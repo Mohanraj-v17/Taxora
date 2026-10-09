@@ -284,7 +284,7 @@ document.addEventListener("DOMContentLoaded", () => {
             navContainer ? fetch("./navbar.html").then(r => r.ok ? r.text() : "").catch(() => "") : Promise.resolve(""),
             footerContainer ? fetch("./footer.html").then(r => r.ok ? r.text() : "").catch(() => "") : Promise.resolve("")
         ]).then(([navHtml, footerHtml]) => {
-            if (navContainer && navHtml) navContainer.innerHTML = navHtml;
+            navContainer.innerHTML = navHtml;
             if (footerContainer && footerHtml) footerContainer.innerHTML = footerHtml;
             initInteractions();
             initAllPageFeatures();

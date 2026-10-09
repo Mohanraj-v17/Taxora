@@ -28,7 +28,176 @@
 <body
     class="min-h-screen w-full overflow-x-clip font-sans bg-[#FAFBFD] text-[#17212B] transition-colors duration-300 dark:bg-[#07131F] dark:text-white">
 
-    <div id="navbar-placeholder" class="sticky top-3 sm:top-5 z-50"></div>
+      <header
+        class="sticky top-3 sm:top-5 left-0 right-0 z-50 mx-4 sm:mx-auto sm:w-[92%] max-w-[1440px] rounded-full border border-gray-200 bg-white/95 shadow-[0_4px_20px_rgba(18,59,93,0.08)] backdrop-blur-md transition-colors duration-200 dark:border-gray-700 dark:bg-[#0D1B2A]/95 dark:shadow-[0_8px_30px_rgba(0,0,0,0.35)]">
+        <div class="mx-auto flex min-h-[68px] w-full items-center justify-between px-5 sm:px-8 lg:px-9">
+
+            <div class="flex items-center gap-6 lg:gap-10">
+                <a href="index.html" class="flex shrink-0 items-center gap-[10px] text-[#123B5D] dark:text-white">
+                    <span
+                        class="flex h-9 w-9 shrink-0 items-center justify-center rounded-[10px] bg-[#123B5D] text-xl text-white">₹</span>
+                    <span class="flex flex-col gap-1 leading-[1.2]">
+                        <span
+                            class="-translate-x-0.5 text-[20px] font-bold tracking-[0.08em] text-[#123B5D] dark:text-white">TAXORA</span>
+                </a>
+
+                <nav class="hidden lg:flex items-center gap-2">
+                    <div class="group relative">
+                        <button type="button"
+                            class="flex items-center rounded-2xl px-[14px] py-2 text-[14px] font-medium text-[#334155] transition duration-200 hover:bg-[#EAF2F7] hover:text-[#123B5D] dark:text-gray-300 dark:hover:bg-[#123B5D] dark:hover:text-white">
+                            Home
+                            <span class="ms-[6px] inline-block rotate-90 text-base">›</span>
+                        </button>
+
+                        <div
+                            class="invisible absolute start-0 top-[calc(100%+3px)] min-w-[180px] translate-y-[-8px] rounded-xl border border-gray-200 bg-white p-1.5 opacity-0 shadow-[0_10px_25px_rgba(0,0,0,0.08)] transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 dark:border-gray-700 dark:bg-[#102235] dark:shadow-[0_10px_25px_rgba(0,0,0,0.35)]">
+                            <a href="index.html"
+                                class="block rounded-lg px-3 py-2.5 text-sm font-medium text-[#334155] transition hover:bg-[#EAF2F7] hover:text-[#123B5D] dark:text-gray-300 dark:hover:bg-[#183247] dark:hover:text-white">Home
+                                1</a>
+                            <a href="home-2.html"
+                                class="block rounded-lg px-3 py-2.5 text-sm font-medium text-[#334155] transition hover:bg-[#EAF2F7] hover:text-[#123B5D] dark:text-gray-300 dark:hover:bg-[#183247] dark:hover:text-white">Home
+                                2</a>
+                        </div>
+                    </div>
+
+                    <a href="about.html"
+                        class="rounded-2xl px-[14px] py-2 text-[14px] font-medium text-[#334155] transition hover:bg-[#EAF2F7] hover:text-[#123B5D] dark:text-gray-300 dark:hover:bg-[#123B5D] dark:hover:text-white">About</a>
+                    <a href="sessions.html"
+                        class="rounded-2xl px-[14px] py-2 text-[14px] font-medium text-[#334155] transition hover:bg-[#EAF2F7] hover:text-[#123B5D] dark:text-gray-300 dark:hover:bg-[#123B5D] dark:hover:text-white">Sessions</a>
+                    <a href="services.html"
+                        class="rounded-2xl px-[14px] py-2 text-[14px] font-medium text-[#334155] transition hover:bg-[#EAF2F7] hover:text-[#123B5D] dark:text-gray-300 dark:hover:bg-[#123B5D] dark:hover:text-white">Services</a>
+                    <a href="pricing.html"
+                        class="rounded-2xl px-[14px] py-2 text-[14px] font-medium text-[#334155] transition hover:bg-[#EAF2F7] hover:text-[#123B5D] dark:text-gray-300 dark:hover:bg-[#123B5D] dark:hover:text-white">Pricing</a>
+                    <a href="blog.html"
+                        class="rounded-2xl px-[14px] py-2 text-[14px] font-medium text-[#334155] transition hover:bg-[#EAF2F7] hover:text-[#123B5D] dark:text-gray-300 dark:hover:bg-[#123B5D] dark:hover:text-white">Blog</a>
+                    <a href="faq.html"
+                        class="rounded-2xl px-[14px] py-2 text-[14px] font-medium text-[#334155] transition hover:bg-[#EAF2F7] hover:text-[#123B5D] dark:text-gray-300 dark:hover:bg-[#123B5D] dark:hover:text-white">FAQ</a>
+                    <a href="contact.html"
+                        class="rounded-2xl px-[14px] py-2 text-[14px] font-medium text-[#334155] transition hover:bg-[#EAF2F7] hover:text-[#123B5D] dark:text-gray-300 dark:hover:bg-[#123B5D] dark:hover:text-white">Contact</a>
+
+                    <div class="group relative">
+                        <button type="button"
+                            class="flex items-center rounded-2xl px-[14px] py-2 text-[14px] font-medium text-[#334155] transition hover:bg-[#EAF2F7] hover:text-[#123B5D] dark:text-gray-300 dark:hover:bg-[#162B3D] dark:hover:text-white">
+                            Dashboard
+                            <span class="ms-[6px] inline-block rotate-90 text-base">›</span>
+                        </button>
+                        <div
+                            class="invisible absolute start-0 top-[calc(100%+3px)] min-w-[180px] translate-y-[-8px] rounded-xl border border-gray-200 bg-white p-1.5 opacity-0 shadow-[0_10px_25px_rgba(0,0,0,0.08)] transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 dark:border-gray-700 dark:bg-[#102235]">
+                            <a href="dashboard.html"
+                                class="block rounded-lg px-3 py-2.5 text-sm font-medium text-[#334155] transition hover:bg-[#EAF2F7] hover:text-[#123B5D] dark:text-gray-300 dark:hover:bg-[#183247] dark:hover:text-white">User
+                                Dashboard</a>
+                            <a href="admin.html"
+                                class="block rounded-lg px-3 py-2.5 text-sm font-medium text-[#334155] transition hover:bg-[#EAF2F7] hover:text-[#123B5D] dark:text-gray-300 dark:hover:bg-[#183247] dark:hover:text-white">Admin
+                                Dashboard</a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+
+            <div class="flex items-center gap-2.5 sm:gap-10">
+                <button type="button" dir="ltr"
+                    class="themeToggleBtn relative hidden lg:flex h-[34px] w-[78px] items-center justify-between overflow-hidden rounded-full border border-gray-200 bg-white px-0 transition-colors duration-300 dark:border-gray-600 dark:bg-[#162B3D]">
+                    <span
+                        class="relative z-20 flex h-[34px] w-[34px] items-center justify-center text-base text-[#64748B] dark:text-gray-300">☀</span>
+                    <span
+                        class="themeKnob absolute left-[3px] top-[2.5px] z-10 h-7 w-7 rounded-full bg-white shadow-md transition-transform duration-300 dark:bg-transparent dark:border dark:border-gray-200"></span>
+                    <span
+                        class="relative z-20 flex h-[34px] w-[34px] items-center justify-center text-base text-[#64748B] dark:text-gray-300">☾</span>
+                </button>
+
+                <button type="button"
+                    class="directionToggleBtn hidden lg:block h-[34px] min-w-[70px] rounded-full border border-gray-200 bg-white px-3 text-[13px] font-medium tracking-[0.04em] text-[#334155] transition duration-200 hover:border-[#D5E3EC] hover:bg-[#EAF2F7] hover:text-[#123B5D] dark:border-gray-600 dark:bg-[#162B3D] dark:text-gray-200 dark:hover:bg-[#20394E] dark:hover:text-white">
+                    LTR
+                </button>
+
+                <a href="login.html"
+                    class="hidden min-[400px]:inline-flex rounded-full bg-[#123B5D] px-4 py-2 sm:px-5 sm:py-2 text-center text-xs sm:text-sm font-semibold text-white transition duration-200 hover:bg-[#0B263D] dark:bg-blue-600 dark:hover:bg-blue-500">
+                    Login
+                </a>
+
+                <button type="button" id="mobileMenuBtn"
+                    class="lg:hidden flex h-9 w-9 items-center justify-center rounded-xl text-2xl text-[#17212B] transition-colors hover:bg-gray-100 dark:text-white dark:hover:bg-[#162B3D]">
+                    ☰
+                </button>
+            </div>
+
+        </div>
+
+        <div id="mobileMenu"
+            class="hidden lg:hidden absolute top-[calc(100%+12px)] start-0 end-0 max-h-[82vh] overflow-y-auto rounded-3xl border border-gray-200 bg-white/95 p-6 shadow-2xl backdrop-blur-xl transition-all duration-300 dark:border-gray-700 dark:bg-[#0D1B2A]/95 dark:text-white">
+
+            <div class="flex flex-col gap-2">
+                <!-- Home Links (No dark black text, clean uniform style) -->
+                <div class="border-b border-gray-100 pb-2 dark:border-gray-800">
+                    <span class="text-[11px] font-bold uppercase tracking-wider text-[#64748B] dark:text-gray-400">Home
+                        Pages</span>
+                    <div class="mt-1 flex flex-col gap-1">
+                        <a href="index.html"
+                            class="rounded-xl px-3 py-2 text-sm font-medium text-[#334155] hover:bg-[#EAF2F7] hover:text-[#123B5D] dark:text-gray-300 dark:hover:bg-[#183247] dark:hover:text-white">Home
+                            1</a>
+                        <a href="home-2.html"
+                            class="rounded-xl px-3 py-2 text-sm font-medium text-[#334155] hover:bg-[#EAF2F7] hover:text-[#123B5D] dark:text-gray-300 dark:hover:bg-[#183247] dark:hover:text-white">Home
+                            2</a>
+                    </div>
+                </div>
+
+                <a href="about.html"
+                    class="rounded-xl px-3 py-2 text-sm font-medium text-[#334155] hover:bg-[#EAF2F7] hover:text-[#123B5D] dark:text-gray-300 dark:hover:bg-[#162B3D] dark:hover:text-white">About</a>
+                <a href="sessions.html"
+                    class="rounded-xl px-3 py-2 text-sm font-medium text-[#334155] hover:bg-[#EAF2F7] hover:text-[#123B5D] dark:text-gray-300 dark:hover:bg-[#162B3D] dark:hover:text-white">Sessions</a>
+                <a href="services.html"
+                    class="rounded-xl px-3 py-2 text-sm font-medium text-[#334155] hover:bg-[#EAF2F7] hover:text-[#123B5D] dark:text-gray-300 dark:hover:bg-[#162B3D] dark:hover:text-white">Services</a>
+                <a href="pricing.html"
+                    class="rounded-xl px-3 py-2 text-sm font-medium text-[#334155] hover:bg-[#EAF2F7] hover:text-[#123B5D] dark:text-gray-300 dark:hover:bg-[#162B3D] dark:hover:text-white">Pricing</a>
+                <a href="blog.html"
+                    class="rounded-xl px-3 py-2 text-sm font-medium text-[#334155] hover:bg-[#EAF2F7] hover:text-[#123B5D] dark:text-gray-300 dark:hover:bg-[#162B3D] dark:hover:text-white">Blog</a>
+                <a href="faq.html"
+                    class="rounded-xl px-3 py-2 text-sm font-medium text-[#334155] hover:bg-[#EAF2F7] hover:text-[#123B5D] dark:text-gray-300 dark:hover:bg-[#162B3D] dark:hover:text-white">FAQ</a>
+                <a href="contact.html"
+                    class="rounded-xl px-3 py-2 text-sm font-medium text-[#334155] hover:bg-[#EAF2F7] hover:text-[#123B5D] dark:text-gray-300 dark:hover:bg-[#162B3D] dark:hover:text-white">Contact</a>
+
+                <div class="border-t border-gray-100 pt-2 dark:border-gray-800">
+                    <span
+                        class="text-[11px] font-bold uppercase tracking-wider text-[#64748B] dark:text-gray-400">Dashboards</span>
+                    <div class="mt-1 flex flex-col gap-1">
+                        <a href="dashboard.html"
+                            class="rounded-xl px-3 py-2 text-sm font-medium text-[#334155] hover:bg-[#EAF2F7] hover:text-[#123B5D] dark:text-gray-300 dark:hover:bg-[#162B3D] dark:hover:text-white">User
+                            Dashboard</a>
+                        <a href="admin.html"
+                            class="rounded-xl px-3 py-2 text-sm font-medium text-[#334155] hover:bg-[#EAF2F7] hover:text-[#123B5D] dark:text-gray-300 dark:hover:bg-[#162B3D] dark:hover:text-white">Admin
+                            Dashboard</a>
+                    </div>
+                </div>
+
+                <div class="mt-2 flex items-center justify-between border-t border-gray-100 pt-4 dark:border-gray-800">
+                    <span class="text-xs font-semibold text-[#64748B] dark:text-gray-400">Theme & Mode</span>
+                    <div class="flex items-center gap-3">
+                        <!-- Mobile Theme Toggle -->
+                        <button type="button" dir="ltr"
+                            class="themeToggleBtn relative flex h-[34px] w-[78px] items-center justify-between overflow-hidden rounded-full border border-gray-200 bg-white px-0 transition-colors duration-300 dark:border-gray-600 dark:bg-[#162B3D]">
+                            <span
+                                class="relative z-20 flex h-[34px] w-[34px] items-center justify-center text-base text-[#64748B] dark:text-gray-300">☀</span>
+                            <span
+                                class="themeKnob absolute left-[3px] top-[2.5px] z-10 h-7 w-7 rounded-full bg-white shadow-md transition-transform duration-300 dark:bg-transparent dark:border dark:border-gray-200"></span>
+                            <span
+                                class="relative z-20 flex h-[34px] w-[34px] items-center justify-center text-base text-[#64748B] dark:text-gray-300">☾</span>
+                        </button>
+
+                        <button type="button"
+                            class="directionToggleBtn h-[34px] min-w-[65px] rounded-full border border-gray-200 bg-white px-3 text-[13px] font-medium tracking-[0.04em] text-[#334155] transition duration-200 hover:border-[#D5E3EC] hover:bg-[#EAF2F7] hover:text-[#123B5D] dark:border-gray-600 dark:bg-[#162B3D] dark:text-gray-200">
+                            LTR
+                        </button>
+                    </div>
+                </div>
+                <div class="mt-2 min-[400px]:hidden border-t border-gray-100 pt-3 dark:border-gray-800">
+                    <a href="login.html"
+                        class="block w-full rounded-xl bg-[#123B5D] py-2.5 text-center text-sm font-bold !text-white transition hover:bg-[#0B263D] dark:bg-blue-600">
+                        Login
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
 
     <section
         class="relative min-h-screen overflow-hidden -mt-16 sm:-mt-20 lg:-mt-24 pt-24 sm:pt-28 lg:pt-36 pb-16 lg:pb-44 border-b border-gray-200 dark:border-gray-800">
@@ -267,7 +436,122 @@
         </div>
     </section>
 
-    <div id="footer-placeholder"></div>
+    <footer
+        class="mt-20 border-t border-gray-200 bg-[#F8FAFC] text-[#17212B] transition-colors duration-300 dark:border-gray-700 dark:bg-[#07131F] dark:text-white">
+        <div
+            class="mx-auto grid max-w-[1280px] grid-cols-1 gap-10 px-6 py-14 md:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1fr] lg:gap-[60px] lg:px-7 lg:py-[70px]">
+           
+            <div class="max-w-[360px] md:col-span-2 lg:col-span-1">
+                <a href="index.html" class="flex items-center gap-[10px] text-[#123B5D] dark:text-white">
+                    <span
+                        class="flex h-9 w-9 shrink-0 items-center justify-center rounded-[10px] bg-[#123B5D] text-xl text-white">₹</span>
+                    <span class="flex flex-col gap-1 leading-[1.2]">
+                        <span
+                            class="-translate-x-0.5 text-[20px] font-bold tracking-[0.08em] text-[#123B5D] dark:text-white">TAXORA</span>
+            
+                </a>
+                <p class="mt-[22px] text-sm leading-[1.8] text-[#64748B] dark:text-gray-400">
+                    Simple, reliable and professional tax filing and accounting services for individuals and businesses.
+                </p>
+
+                <div class="mt-6 flex items-center gap-3">
+
+                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"
+                        class="flex h-9 w-9 items-center justify-center rounded-xl border border-gray-200 bg-white text-[#64748B] shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-[#123B5D] hover:text-[#123B5D] dark:border-gray-800 dark:bg-[#0D1B2A] dark:text-gray-400 dark:hover:border-blue-400 dark:hover:text-blue-400">
+                        <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.738-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                        </svg>
+                    </a>
+
+                    <a href="https://x.com" target="_blank" rel="noopener noreferrer" aria-label="X"
+                        class="flex h-9 w-9 items-center justify-center rounded-xl border border-gray-200 bg-white text-[#64748B] shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-[#123B5D] hover:text-[#123B5D] dark:border-gray-800 dark:bg-[#0D1B2A] dark:text-gray-400 dark:hover:border-blue-400 dark:hover:text-blue-400">
+                        <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                        </svg>
+                    </a>
+
+                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram"
+                        class="flex h-9 w-9 items-center justify-center rounded-xl border border-gray-200 bg-white text-[#64748B] shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-[#123B5D] hover:text-[#123B5D] dark:border-gray-800 dark:bg-[#0D1B2A] dark:text-gray-400 dark:hover:border-blue-400 dark:hover:text-blue-400">
+                        <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
+                    </a>
+
+                    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook"
+                        class="flex h-9 w-9 items-center justify-center rounded-xl border border-gray-200 bg-white text-[#64748B] shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-[#123B5D] hover:text-[#123B5D] dark:border-gray-800 dark:bg-[#0D1B2A] dark:text-gray-400 dark:hover:border-blue-400 dark:hover:text-blue-400">
+                        <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M9 8h-3v4h3v12h5V12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333H18V0h-3.808C10.595 0 9 1.582 9 4.615V8z"/>
+                        </svg>
+                    </a>
+
+                </div>
+            </div>
+
+            <div class="flex flex-col gap-[13px]">
+                <h3 class="mb-2 text-[15px] font-semibold text-[#17212B] dark:text-white">Services</h3>
+                <a href="services.html"
+                    class="text-sm text-[#64748B] transition-colors duration-200 hover:text-[#123B5D] dark:text-gray-400 dark:hover:text-white">Tax
+                    Filing</a>
+                <a href="services.html"
+                    class="text-sm text-[#64748B] transition-colors duration-200 hover:text-[#123B5D] dark:text-gray-400 dark:hover:text-white">GST
+                    Services</a>
+                <a href="services.html"
+                    class="text-sm text-[#64748B] transition-colors duration-200 hover:text-[#123B5D] dark:text-gray-400 dark:hover:text-white">Accounting</a>
+                <a href="services.html"
+                    class="text-sm text-[#64748B] transition-colors duration-200 hover:text-[#123B5D] dark:text-gray-400 dark:hover:text-white">Bookkeeping</a>
+                <a href="services.html"
+                    class="text-sm text-[#64748B] transition-colors duration-200 hover:text-[#123B5D] dark:text-gray-400 dark:hover:text-white">Tax
+                    Consultation</a>
+            </div>
+
+            <div class="flex flex-col gap-[13px]">
+                <h3 class="mb-2 text-[15px] font-semibold text-[#17212B] dark:text-white">Company</h3>
+                <a href="about.html"
+                    class="text-sm text-[#64748B] transition-colors duration-200 hover:text-[#123B5D] dark:text-gray-400 dark:hover:text-white">About
+                    Us</a>
+                <a href="pricing.html"
+                    class="text-sm text-[#64748B] transition-colors duration-200 hover:text-[#123B5D] dark:text-gray-400 dark:hover:text-white">Pricing</a>
+                <a href="blog.html"
+                    class="text-sm text-[#64748B] transition-colors duration-200 hover:text-[#123B5D] dark:text-gray-400 dark:hover:text-white">Blog</a>
+                <a href="faq.html"
+                    class="text-sm text-[#64748B] transition-colors duration-200 hover:text-[#123B5D] dark:text-gray-400 dark:hover:text-white">FAQ</a>
+                <a href="contact.html"
+                    class="text-sm text-[#64748B] transition-colors duration-200 hover:text-[#123B5D] dark:text-gray-400 dark:hover:text-white">Contact</a>
+            </div>
+
+    
+            <div class="flex flex-col gap-[13px]">
+                <h3 class="mb-2 text-[15px] font-semibold text-[#17212B] dark:text-white">Support</h3>
+                <a href="user-dashboard.html"
+                    class="text-sm text-[#64748B] transition-colors duration-200 hover:text-[#123B5D] dark:text-gray-400 dark:hover:text-white">Client
+                    Dashboard</a>
+                <a href="contact.html"
+                    class="text-sm text-[#64748B] transition-colors duration-200 hover:text-[#123B5D] dark:text-gray-400 dark:hover:text-white">Help
+                    Center</a>
+                <a href="faq.html"
+                    class="text-sm text-[#64748B] transition-colors duration-200 hover:text-[#123B5D] dark:text-gray-400 dark:hover:text-white">FAQs</a>
+                <a href="contact.html"
+                    class="text-sm text-[#64748B] transition-colors duration-200 hover:text-[#123B5D] dark:text-gray-400 dark:hover:text-white">Contact
+                    Support</a>
+                <a href="login.html"
+                    class="text-sm text-[#64748B] transition-colors duration-200 hover:text-[#123B5D] dark:text-gray-400 dark:hover:text-white">Login</a>
+            </div>
+        </div>
+
+        <div
+            class="mx-auto flex max-w-[1280px] flex-col items-start justify-between gap-5 border-t border-gray-200 px-6 py-5 md:flex-row md:items-center lg:px-7 dark:border-gray-700">
+            <p class="text-[13px] text-[#64748B] dark:text-gray-400">© 2026 Tax Filing & Accounting Service. All rights
+                reserved.</p>
+            <div class="flex gap-6">
+                <a href="#"
+                    class="text-[13px] text-[#64748B] transition-colors duration-200 hover:text-[#123B5D] dark:text-gray-400 dark:hover:text-white">Privacy
+                    Policy</a>
+                <a href="#"
+                    class="text-[13px] text-[#64748B] transition-colors duration-200 hover:text-[#123B5D] dark:text-gray-400 dark:hover:text-white">Terms
+                    & Conditions</a>
+            </div>
+        </div>
+    </footer>
 
     <script src="app.js"></script>
 
