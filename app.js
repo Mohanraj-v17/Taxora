@@ -1,11 +1,14 @@
-
 (function () {
     const savedTheme = localStorage.getItem("theme");
     const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
+    const isDark = savedTheme === "dark" || (!savedTheme && prefersDark);
+
+    if (isDark) {
         document.documentElement.classList.add("dark");
+        document.documentElement.style.backgroundColor = "#07131F";
     } else {
         document.documentElement.classList.remove("dark");
+        document.documentElement.style.backgroundColor = "#FAFBFD";
     }
 
     const savedDir = localStorage.getItem("taxora_direction") || "ltr";
@@ -17,10 +20,13 @@
         * {
             -webkit-tap-highlight-color: transparent !important;
         }
-        .dark .active-filter, 
-        .dark .active-toggle {
-            background-color: #2563eb !important;
-            color: #ffffff !important;
+        html.dark, html.dark body {
+            background-color: #07131F !important;
+            color-scheme: dark;
+        }
+        html:not(.dark), html:not(.dark) body {
+            background-color: #FAFBFD !important;
+            color-scheme: light;
         }
     `;
     document.head.appendChild(zeroFlashStyle);
@@ -141,25 +147,27 @@ window.toggleDarkMode = function () {
     const isDark = html.classList.contains("dark");
     if (isDark) {
         html.classList.remove("dark");
+        html.style.backgroundColor = "#FAFBFD";
         localStorage.setItem("theme", "light");
     } else {
         html.classList.add("dark");
+        html.style.backgroundColor = "#07131F";
         localStorage.setItem("theme", "dark");
     }
     const knobs = document.querySelectorAll(".themeKnob");
     knobs.forEach(knob => {
-        knob.style.transform = isDark ? "translateX(0px)" : "translateX(42px)";
+        knob.style.transform = isDark ? "translateX(0px)" : "translateX(28px)";
     });
 };
 
 window.toggleDirection = function () {
     const html = document.documentElement;
     const currentDir = html.getAttribute("dir") || "ltr";
-    const nextDir = currentDir === "rtl" ? "ltr" : "rtl";
-    html.setAttribute("dir", nextDir);
-    localStorage.setItem("taxora_direction", nextDir);
+    const newDir = currentDir === "rtl" ? "ltr" : "rtl";
+    html.setAttribute("dir", newDir);
+    localStorage.setItem("taxora_direction", newDir);
     const directionToggleBtns = document.querySelectorAll(".directionToggleBtn");
-    directionToggleBtns.forEach(btn => btn.textContent = nextDir.toUpperCase());
+    directionToggleBtns.forEach(btn => btn.textContent = newDir.toUpperCase());
 };
 
 window.showDashboardToast = function (msg) {
@@ -267,39 +275,29 @@ window.setPriorityFilter = function (priority, btn) {
     filterCases();
 };
 
-
-document.addEventListener("DOMContentLoaded", async () => {
+document.addEventListener("DOMContentLoaded", () => {
     const navContainer = document.getElementById("navbar-placeholder");
     const footerContainer = document.getElementById("footer-placeholder");
 
-    try {
-        if (navContainer) {
-            const response = await fetch("/navbar.html");
-
-            if (!response.ok) {
-                throw new Error("Navbar failed to load");
-            }
-
-            navContainer.innerHTML = await response.text();
-        }
-
-        if (footerContainer) {
-            const response = await fetch("/footer.html");
-
-            if (response.ok) {
-                footerContainer.innerHTML = await response.text();
-            }
-        }
-    } catch (error) {
-        console.error("Loading error:", error);
+    if (navContainer || footerContainer) {
+        Promise.all([
+            navContainer ? fetch("./navbar.html").then(r => r.ok ? r.text() : "").catch(() => "") : Promise.resolve(""),
+            footerContainer ? fetch("./footer.html").then(r => r.ok ? r.text() : "").catch(() => "") : Promise.resolve("")
+        ]).then(([navHtml, footerHtml]) => {
+            if (navContainer && navHtml) navContainer.innerHTML = navHtml;
+            if (footerContainer && footerHtml) footerContainer.innerHTML = footerHtml;
+            initInteractions();
+            initAllPageFeatures();
+            updateActiveNav();
+        }).catch(() => {
+            initInteractions();
+            initAllPageFeatures();
+        });
+    } else {
+        initInteractions();
+        initAllPageFeatures();
     }
-
-    initInteractions();
-    initAllPageFeatures();
-    updateActiveNav();
 });
-
-
 
 function initAllPageFeatures() {
     initPricingToggle();
@@ -320,7 +318,6 @@ function initDashboardFeatures() {
         applyUpdatedName(savedName);
     }
 }
-
 
 function initAdminFeatures() {
     const defaultAdminBtn = document.querySelector(".sidebar-btn[onclick*='pipeline']");
@@ -582,10 +579,12 @@ function initInteractions() {
     function applyTheme(isDark) {
         if (isDark) {
             html.classList.add("dark");
-            themeKnobs.forEach(knob => knob.style.transform = "translateX(42px)");
+            html.style.backgroundColor = "#07131F";
+            themeKnobs.forEach(knob => knob.style.transform = "translateX(28px)");
             localStorage.setItem("theme", "dark");
         } else {
             html.classList.remove("dark");
+            html.style.backgroundColor = "#FAFBFD";
             themeKnobs.forEach(knob => knob.style.transform = "translateX(0px)");
             localStorage.setItem("theme", "light");
         }
