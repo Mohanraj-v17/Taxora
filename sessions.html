@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sessions & Masterclasses</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23123B5D'/><text x='50%' y='52%' dominant-baseline='central' text-anchor='middle' font-family='Arial, sans-serif' font-weight='900' font-size='24' fill='white'>₹</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body
+    class="min-h-screen w-full overflow-x-clip font-sans bg-[#F8FAFC] text-[#17212B] transition-colors duration-300 dark:bg-[#07131F] dark:text-white">
+
+    <div id="navbar-placeholder" class="sticky top-3 sm:top-5 z-50"></div>
+
+    <section
+        class="relative overflow-hidden -mt-20 pt-28 pb-16 lg:-mt-24 lg:pt-36 lg:pb-32 border-b border-gray-200/70 dark:border-gray-800">
+
+        <div class="pointer-events-none absolute inset-0 z-0 overflow-hidden">
+            <img src="/public/hero-banner4.avif"
+                alt="Masterclass Conference Hall Background"
+                class="h-full w-full object-cover object-center opacity-[6.8] filter blur-[0.2px] dark:opacity-[6.8]">
+            <div
+                class="absolute inset-0 bg-gradient-to-b from-transparent via-[#F8FAFC]/75 to-[#F8FAFC] dark:via-[#07131F]/75 dark:to-[#07131F]">
+            </div>
+            <div
+                class="absolute left-1/2 top-1/4 -translate-x-1/2 -translate-y-1/2 h-[380px] w-[650px] rounded-full bg-blue-500/10 blur-[130px]">
+            </div>
+        </div>
+
+        <div class="relative z-10 mx-auto max-w-[1440px] px-6 sm:px-8 py-8 lg:px-12 text-center">
+            <div class="mx-auto max-w-3xl">
+                <div
+                    class="inline-flex items-center gap-2 rounded-full border border-blue-500/30 bg-blue-50/90 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-[#123B5D] transition-transform duration-200 hover:scale-105 cursor-default dark:bg-blue-950/60 dark:text-blue-300 shadow-sm">
+                    <span class="h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                    Live Cohorts & 1-on-1 Advisory Clinics
+                </div>
+                <h1
+                    class="mt-6 text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl text-[#17212B] dark:text-white leading-[1.15]">
+                    Master Tax Strategy from <br>
+                    <span
+                        class="bg-gradient-to-r from-[#123B5D] to-blue-600 bg-clip-text text-transparent dark:from-blue-400 dark:to-cyan-300">
+                        Practicing Industry Partners.
+                    </span>
+                </h1>
+                <p
+                    class="mx-auto mt-5 max-w-2xl text-base sm:text-lg text-[#17212B] dark:text-gray-300 leading-relaxed">
+                    Live weekend masterclasses, real-world spreadsheet audit templates, and private 30-minute diagnostic
+                    desks for founders, tech leads, and accounting professionals.
+                </p>
+
+                <div id="sessionFilterGroup" class="mt-8 flex flex-wrap items-center justify-center gap-2 pt-2">
+                    <button data-filter="all"
+                        class="filter-btn rounded-xl bg-[#123B5D] px-4 py-2.5 text-xs font-bold text-white shadow-md transition-all duration-200 hover:-translate-y-0.5 active:scale-95 dark:bg-blue-600">
+                        All Masterclasses
+                    </button>
+                    <button data-filter="gst"
+                        class="filter-btn rounded-xl border border-gray-200 bg-white/90 px-4 py-2.5 text-xs font-semibold text-[#64748B] backdrop-blur-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-[#123B5D] hover:text-[#123B5D] active:scale-95 dark:border-gray-700 dark:bg-[#0D1B2A] dark:text-gray-300 dark:hover:border-blue-400 dark:hover:text-white">
+                        Corporate & MSME GST
+                    </button>
+                    <button data-filter="esop"
+                        class="filter-btn rounded-xl border border-gray-200 bg-white/90 px-4 py-2.5 text-xs font-semibold text-[#64748B] backdrop-blur-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-[#123B5D] hover:text-[#123B5D] active:scale-95 dark:border-gray-700 dark:bg-[#0D1B2A] dark:text-gray-300 dark:hover:border-blue-400 dark:hover:text-white">
+                        US ESOP & Schedule FA
+                    </button>
+                    <button data-filter="notice"
+                        class="filter-btn rounded-xl border border-gray-200 bg-white/90 px-4 py-2.5 text-xs font-semibold text-[#64748B] backdrop-blur-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-[#123B5D] hover:text-[#123B5D] active:scale-95 dark:border-gray-700 dark:bg-[#0D1B2A] dark:text-gray-300 dark:hover:border-blue-400 dark:hover:text-white">
+                        Sec 148 Notice Defense
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20" border-b border-gray-200 dark:border-gray-800>
+        <div class="mx-auto max-w-[1440px] px-6 sm:px-8 lg:px-12">
+            <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-12">
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-wider text-[#123B5D] dark:text-blue-400">Calendar Agenda</span>
+                    <h2 class="mt-2 text-3xl font-extrabold sm:text-4xl text-[#17212B] dark:text-white">
+                        Scheduled Cohorts Open for Enrollment
+                    </h2>
+                </div>
+                <span class="text-xs font-semibold text-[#64748B] dark:text-gray-400">All sessions include lifetime recordings + audit sheets</span>
+            </div>
+
+            <div id="sessionCardsList" class="space-y-4">
+
+                <div data-category="esop"
+                    class="session-item flex flex-col lg:flex-row lg:items-center justify-between gap-6 rounded-3xl border border-gray-200 bg-white p-6 sm:p-8 shadow-sm transition-all duration-300 ease-out hover:-translate-y-1.5 hover:border-blue-400/50 hover:shadow-xl dark:border-gray-800 dark:bg-[#0D1B2A] dark:hover:border-blue-500/40">
+                    <div class="flex items-start sm:items-center gap-5">
+                        <div
+                            class="flex flex-col items-center justify-center rounded-2xl bg-blue-50 p-4 text-[#123B5D] transition-transform duration-300 group-hover:scale-105 dark:bg-blue-950/50 dark:text-blue-300 min-w-[76px]">
+                            <span class="text-xs font-bold uppercase">OCT</span>
+                            <span class="text-2xl font-black">17</span>
+                        </div>
+                        <div>
+                            <div class="flex flex-wrap items-center gap-2">
+                                <span
+                                    class="rounded bg-emerald-100 px-2 py-0.5 text-[10px] font-bold text-emerald-800 dark:bg-emerald-950/60 dark:text-emerald-300">Live Interactive</span>
+                                <span class="text-xs text-[#64748B] dark:text-gray-400">Saturday • 10:00 AM - 1:00 PM IST</span>
+                            </div>
+                            <h3 class="mt-2 text-xl font-bold text-[#17212B] dark:text-white">
+                                Advanced US Stocks, RSU Vesting & DTAA Schedule FA Clinic
+                            </h3>
+                            <p class="mt-1 text-xs text-[#64748B] dark:text-gray-400">Instructor: CA Ananya Sundaram (Senior Partner • FCA)</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4 lg:shrink-0">
+                        <div class="text-start sm:text-end">
+                            <p class="text-sm font-black text-[#17212B] dark:text-white">₹1,499</p>
+                            <p class="text-[11px] font-semibold text-emerald-600 dark:text-emerald-400">8 Seats Remaining</p>
+                        </div>
+                        <a href="contact.html"
+                            class="rounded-xl bg-[#123B5D] px-6 py-3 text-xs font-bold text-white shadow-md transition-all duration-300 hover:bg-[#0b243a] dark:bg-blue-600 dark:hover:bg-blue-500">
+                            Reserve Seat →
+                        </a>
+                    </div>
+                </div>
+
+                <div data-category="gst"
+                    class="session-item flex flex-col lg:flex-row lg:items-center justify-between gap-6 rounded-3xl border border-gray-200 bg-white p-6 sm:p-8 shadow-sm transition-all duration-300 ease-out hover:-translate-y-1.5 hover:border-indigo-400/50 hover:shadow-xl dark:border-gray-800 dark:bg-[#0D1B2A] dark:hover:border-indigo-500/40">
+                    <div class="flex items-start sm:items-center gap-5">
+                        <div
+                            class="flex flex-col items-center justify-center rounded-2xl bg-indigo-50 p-4 text-indigo-700 transition-transform duration-300 dark:bg-indigo-950/50 dark:text-indigo-300 min-w-[76px]">
+                            <span class="text-xs font-bold uppercase">OCT</span>
+                            <span class="text-2xl font-black">24</span>
+                        </div>
+                        <div>
+                            <div class="flex flex-wrap items-center gap-2">
+                                <span
+                                    class="rounded bg-indigo-100 px-2 py-0.5 text-[10px] font-bold text-indigo-800 dark:bg-indigo-950/60 dark:text-indigo-300">GST Practitioner</span>
+                                <span class="text-xs text-[#64748B] dark:text-gray-400">Saturday • 02:00 PM - 5:30 PM IST</span>
+                            </div>
+                            <h3 class="mt-2 text-xl font-bold text-[#17212B] dark:text-white">
+                                GSTR-2B Mismatch Resolution & Reclaiming Blocked ITC Under Rule 36(4)
+                            </h3>
+                            <p class="mt-1 text-xs text-[#64748B] dark:text-gray-400">Instructor: CA Karthik Raghavan (Ex-Big 4 Advisory Head)</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4 lg:shrink-0">
+                        <div class="text-start sm:text-end">
+                            <p class="text-sm font-black text-[#17212B] dark:text-white">₹1,999</p>
+                            <p class="text-[11px] font-semibold text-amber-600 dark:text-amber-400">Fast Filling</p>
+                        </div>
+                        <a href="contact.html"
+                            class="rounded-xl bg-[#123B5D] px-6 py-3 text-xs font-bold text-white shadow-md transition-all duration-300 hover:bg-[#0b243a] dark:bg-blue-600 dark:hover:bg-blue-500">
+                            Reserve Seat →
+                        </a>
+                    </div>
+                </div>
+
+                <div data-category="notice"
+                    class="session-item flex flex-col lg:flex-row lg:items-center justify-between gap-6 rounded-3xl border border-gray-200 bg-white p-6 sm:p-8 shadow-sm transition-all duration-300 ease-out hover:-translate-y-1.5 hover:border-purple-400/50 hover:shadow-xl dark:border-gray-800 dark:bg-[#0D1B2A] dark:hover:border-purple-500/40">
+                    <div class="flex items-start sm:items-center gap-5">
+                        <div
+                            class="flex flex-col items-center justify-center rounded-2xl bg-purple-50 p-4 text-purple-700 transition-transform duration-300 dark:bg-purple-950/50 dark:text-purple-300 min-w-[76px]">
+                            <span class="text-xs font-bold uppercase">NOV</span>
+                            <span class="text-2xl font-black">02</span>
+                        </div>
+                        <div>
+                            <div class="flex flex-wrap items-center gap-2">
+                                <span
+                                    class="rounded bg-purple-100 px-2 py-0.5 text-[10px] font-bold text-purple-800 dark:bg-purple-950/60 dark:text-purple-300">Litigation & Law</span>
+                                <span class="text-xs text-[#64748B] dark:text-gray-400">Sunday • 11:00 AM - 1:30 PM IST</span>
+                            </div>
+                            <h3 class="mt-2 text-xl font-bold text-[#17212B] dark:text-white">
+                                How to Handle Income Tax Scrutiny Notices (Sec 143(2) & Sec 148)
+                            </h3>
+                            <p class="mt-1 text-xs text-[#64748B] dark:text-gray-400">Instructor: Adv. Meera Krishnan (High Court Tax Advocate)</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4 lg:shrink-0">
+                        <div class="text-start sm:text-end">
+                            <p class="text-sm font-black text-[#17212B] dark:text-white">₹2,499</p>
+                            <p class="text-[11px] font-semibold text-emerald-600 dark:text-emerald-400">Registration Open</p>
+                        </div>
+                        <a href="contact.html"
+                            class="rounded-xl bg-[#123B5D] px-6 py-3 text-xs font-bold text-white shadow-md transition-all duration-300 hover:bg-[#0b243a] dark:bg-blue-600 dark:hover:bg-blue-500">
+                            Reserve Seat →
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-white border-y border-gray-200/80 dark:border-gray-800 dark:bg-[#0A1624] border-b border-gray-200 dark:border-gray-800">
+        <div class="mx-auto max-w-[1440px] px-6 sm:px-8 lg:px-12">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-xs font-bold uppercase tracking-wider text-[#123B5D] dark:text-blue-400">Faculty
+                    Bench</span>
+                <h2 class="mt-2 text-3xl font-extrabold sm:text-4xl text-[#17212B] dark:text-white">
+                    Meet Your Masterclass Mentors & Lead CAs
+                </h2>
+                <p class="mt-3 text-sm text-[#64748B] dark:text-gray-400">
+                    Learn directly from active practitioners who defend multi-crore balance sheets, not theoretical
+                    course creators.
+                </p>
+            </div>
+
+            <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+                <div
+                    class="group rounded-3xl border border-gray-200 bg-[#FBFDFF] p-7 transition-all duration-300 ease-out hover:-translate-y-2 hover:border-blue-400/50 hover:shadow-2xl dark:border-gray-800 dark:bg-[#0D1B2A] dark:hover:border-blue-500/50">
+                    <div class="relative overflow-hidden rounded-2xl">
+                        <img src="/public/rajeshvarma.jpg" alt="CA Rajesh Varma"
+                            class="h-64 w-full object-cover object-top transition-transform duration-500 ease-out group-hover:scale-108">
+                        <span
+                            class="absolute bottom-3 start-3 rounded-lg bg-[#123B5D]/90 px-3 py-1 text-[11px] font-bold text-white backdrop-blur-sm shadow-sm">
+                            FCA • 16+ Yrs ICAI
+                        </span>
+                    </div>
+                    <div class="mt-6">
+                        <h3
+                            class="text-lg font-bold text-[#17212B] transition-colors duration-200 group-hover:text-[#123B5D] dark:text-white dark:group-hover:text-blue-400">
+                            CA Rajesh Varma
+                        </h3>
+                        <p class="text-xs font-medium text-[#123B5D] dark:text-blue-400">Corporate M&A & Cross-Border
+                            Holding Strategist</p>
+                        <p class="mt-3 text-xs leading-relaxed text-[#64748B] dark:text-gray-400">
+                            Advised over 120 tech firms on Delaware C-Corp flips, ESOP buybacks, and Indo-Singapore
+                            treaty structuring with zero withholding tax leakage.
+                        </p>
+                        <div
+                            class="mt-5 border-t border-gray-100 pt-4 dark:border-gray-800 flex items-center justify-between">
+                            <span class="text-[11px] font-semibold text-emerald-600 dark:text-emerald-400">★ 4.98 (380+
+                                Reviews)</span>
+                            <a href="contact.html"
+                                class="inline-flex items-center text-xs font-bold text-[#123B5D] transition-transform duration-200 group-hover:translate-x-1 dark:text-blue-400">
+                                Book 1:1 Desk →
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="group rounded-3xl border border-gray-200 bg-[#FBFDFF] p-7 transition-all duration-300 ease-out hover:-translate-y-2 hover:border-emerald-400/50 hover:shadow-2xl dark:border-gray-800 dark:bg-[#0D1B2A] dark:hover:border-emerald-500/50">
+                    <div class="relative overflow-hidden rounded-2xl">
+                        <img src="/public/divya.avif" alt="CA Divya Natarajan"
+                            class="h-64 w-full object-cover object-[50%_30%] transition-transform duration-500 ease-out group-hover:scale-108">
+                        <span
+                            class="absolute bottom-3 start-3 rounded-lg bg-[#123B5D]/90 px-3 py-1 text-[11px] font-bold text-white backdrop-blur-sm shadow-sm">
+                            Ex-Deloitte Lead • DISA
+                        </span>
+                    </div>
+                    <div class="mt-6">
+                        <h3
+                            class="text-lg font-bold text-[#17212B] transition-colors duration-200 group-hover:text-emerald-600 dark:text-white dark:group-hover:text-emerald-400">
+                            CA Divya Natarajan
+                        </h3>
+                        <p class="text-xs font-medium text-[#123B5D] dark:text-blue-400">Indirect Tax Partner &
+                            Automated Reconciliation Lead</p>
+                        <p class="mt-3 text-xs leading-relaxed text-[#64748B] dark:text-gray-400">
+                            11+ years leading multi-state GST statutory audits. Trained over 4,000 corporate accountants
+                            across Tamil Nadu on GSTR-2B ITC recovery algorithms.
+                        </p>
+                        <div
+                            class="mt-5 border-t border-gray-100 pt-4 dark:border-gray-800 flex items-center justify-between">
+                            <span class="text-[11px] font-semibold text-emerald-600 dark:text-emerald-400">★ 4.96 (420+
+                                Reviews)</span>
+                            <a href="contact.html"
+                                class="inline-flex items-center text-xs font-bold text-[#123B5D] transition-transform duration-200 group-hover:translate-x-1 dark:text-blue-400">
+                                Book 1:1 Desk →
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="group rounded-3xl border border-gray-200 bg-[#FBFDFF] p-7 transition-all duration-300 ease-out hover:-translate-y-2 hover:border-purple-400/50 hover:shadow-2xl dark:border-gray-800 dark:bg-[#0D1B2A] dark:hover:border-purple-500/50">
+                    <div class="relative overflow-hidden rounded-2xl">
+                        <img src="/public/vikramadhitya.jpg" alt="Adv. Vikramaditya Sen"
+                            class="h-64 w-full object-cover object-[50%_30%] transition-transform duration-500 ease-out group-hover:scale-108">
+                        <span
+                            class="absolute bottom-3 start-3 rounded-lg bg-[#123B5D]/90 px-3 py-1 text-[11px] font-bold text-white backdrop-blur-sm shadow-sm">
+                            Bar Council • LL.M (Tax)
+                        </span>
+                    </div>
+                    <div class="mt-6">
+                        <h3
+                            class="text-lg font-bold text-[#17212B] transition-colors duration-200 group-hover:text-purple-600 dark:text-white dark:group-hover:text-purple-400">
+                            Adv. Vikramaditya Sen
+                        </h3>
+                        <p class="text-xs font-medium text-[#123B5D] dark:text-blue-400">Senior Tax Litigator & Scrutiny
+                            Trial Specialist</p>
+                        <p class="mt-3 text-xs leading-relaxed text-[#64748B] dark:text-gray-400">
+                            Veteran counsel with 14 years before ITAT and High Court benches. Master trainer in
+                            defending Section 69 unexplained cash credit reassessments.
+                        </p>
+                        <div
+                            class="mt-5 border-t border-gray-100 pt-4 dark:border-gray-800 flex items-center justify-between">
+                            <span class="text-[11px] font-semibold text-emerald-600 dark:text-emerald-400">★ 4.99 (510+
+                                Reviews)</span>
+                            <a href="contact.html"
+                                class="inline-flex items-center text-xs font-bold text-[#123B5D] transition-transform duration-200 group-hover:translate-x-1 dark:text-blue-400">
+                                Book 1:1 Desk →
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 lg:py-28 border-b border-gray-200 dark:border-gray-800">
+        <div class="mx-auto max-w-[1440px] px-6 sm:px-8 lg:px-12">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-xs font-bold uppercase tracking-wider text-[#123B5D] dark:text-blue-400">Instruction
+                    Architecture</span>
+                <h2 class="mt-2 text-3xl font-extrabold sm:text-4xl text-[#17212B] dark:text-white">
+                    Our 4-Step Action Blueprint
+                </h2>
+                <p class="mt-3 text-sm text-[#64748B] dark:text-gray-400">No slides or theoretical textbooks. You work
+                    on actual redacted case sheets.</p>
+            </div>
+
+            <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+                <div
+                    class="group rounded-3xl border border-gray-200 bg-white p-7 transition-all duration-300 ease-out hover:-translate-y-2 hover:border-blue-400/50 hover:shadow-xl dark:border-gray-800 dark:bg-[#0D1B2A] dark:hover:border-blue-500/50">
+                    <span
+                        class="text-xs font-black text-[#123B5D] transition-transform duration-200 group-hover:scale-105 inline-block dark:text-blue-400">PHASE
+                        01</span>
+                    <h3
+                        class="mt-3 text-lg font-bold text-[#17212B] transition-colors duration-200 group-hover:text-[#123B5D] dark:text-white dark:group-hover:text-blue-400">
+                        Diagnostic Audit</h3>
+                    <p class="mt-2 text-xs leading-relaxed text-[#64748B] dark:text-gray-400">Extract insights from Form
+                        16, AIS, and broker P&L sheets to spot hidden gaps and tax leakage points.</p>
+                </div>
+
+                <div
+                    class="group rounded-3xl border border-gray-200 bg-white p-7 transition-all duration-300 ease-out hover:-translate-y-2 hover:border-blue-400/50 hover:shadow-xl dark:border-gray-800 dark:bg-[#0D1B2A] dark:hover:border-blue-500/50">
+                    <span
+                        class="text-xs font-black text-[#123B5D] transition-transform duration-200 group-hover:scale-105 inline-block dark:text-blue-400">PHASE
+                        02</span>
+                    <h3
+                        class="mt-3 text-lg font-bold text-[#17212B] transition-colors duration-200 group-hover:text-[#123B5D] dark:text-white dark:group-hover:text-blue-400">
+                        Regime Arbitrage</h3>
+                    <p class="mt-2 text-xs leading-relaxed text-[#64748B] dark:text-gray-400">Run parallel simulations
+                        comparing Section 115BAC versus Chapter VI-A deductions to guarantee max net retention.</p>
+                </div>
+
+                <div
+                    class="group rounded-3xl border border-gray-200 bg-white p-7 transition-all duration-300 ease-out hover:-translate-y-2 hover:border-blue-400/50 hover:shadow-xl dark:border-gray-800 dark:bg-[#0D1B2A] dark:hover:border-blue-500/50">
+                    <span
+                        class="text-xs font-black text-[#123B5D] transition-transform duration-200 group-hover:scale-105 inline-block dark:text-blue-400">PHASE
+                        03</span>
+                    <h3
+                        class="mt-3 text-lg font-bold text-[#17212B] transition-colors duration-200 group-hover:text-[#123B5D] dark:text-white dark:group-hover:text-blue-400">
+                        Portal Live Mock</h3>
+                    <p class="mt-2 text-xs leading-relaxed text-[#64748B] dark:text-gray-400">Perform complete dry runs
+                        inside simulated Income Tax & GST e-filing utilities with zero fear of filing errors.</p>
+                </div>
+
+                <div
+                    class="group rounded-3xl border border-gray-200 bg-white p-7 transition-all duration-300 ease-out hover:-translate-y-2 hover:border-emerald-400/50 hover:shadow-xl dark:border-gray-800 dark:bg-[#0D1B2A] dark:hover:border-emerald-500/50">
+                    <span
+                        class="text-xs font-black text-emerald-600 transition-transform duration-200 group-hover:scale-105 inline-block dark:text-emerald-400">PHASE
+                        04</span>
+                    <h3
+                        class="mt-3 text-lg font-bold text-[#17212B] transition-colors duration-200 group-hover:text-emerald-600 dark:text-white dark:group-hover:text-emerald-400">
+                        Notice Immunity</h3>
+                    <p class="mt-2 text-xs leading-relaxed text-[#64748B] dark:text-gray-400">Learn how to build paper
+                        audit trails, legal evidence binders, and response templates against automated intimations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-gray-50/70 dark:bg-[#0A1624] border-b border-gray-200 dark:border-gray-800">
+        <div class="mx-auto max-w-[1440px] px-6 sm:px-8 lg:px-12">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-wider text-[#123B5D] dark:text-blue-400">Verified
+                        Outcomes</span>
+                    <h2 class="mt-2 text-3xl font-extrabold sm:text-4xl text-[#17212B] dark:text-white">
+                        What Alumni Say After Attending
+                    </h2>
+                </div>
+                <div class="text-xs font-semibold text-[#64748B] dark:text-gray-400">
+                    Trusted by engineers and finance managers at leading tech hubs.
+                </div>
+            </div>
+
+            <div class="grid gap-8 md:grid-cols-3">
+                <div
+                    class="group rounded-3xl border border-gray-200 bg-white p-8 transition-all duration-300 ease-out hover:-translate-y-2 hover:border-blue-400/50 hover:shadow-xl dark:border-gray-800 dark:bg-[#0D1B2A] dark:hover:border-blue-500/40">
+                    <p
+                        class="text-xs text-amber-500 font-bold transition-transform duration-200 group-hover:scale-105 inline-block">
+                        ★★★★★</p>
+                    <p class="mt-4 text-xs sm:text-sm leading-relaxed text-[#64748B] dark:text-gray-300">
+                        "The US ESOP clinic was an eye-opener. I was about to pay double tax on my NASDAQ shares. CA
+                        Ananya's step-by-step Form 67 walkthrough saved me ₹4.2 Lakhs legitimately."
+                    </p>
+                    <div class="mt-6 border-t border-gray-100 pt-4 dark:border-gray-800">
+                        <h4
+                            class="text-sm font-bold text-[#17212B] transition-colors duration-200 group-hover:text-[#123B5D] dark:text-white dark:group-hover:text-blue-400">
+                            Siddharth N.</h4>
+                        <p class="text-[11px] text-[#64748B] dark:text-gray-400">Staff Software Engineer • Bengaluru</p>
+                    </div>
+                </div>
+
+                <div
+                    class="group rounded-3xl border border-gray-200 bg-white p-8 transition-all duration-300 ease-out hover:-translate-y-2 hover:border-blue-400/50 hover:shadow-xl dark:border-gray-800 dark:bg-[#0D1B2A] dark:hover:border-blue-500/40">
+                    <p
+                        class="text-xs text-amber-500 font-bold transition-transform duration-200 group-hover:scale-105 inline-block">
+                        ★★★★★</p>
+                    <p class="mt-4 text-xs sm:text-sm leading-relaxed text-[#64748B] dark:text-gray-300">
+                        "Karthik's session on GSTR-2B reconciliation helped our manufacturing accounts team recover over
+                        ₹12 Lakhs of vendor ITC that was stuck in ledger discrepancies."
+                    </p>
+                    <div class="mt-6 border-t border-gray-100 pt-4 dark:border-gray-800">
+                        <h4
+                            class="text-sm font-bold text-[#17212B] transition-colors duration-200 group-hover:text-[#123B5D] dark:text-white dark:group-hover:text-blue-400">
+                            Pooja Venkatesh</h4>
+                        <p class="text-[11px] text-[#64748B] dark:text-gray-400">Finance Controller • Hosur Industrial
+                            Park</p>
+                    </div>
+                </div>
+
+                <div
+                    class="group rounded-3xl border border-gray-200 bg-white p-8 transition-all duration-300 ease-out hover:-translate-y-2 hover:border-blue-400/50 hover:shadow-xl dark:border-gray-800 dark:bg-[#0D1B2A] dark:hover:border-blue-500/40">
+                    <p
+                        class="text-xs text-amber-500 font-bold transition-transform duration-200 group-hover:scale-105 inline-block">
+                        ★★★★★</p>
+                    <p class="mt-4 text-xs sm:text-sm leading-relaxed text-[#64748B] dark:text-gray-300">
+                        "The scrutiny defense masterclass paid for itself ten times over. The drafting templates gave me
+                        the exact confidence to resolve a Section 148 notice without stress."
+                    </p>
+                    <div class="mt-6 border-t border-gray-100 pt-4 dark:border-gray-800">
+                        <h4
+                            class="text-sm font-bold text-[#17212B] transition-colors duration-200 group-hover:text-[#123B5D] dark:text-white dark:group-hover:text-blue-400">
+                            Harish Kumar</h4>
+                        <p class="text-[11px] text-[#64748B] dark:text-gray-400">D2C Founder • Chennai</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16">
+        <div class="mx-auto max-w-[1440px] px-6 sm:px-8 lg:px-12">
+            <div
+                class="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#0F2841] via-[#123B5D] to-[#0A1B2D] p-8 sm:p-12 lg:p-16 text-white shadow-2xl transition-all duration-500 hover:shadow-[0_25px_60px_rgba(18,59,93,0.35)]">
+                <div class="relative z-10 grid gap-10 lg:grid-cols-12 items-center">
+                    <div class="lg:col-span-8 space-y-4">
+                        <span
+                            class="inline-block rounded-full bg-white/10 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-blue-200 transition-transform duration-200 hover:scale-105 cursor-default">
+                            Corporate Finance Programs
+                        </span>
+                        <h2 class="text-3xl font-extrabold sm:text-4xl text-white">
+                            Upskill Your In-House Accounting & Payroll Team.
+                        </h2>
+                        <p class="text-sm sm:text-base text-gray-200 leading-relaxed max-w-2xl">
+                            We host private customized masterclasses for startups and corporate departments on payroll
+                            structuring, statutory compliance, and vendor GST audits.
+                        </p>
+                    </div>
+                    <div class="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col gap-3">
+                        <a href="contact.html"
+                            class="text-center rounded-xl bg-white px-7 py-3.5 text-sm font-bold text-[#123B5D] shadow-md transition-all duration-300 ease-out hover:-translate-y-1 hover:bg-gray-100 hover:shadow-xl active:scale-95">
+                            Request Team Workshop
+                        </a>
+                        <a href="pricing.html"
+                            class="text-center rounded-xl border border-white/30 bg-white/10 px-7 py-3.5 text-sm font-bold text-white transition-all duration-300 ease-out hover:-translate-y-1 hover:border-white hover:bg-white/20 active:scale-95">
+                            View Pricing Plans
+                        </a>
+                    </div>
+                </div>
+
+                <div
+                    class="pointer-events-none absolute -right-20 -top-20 h-72 w-72 rounded-full bg-blue-500/20 blur-3xl transition-all duration-700 group-hover:scale-125 group-hover:bg-blue-400/30">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

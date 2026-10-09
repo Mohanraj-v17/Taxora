@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth overflow-x-clip">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services Suite - Taxora Enterprise & Individual Advisory</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23123B5D'/><text x='50%' y='52%' dominant-baseline='central' text-anchor='middle' font-family='Arial, sans-serif' font-weight='900' font-size='24' fill='white'>₹</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body
+    class="min-h-screen w-full overflow-x-clip font-sans bg-[#FAFBFD] text-[#17212B] transition-colors duration-300 dark:bg-[#07131F] dark:text-white">
+
+    <div id="navbar-placeholder" class="sticky top-3 sm:top-5 z-50"></div>
+
+    <section
+        class="relative min-h-screen overflow-hidden -mt-20 pt-24 pb-18 lg:-mt-24 lg:pt-36 lg:pb-32 border-b border-gray-200 dark:border-gray-800">
+
+        <div class="pointer-events-none absolute inset-0 z-0 overflow-hidden">
+            <img src="/public/hero-banner-2.jpg"
+                alt="Executive Tax Advisory Headquarters"
+                class="h-full w-full object-cover object-center opacity-[4.7] filter blur-[0.2px] dark:opacity-[4.7]">
+
+            <div
+                class="absolute inset-0 bg-gradient-to-b from-transparent via-[#FAFBFD]/70 to-[#FAFBFD] dark:via-[#07131F]/75 dark:to-[#07131F]">
+            </div>
+
+            <div
+                class="absolute left-1/2 top-1/4 -translate-x-1/2 -translate-y-1/2 h-[380px] w-[680px] rounded-full bg-blue-500/10 blur-[130px]">
+            </div>
+        </div>
+
+        <div class="relative z-10 mx-auto max-w-[1440px] px-6 sm:px-8 py-8 lg:px-12 text-center">
+            <div class="mx-auto max-w-3xl">
+                <div
+                    class="inline-flex items-center gap-2 rounded-full border border-blue-500/30 bg-blue-50/90 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-[#123B5D] transition-transform duration-200 hover:scale-105 cursor-default dark:bg-blue-950/60 dark:text-blue-300 shadow-sm">
+                    <span class="h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                    Full-Spectrum Chartered Advisory Bench
+                </div>
+                <h1
+                    class="mt-6 text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl text-[#17212B] dark:text-white leading-[1.12]">
+                    High-Precision Accounting, Audit & <br>
+                    <span
+                        class="bg-gradient-to-r from-[#123B5D] via-blue-600 to-cyan-500 bg-clip-text text-transparent dark:from-blue-400 dark:to-cyan-300">
+                        Notice Defense Solutions.
+                    </span>
+                </h1>
+                <p
+                    class="mx-auto mt-5 max-w-2xl text-base sm:text-lg text-[#17212B] dark:text-gray-300 leading-relaxed">
+                    From complex foreign asset disclosure to multi-state GST audit reconciliations—handled by real
+                    practicing Chartered Accountants with lifetime notice representation.
+                </p>
+
+                <!-- Quick Domain Filter Buttons -->
+                <div class="mt-8 flex flex-wrap items-center justify-center gap-2 pt-2">
+                    <a href="#direct-tax"
+                        class="rounded-xl bg-[#123B5D] px-4 py-2.5 text-xs font-bold text-white shadow-md transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#0c283f] hover:shadow-lg active:scale-95 dark:bg-blue-600 dark:hover:bg-blue-500">
+                        Direct Tax & ITR
+                    </a>
+                    <a href="#gst-desk"
+                        class="rounded-xl border border-gray-200 bg-white/90 px-4 py-2.5 text-xs font-semibold text-[#64748B] backdrop-blur-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-[#123B5D] hover:text-[#123B5D] hover:shadow-sm active:scale-95 dark:border-gray-700 dark:bg-[#0D1B2A] dark:text-gray-300 dark:hover:border-blue-400 dark:hover:text-white">
+                        Corporate GST
+                    </a>
+                    <a href="#cross-border"
+                        class="rounded-xl border border-gray-200 bg-white/90 px-4 py-2.5 text-xs font-semibold text-[#64748B] backdrop-blur-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-[#123B5D] hover:text-[#123B5D] hover:shadow-sm active:scale-95 dark:border-gray-700 dark:bg-[#0D1B2A] dark:text-gray-300 dark:hover:border-blue-400 dark:hover:text-white">
+                        US ESOPs & DTAA
+                    </a>
+                    <a href="#virtual-cfo"
+                        class="rounded-xl border border-gray-200 bg-white/90 px-4 py-2.5 text-xs font-semibold text-[#64748B] backdrop-blur-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-[#123B5D] hover:text-[#123B5D] hover:shadow-sm active:scale-95 dark:border-gray-700 dark:bg-[#0D1B2A] dark:text-gray-300 dark:hover:border-blue-400 dark:hover:text-white">
+                        Virtual CFO
+                    </a>
+                    <a href="#scrutiny-defense"
+                        class="rounded-xl border border-gray-200 bg-white/90 px-4 py-2.5 text-xs font-semibold text-[#64748B] backdrop-blur-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-[#123B5D] hover:text-[#123B5D] hover:shadow-sm active:scale-95 dark:border-gray-700 dark:bg-[#0D1B2A] dark:text-gray-300 dark:hover:border-blue-400 dark:hover:text-white">
+                        Section 148 Defense
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 lg:py-28 border-b border-gray-200 dark:border-gray-800" id="direct-tax">
+        <div class="mx-auto max-w-[1440px] px-6 sm:px-8 lg:px-12">
+            <div class="max-w-2xl mx-auto text-center mb-16">
+                <span class="text-xs font-bold uppercase tracking-wider text-[#123B5D] dark:text-blue-400">Institutional Practice Areas</span>
+                <h2 class="mt-2 text-3xl font-extrabold sm:text-4xl text-[#17212B] dark:text-white">
+                    Six Pillars of Complete Balance Sheet Protection
+                </h2>
+                <p class="mt-3 text-sm text-[#64748B] dark:text-gray-400">
+                    Engineered with rigorous mathematical scrutiny and zero reliance on automated unverified filings.
+                </p>
+            </div>
+
+            <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+
+                <div
+                    class="group relative rounded-3xl border border-gray-200 bg-white p-8 transition-all duration-300 ease-out hover:-translate-y-2 hover:border-blue-400/50 hover:shadow-2xl dark:border-gray-800 dark:bg-[#0D1B2A] dark:hover:border-blue-500/50">
+                    <div
+                        class="flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-50 text-2xl font-bold text-[#123B5D] transition-transform duration-300 ease-out group-hover:scale-110 group-hover:bg-[#123B5D] group-hover:text-white dark:bg-blue-900/30 dark:text-blue-300 dark:group-hover:bg-blue-600 dark:group-hover:text-white">
+                        🏛️
+                    </div>
+                    <span class="mt-6 inline-block text-[11px] font-bold uppercase tracking-wider text-[#123B5D] dark:text-blue-400">
+                        Income Tax Act 1961
+                    </span>
+                    <h3 class="mt-2 text-xl font-bold text-[#17212B] transition-colors duration-200 group-hover:text-[#123B5D] dark:text-white dark:group-hover:text-blue-400">
+                        Direct Tax & ITR 1-7 Advisory
+                    </h3>
+                    <p class="mt-3 text-xs leading-relaxed text-[#64748B] dark:text-gray-400">
+                        Regime modeling (115BAC vs Chapter VI-A), capital gain indexation, F&O loss set-offs, Section 89 relief calculations, and comprehensive HNI tax reduction strategies.
+                    </p>
+                    <div class="mt-6 border-t border-gray-100 pt-4 dark:border-gray-800">
+                        <span class="text-xs font-semibold text-emerald-600 dark:text-emerald-400">✓ 24hr Fast Turnaround SLA</span>
+                    </div>
+                </div>
+
+                <div id="gst-desk"
+                    class="group relative rounded-3xl border border-gray-200 bg-white p-8 transition-all duration-300 ease-out hover:-translate-y-2 hover:border-emerald-400/50 hover:shadow-2xl dark:border-gray-800 dark:bg-[#0D1B2A] dark:hover:border-emerald-500/50">
+                    <div
+                        class="flex h-14 w-14 items-center justify-center rounded-2xl bg-emerald-50 text-2xl font-bold text-emerald-600 transition-transform duration-300 ease-out group-hover:scale-110 group-hover:bg-emerald-600 group-hover:text-white dark:bg-emerald-950/60 dark:text-emerald-300 dark:group-hover:bg-emerald-600 dark:group-hover:text-white">
+                        📊
+                    </div>
+                    <span class="mt-6 inline-block text-[11px] font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">
+                        CGST & SGST Compliance
+                    </span>
+                    <h3 class="mt-2 text-xl font-bold text-[#17212B] transition-colors duration-200 group-hover:text-emerald-600 dark:text-white dark:group-hover:text-emerald-400">
+                        Corporate GST & ITC Recovery Desk
+                    </h3>
+                    <p class="mt-3 text-xs leading-relaxed text-[#64748B] dark:text-gray-400">
+                        Automated GSTR-2B vs 3B input tax credit mismatch resolution, annual GSTR-9/9C statutory audits, multi-state registrations, and export LUT refund claims.
+                    </p>
+                    <div class="mt-6 border-t border-gray-100 pt-4 dark:border-gray-800">
+                        <span class="text-xs font-semibold text-emerald-600 dark:text-emerald-400">✓ 100% Blocked ITC Reclaimed</span>
+                    </div>
+                </div>
+
+                <div id="cross-border"
+                    class="group relative rounded-3xl border border-gray-200 bg-white p-8 transition-all duration-300 ease-out hover:-translate-y-2 hover:border-indigo-400/50 hover:shadow-2xl dark:border-gray-800 dark:bg-[#0D1B2A] dark:hover:border-indigo-500/50">
+                    <div
+                        class="flex h-14 w-14 items-center justify-center rounded-2xl bg-indigo-50 text-2xl font-bold text-indigo-600 transition-transform duration-300 ease-out group-hover:scale-110 group-hover:bg-indigo-600 group-hover:text-white dark:bg-indigo-950/60 dark:text-indigo-300 dark:group-hover:bg-indigo-600 dark:group-hover:text-white">
+                        🌐
+                    </div>
+                    <span class="mt-6 inline-block text-[11px] font-bold uppercase tracking-wider text-indigo-600 dark:text-indigo-400">
+                        International Tax & DTAA
+                    </span>
+                    <h3 class="mt-2 text-xl font-bold text-[#17212B] transition-colors duration-200 group-hover:text-indigo-600 dark:text-white dark:group-hover:text-indigo-400">
+                        US ESOPs & Foreign Asset Shield
+                    </h3>
+                    <p class="mt-3 text-xs leading-relaxed text-[#64748B] dark:text-gray-400">
+                        Schedule FA disclosure for US stock portfolios (NASDAQ/NYSE), Form 67 foreign tax credits, Form 15CA/CB remittance clearance, and Black Money Act immunity.
+                    </p>
+                    <div class="mt-6 border-t border-gray-100 pt-4 dark:border-gray-800">
+                        <span class="text-xs font-semibold text-indigo-600 dark:text-indigo-400">✓ Zero Double-Tax Liability</span>
+                    </div>
+                </div>
+
+                <div id="virtual-cfo"
+                    class="group relative rounded-3xl border border-gray-200 bg-white p-8 transition-all duration-300 ease-out hover:-translate-y-2 hover:border-amber-400/50 hover:shadow-2xl dark:border-gray-800 dark:bg-[#0D1B2A] dark:hover:border-amber-500/50">
+                    <div
+                        class="flex h-14 w-14 items-center justify-center rounded-2xl bg-amber-50 text-2xl font-bold text-amber-600 transition-transform duration-300 ease-out group-hover:scale-110 group-hover:bg-amber-600 group-hover:text-white dark:bg-amber-950/60 dark:text-amber-300 dark:group-hover:bg-amber-600 dark:group-hover:text-white">
+                        📈
+                    </div>
+                    <span class="mt-6 inline-block text-[11px] font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400">
+                        Executive Finance Office
+                    </span>
+                    <h3 class="mt-2 text-xl font-bold text-[#17212B] transition-colors duration-200 group-hover:text-amber-600 dark:text-white dark:group-hover:text-amber-400">
+                        Virtual CFO & Daily Bookkeeping
+                    </h3>
+                    <p class="mt-3 text-xs leading-relaxed text-[#64748B] dark:text-gray-400">
+                        Monthly MIS dashboards, cash runway modeling, automated vendor TDS reconciliations, payroll tax architecture, and board-ready financial projections.
+                    </p>
+                    <div class="mt-6 border-t border-gray-100 pt-4 dark:border-gray-800">
+                        <span class="text-xs font-semibold text-amber-600 dark:text-amber-400">✓ Dedicated Partner CA Supervision</span>
+                    </div>
+                </div>
+
+                <div id="scrutiny-defense"
+                    class="group relative rounded-3xl border border-gray-200 bg-white p-8 transition-all duration-300 ease-out hover:-translate-y-2 hover:border-rose-400/50 hover:shadow-2xl dark:border-gray-800 dark:bg-[#0D1B2A] dark:hover:border-rose-500/50">
+                    <div
+                        class="flex h-14 w-14 items-center justify-center rounded-2xl bg-rose-50 text-2xl font-bold text-rose-600 transition-transform duration-300 ease-out group-hover:scale-110 group-hover:bg-rose-600 group-hover:text-white dark:bg-rose-950/60 dark:text-rose-300 dark:group-hover:bg-rose-600 dark:group-hover:text-white">
+                        🛡️
+                    </div>
+                    <span class="mt-6 inline-block text-[11px] font-bold uppercase tracking-wider text-rose-600 dark:text-rose-400">
+                        Appellate Representation
+                    </span>
+                    <h3 class="mt-2 text-xl font-bold text-[#17212B] transition-colors duration-200 group-hover:text-rose-600 dark:text-white dark:group-hover:text-rose-400">
+                        Litigation & Section 148 Defense
+                    </h3>
+                    <p class="mt-3 text-xs leading-relaxed text-[#64748B] dark:text-gray-400">
+                        Drafting airtight legal responses to Section 143(1) intimation demands, Section 148 reassessment notices, cash deposit inquiries, and direct ITAT representation.
+                    </p>
+                    <div class="mt-6 border-t border-gray-100 pt-4 dark:border-gray-800">
+                        <span class="text-xs font-semibold text-rose-600 dark:text-rose-400">✓ High Court Advocates On Bench</span>
+                    </div>
+                </div>
+
+                <div
+                    class="group relative rounded-3xl border border-gray-200 bg-white p-8 transition-all duration-300 ease-out hover:-translate-y-2 hover:border-purple-400/50 hover:shadow-2xl dark:border-gray-800 dark:bg-[#0D1B2A] dark:hover:border-purple-500/50">
+                    <div
+                        class="flex h-14 w-14 items-center justify-center rounded-2xl bg-purple-50 text-2xl font-bold text-purple-600 transition-transform duration-300 ease-out group-hover:scale-110 group-hover:bg-purple-600 group-hover:text-white dark:bg-purple-950/60 dark:text-purple-300 dark:group-hover:bg-purple-600 dark:group-hover:text-white">
+                        📑
+                    </div>
+                    <span class="mt-6 inline-block text-[11px] font-bold uppercase tracking-wider text-purple-600 dark:text-purple-400">
+                        MCA & Startup Governance
+                    </span>
+                    <h3 class="mt-2 text-xl font-bold text-[#17212B] transition-colors duration-200 group-hover:text-purple-600 dark:text-white dark:group-hover:text-purple-400">
+                        Valuation, Angel Tax & ROC Desk
+                    </h3>
+                    <p class="mt-3 text-xs leading-relaxed text-[#64748B] dark:text-gray-400">
+                        Section 56(2)(viib) angel tax immunity filings, DCF valuation certificates by registered valuers, annual ROC filings (AOC-4, MGT-7), and cap-table structuring.
+                    </p>
+                    <div class="mt-6 border-t border-gray-100 pt-4 dark:border-gray-800">
+                        <span class="text-xs font-semibold text-purple-600 dark:text-purple-400">✓ Certified Merchant Banker Tie-Ups</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-white border-b border-gray-200 dark:border-gray-800 dark:bg-[#0A1624]">
+        <div class="mx-auto max-w-[1440px] px-6 sm:px-8 lg:px-12">
+            <div class="max-w-2xl mx-auto text-center mb-16">
+                <span class="text-xs font-bold uppercase tracking-wider text-[#123B5D] dark:text-blue-400">Quality Architecture</span>
+                <h2 class="mt-2 text-3xl font-extrabold sm:text-4xl text-[#17212B] dark:text-white">
+                    The 5-Stage Pre-Filing Scrubber Protocol
+                </h2>
+                <p class="mt-3 text-sm text-[#64748B] dark:text-gray-400">
+                    How we guarantee 0% defective notices across thousands of annual filings.
+                </p>
+            </div>
+
+            <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
+                <div class="group rounded-2xl border border-gray-200 bg-[#FBFDFF] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-blue-300 hover:shadow-lg dark:border-gray-800 dark:bg-[#0D1B2A]">
+                    <span class="font-mono text-xs font-bold text-[#123B5D] dark:text-blue-400">01 • INGESTION</span>
+                    <h4 class="mt-2 font-bold text-sm text-[#17212B] dark:text-white">Encrypted Vault Upload</h4>
+                    <p class="mt-2 text-xs leading-relaxed text-[#64748B] dark:text-gray-400">Direct document parsing of Form 16, bank CSVs, and broker trade books.</p>
+                </div>
+
+                <div class="group rounded-2xl border border-gray-200 bg-[#FBFDFF] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-blue-300 hover:shadow-lg dark:border-gray-800 dark:bg-[#0D1B2A]">
+                    <span class="font-mono text-xs font-bold text-[#123B5D] dark:text-blue-400">02 • CROSS-MATCH</span>
+                    <h4 class="mt-2 font-bold text-sm text-[#17212B] dark:text-white">AIS & TIS Reconciliation</h4>
+                    <p class="mt-2 text-xs leading-relaxed text-[#64748B] dark:text-gray-400">Algorithmic cross-verification against government portal records to avoid mismatches.</p>
+                </div>
+
+                <div class="group rounded-2xl border border-gray-200 bg-[#FBFDFF] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-blue-300 hover:shadow-lg dark:border-gray-800 dark:bg-[#0D1B2A]">
+                    <span class="font-mono text-xs font-bold text-[#123B5D] dark:text-blue-400">03 • ARBITRAGE</span>
+                    <h4 class="mt-2 font-bold text-sm text-[#17212B] dark:text-white">Dual-Regime Optimization</h4>
+                    <p class="mt-2 text-xs leading-relaxed text-[#64748B] dark:text-gray-400">Simulate Old vs New regime calculations to select maximum net refund.</p>
+                </div>
+
+                <div class="group rounded-2xl border border-gray-200 bg-[#FBFDFF] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-blue-300 hover:shadow-lg dark:border-gray-800 dark:bg-[#0D1B2A]">
+                    <span class="font-mono text-xs font-bold text-[#123B5D] dark:text-blue-400">04 • CA REVIEW</span>
+                    <h4 class="mt-2 font-bold text-sm text-[#17212B] dark:text-white">Partner Sign-Off</h4>
+                    <p class="mt-2 text-xs leading-relaxed text-[#64748B] dark:text-gray-400">Senior FCA vets every line item before sending draft for client approval.</p>
+                </div>
+
+                <div class="group rounded-2xl border-2 border-emerald-500 bg-white p-6 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:bg-[#0D1B2A]">
+                    <span class="font-mono text-xs font-bold text-emerald-600 dark:text-emerald-400">05 • PROTECTION</span>
+                    <h4 class="mt-2 font-bold text-sm text-[#17212B] dark:text-white">ITR-V & Vault Archival</h4>
+                    <p class="mt-2 text-xs leading-relaxed text-[#64748B] dark:text-gray-400">E-verification acknowledgment backed by Lifetime Notice Defense Warranty.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 lg:py-28 border-b border-gray-200 dark:border-gray-800">
+        <div class="mx-auto max-w-[1440px] px-6 sm:px-8 lg:px-12">
+            <div class="max-w-2xl mx-auto text-center mb-16">
+                <span class="text-xs font-bold uppercase tracking-wider text-[#123B5D] dark:text-blue-400">Flexible Delivery</span>
+                <h2 class="mt-2 text-3xl font-extrabold sm:text-4xl text-[#17212B] dark:text-white">
+                    Choose Your Advisory Engagement Model
+                </h2>
+                <p class="mt-3 text-sm text-[#64748B] dark:text-gray-400">
+                    Transparent, fixed engagement fees with zero hidden representation charges.
+                </p>
+            </div>
+
+            <div class="grid gap-8 md:grid-cols-3">
+
+                <div
+                    class="group rounded-3xl border border-gray-200 bg-white p-8 transition-all duration-300 ease-out hover:-translate-y-2 hover:border-gray-400 hover:shadow-xl dark:border-gray-800 dark:bg-[#0D1B2A]">
+                    <h3 class="text-xl font-bold text-[#17212B] dark:text-white">Assisted Filing</h3>
+                    <p class="text-xs text-[#64748B] dark:text-gray-400 mt-1">For Salaried Individuals & Freelancers</p>
+                    <div class="mt-6 border-t border-gray-100 pt-6 dark:border-gray-800 space-y-3 text-xs text-[#64748B] dark:text-gray-300">
+                        <div class="flex items-center gap-2"><span>✓</span> Form 16, HRA & 80C Deductions</div>
+                        <div class="flex items-center gap-2"><span>✓</span> AIS Dividend & Interest Match</div>
+                        <div class="flex items-center gap-2"><span>✓</span> 48hr Standard Delivery SLA</div>
+                        <div class="flex items-center gap-2 text-gray-400"><span>✕</span> Foreign Asset (Schedule FA) Desk</div>
+                    </div>
+                    <a href="pricing.html"
+                        class="mt-8 block w-full rounded-xl border border-gray-300 bg-white py-3 text-center text-xs font-bold text-[#17212B] transition-colors hover:bg-gray-50 dark:border-gray-700 dark:bg-transparent dark:text-white dark:hover:bg-[#162B3D]">
+                        View Tier Pricing →
+                    </a>
+                </div>
+
+                <div
+                    class="group relative rounded-3xl border-2 border-[#123B5D] bg-white p-8 shadow-xl transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-2xl dark:border-blue-500 dark:bg-[#0D1B2A]">
+                    <span class="absolute -top-3.5 start-8 rounded-full bg-[#123B5D] px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-white dark:bg-blue-600">
+                        Most Popular
+                    </span>
+                    <h3 class="text-xl font-bold text-[#17212B] dark:text-white">Assigned Partner CA Desk</h3>
+                    <p class="text-xs text-[#123B5D] dark:text-blue-400 font-semibold mt-1">For HNIs, Tech Leads & Investors</p>
+                    <div class="mt-6 border-t border-gray-100 pt-6 dark:border-gray-800 space-y-3 text-xs text-[#17212B] dark:text-gray-200">
+                        <div class="flex items-center gap-2 font-medium"><span>✓</span> US Stocks, RSUs & Form 67 DTAA</div>
+                        <div class="flex items-center gap-2 font-medium"><span>✓</span> F&O, Crypto & Real Estate Capital Gains</div>
+                        <div class="flex items-center gap-2 font-medium"><span>✓</span> 1-on-1 Video Consultation Included</div>
+                        <div class="flex items-center gap-2 font-medium text-emerald-600 dark:text-emerald-400"><span>✓</span> Free Sec 143(1) Notice Response</div>
+                    </div>
+                    <a href="sessions.html"
+                        class="mt-8 block w-full rounded-xl bg-[#123B5D] py-3 text-center text-xs font-bold text-white shadow-md transition-colors hover:bg-[#0c283f] dark:bg-blue-600 dark:hover:bg-blue-500">
+                        Book Dedicated Partner CA →
+                    </a>
+                </div>
+
+                <div
+                    class="group rounded-3xl border border-gray-200 bg-white p-8 transition-all duration-300 ease-out hover:-translate-y-2 hover:border-gray-400 hover:shadow-xl dark:border-gray-800 dark:bg-[#0D1B2A]">
+                    <h3 class="text-xl font-bold text-[#17212B] dark:text-white">Corporate Retainer</h3>
+                    <p class="text-xs text-[#64748B] dark:text-gray-400 mt-1">For Startups, MSMEs & Exporters</p>
+                    <div class="mt-6 border-t border-gray-100 pt-6 dark:border-gray-800 space-y-3 text-xs text-[#64748B] dark:text-gray-300">
+                        <div class="flex items-center gap-2"><span>✓</span> Monthly GST Filings & ITC Reconciliation</div>
+                        <div class="flex items-center gap-2"><span>✓</span> Daily Bookkeeping & Payroll TDS Desk</div>
+                        <div class="flex items-center gap-2"><span>✓</span> Annual ROC & Statutory Audit Defense</div>
+                        <div class="flex items-center gap-2"><span>✓</span> Virtual CFO Monthly Advisory</div>
+                    </div>
+                    <a href="contact.html"
+                        class="mt-8 block w-full rounded-xl border border-gray-300 bg-white py-3 text-center text-xs font-bold text-[#17212B] transition-colors hover:bg-gray-50 dark:border-gray-700 dark:bg-transparent dark:text-white dark:hover:bg-[#162B3D]">
+                        Contact Corporate Desk →
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-gray-50/70 dark:bg-[#0A1624] border-b border-gray-200 dark:border-gray-800">
+        <div class="mx-auto max-w-[1440px] px-6 sm:px-8 lg:px-12">
+            <div class="grid items-center gap-12 lg:grid-cols-12">
+                <div class="lg:col-span-5 space-y-6">
+                    <span class="text-xs font-bold uppercase tracking-wider text-[#123B5D] dark:text-blue-400">Industry Tailored</span>
+                    <h2 class="text-3xl font-extrabold sm:text-4xl text-[#17212B] dark:text-white">
+                        Specialized Compliances by Business Model
+                    </h2>
+                    <p class="text-sm text-[#64748B] dark:text-gray-300 leading-relaxed">
+                        Tax laws differ significantly for an exporter compared to an offline manufacturing vendor. We tailor compliance packages to your sector's exact statutory schedule.
+                    </p>
+                    <div class="pt-2">
+                        <a href="contact.html"
+                            class="inline-flex items-center gap-2 rounded-xl bg-[#123B5D] px-6 py-3.5 text-xs font-bold text-white transition hover:bg-[#0c283f] dark:bg-blue-600 dark:hover:bg-blue-500">
+                            Request Industry Audit Plan →
+                        </a>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7 grid gap-4 sm:grid-cols-2">
+                    <div class="group rounded-2xl border border-gray-200 bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg dark:border-gray-800 dark:bg-[#0D1B2A]">
+                        <h4 class="font-bold text-sm text-[#17212B] dark:text-white">💻 SaaS & IT Services</h4>
+                        <p class="mt-2 text-xs text-[#64748B] dark:text-gray-400">Zero-rated GST export refunds, FIRC documentation, Form 15CA/CB, and transfer pricing studies.</p>
+                    </div>
+
+                    <div class="group rounded-2xl border border-gray-200 bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg dark:border-gray-800 dark:bg-[#0D1B2A]">
+                        <h4 class="font-bold text-sm text-[#17212B] dark:text-white">🏭 Manufacturing & Auto Ancillaries</h4>
+                        <p class="mt-2 text-xs leading-relaxed text-[#64748B] dark:text-gray-400">Job-work GST compliance, Rule 36(4) blocked ITC reclaim, and Section 44AB statutory audits.</p>
+                    </div>
+
+                    <div class="group rounded-2xl border border-gray-200 bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg dark:border-gray-800 dark:bg-[#0D1B2A]">
+                        <h4 class="font-bold text-sm text-[#17212B] dark:text-white">🩺 Medical & Dental Practitioners</h4>
+                        <p class="mt-2 text-xs leading-relaxed text-[#64748B] dark:text-gray-400">Presumptive 50% profit filings under Section 44ADA and high-value surgical depreciation ledgering.</p>
+                    </div>
+
+                    <div class="group rounded-2xl border border-gray-200 bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg dark:border-gray-800 dark:bg-[#0D1B2A]">
+                        <h4 class="font-bold text-sm text-[#17212B] dark:text-white">📦 E-Commerce & Retail Sellers</h4>
+                        <p class="mt-2 text-xs leading-relaxed text-[#64748B] dark:text-gray-400">TCS reconciliation from Amazon/Flipkart, multi-state GST principal places, and stock audits.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16">
+        <div class="mx-auto max-w-[1440px] px-6 sm:px-8 lg:px-12">
+            <div
+                class="group relative overflow-hidden rounded-3xl bg-gradient-to-r from-[#0F2841] via-[#123B5D] to-[#0A1B2D] p-8 sm:p-12 lg:p-16 text-white shadow-2xl transition-all duration-500 hover:shadow-[0_25px_60px_rgba(18,59,93,0.35)]">
+                <div class="relative z-10 grid gap-10 lg:grid-cols-12 items-center">
+                    <div class="lg:col-span-8 space-y-4">
+                        <span
+                            class="inline-block rounded-md bg-rose-500/20 border border-rose-400/30 px-3 py-1 text-xs font-bold uppercase tracking-wider text-rose-300">
+                            Urgent Legal Desk • 30-Min SLA
+                        </span>
+                        <h2 class="text-3xl font-extrabold sm:text-4xl text-white">
+                            Received an IT Department Notice (Sec 143(1), 139(9), or 148)?
+                        </h2>
+                        <p class="text-sm sm:text-base text-gray-200 leading-relaxed max-w-2xl">
+                            Do not panic or submit unverified replies online. Our senior tax litigators evaluate the demand, draft case-law backed legal replies, and petition for immediate penalty stay.
+                        </p>
+                    </div>
+                    <div class="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col gap-3">
+                        <a href="contact.html"
+                            class="text-center rounded-xl bg-white px-7 py-3.5 text-sm font-bold text-[#123B5D] shadow-md transition-all duration-300 ease-out hover:-translate-y-1 hover:bg-gray-100 hover:shadow-xl active:scale-95">
+                            Upload Notice for Free Review
+                        </a>
+                        <a href="sessions.html"
+                            class="text-center rounded-xl border border-white/30 bg-white/10 px-7 py-3.5 text-sm font-bold text-white transition-all duration-300 ease-out hover:-translate-y-1 hover:border-white hover:bg-white/20 active:scale-95">
+                            Book Scrutiny Strategy Call
+                        </a>
+                    </div>
+                </div>
+                <div
+                    class="pointer-events-none absolute -right-20 -top-20 h-72 w-72 rounded-full bg-blue-500/20 blur-3xl transition-all duration-700 group-hover:scale-125 group-hover:bg-blue-400/30">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <div id="footer-placeholder"></div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

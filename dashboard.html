@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Dashboard - Taxora Advisory</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23123B5D'/><text x='50%' y='52%' dominant-baseline='central' text-anchor='middle' font-family='Arial, sans-serif' font-weight='900' font-size='24' fill='white'>₹</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+        <script>
+        if (localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+            document.documentElement.style.backgroundColor = '#07131F';
+        }
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .sidebar-btn.active {
+            border-left: 4px solid #123B5D !important;
+            background-color: #F1F5F9 !important;
+            color: #123B5D !important;
+            font-weight: 700 !important;
+        }
+
+        .dark .sidebar-btn.active {
+            border-left-color: #3b82f6 !important;
+            background-color: #162B3D !important;
+            color: #ffffff !important;
+        }
+
+        [dir="rtl"] .sidebar-btn.active {
+            border-left: none !important;
+            border-right: 4px solid #123B5D !important;
+        }
+
+        [dir="rtl"] .dark .sidebar-btn.active {
+            border-right-color: #3b82f6 !important;
+        }
+
+        .tab-panel {
+            display: none;
+        }
+
+        .tab-panel.active {
+            display: block;
+        }
+    </style>
+</head>
+
+<body class="bg-[#F8FAFC] font-sans text-[#17212B]  duration-300 dark:bg-[#07131F] dark:text-white">
+
+    <div id="toastNotification"
+        class="fixed bottom-5 right-5 z-50 flex items-center gap-3 rounded-2xl border border-gray-200 bg-white/95 px-5 py-3 shadow-2xl backdrop-blur-md transition-all duration-300 translate-y-28 opacity-0 dark:border-gray-800 dark:bg-[#0D1B2A]/95">
+        <span
+            class="flex h-7 w-7 items-center justify-center rounded-lg bg-emerald-50 text-emerald-600 dark:bg-emerald-950/60 dark:text-emerald-400">✓</span>
+        <span id="toastMsg" class="text-xs font-bold text-[#17212B] dark:text-white">Profile updated
+            successfully!</span>
+    </div>
+
+    <div id="sidebarBackdrop" onclick="toggleSidebar(false)"
+        class="fixed inset-0 z-40 hidden bg-black/50 backdrop-blur-xs transition-opacity lg:hidden"></div>
+
+    <div class="flex min-h-screen relative overflow-x-hidden">
+
+        <aside id="sidebar"
+            class="fixed inset-y-0 left-0 z-50 flex w-72 shrink-0 -translate-x-full flex-col justify-between border-r border-gray-200 bg-white p-6 transition-transform duration-300 ease-in-out lg:static lg:translate-x-0 dark:border-gray-800 dark:bg-[#0D1B2A]">
+            <div>
+                <!-- BRAND LOGO -->
+                <div class="flex items-center justify-between pb-6 border-b border-gray-100 dark:border-gray-800">
+                    <div class="flex flex-col items-start gap-1">
+                        <a href="index.html"
+                            class="flex shrink-0 items-center gap-[10px] text-[#123B5D] dark:text-white">
+                            <span
+                                class="flex h-9 w-9 shrink-0 items-center justify-center rounded-[10px] bg-[#123B5D] text-xl text-white">₹</span>
+                            <span class="flex flex-col gap-1 leading-[1.2]">
+                                <span
+                                    class="-translate-x-0.5 text-[20px] font-bold tracking-[0.08em] text-[#123B5D] dark:text-white">TAXORA</span>
+                            </span>
+                        </a>
+                        <span
+                            class="ml-13 mt-1 inline-block rounded-full bg-blue-50 px-2.5 py-0.5 text-[10px] font-bold tracking-wider uppercase text-[#123B5D] dark:bg-blue-950/60 dark:text-blue-300">
+                            CLIENT PORTAL
+                        </span>
+                    </div>
+
+                    <button type="button" onclick="toggleSidebar(false)"
+                        class="p-1 text-gray-500 hover:text-gray-800 dark:text-gray-400 dark:hover:text-white lg:hidden">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+
+                <nav class="mt-8 space-y-2">
+                    <button type="button" onclick="switchTab('overview', this)"
+                        class="sidebar-btn active flex w-full cursor-pointer items-center gap-3 rounded-xl px-4 py-3 text-xs font-semibold text-[#64748B] transition hover:bg-gray-50 hover:text-[#17212B] dark:text-gray-400 dark:hover:bg-[#102235] dark:hover:text-white text-left">
+                        <svg class="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                            stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                        </svg>
+                        <span>Overview</span>
+                    </button>
+
+                    <button type="button" onclick="switchTab('filings', this)"
+                        class="sidebar-btn flex w-full cursor-pointer items-center gap-3 rounded-xl px-4 py-3 text-xs font-semibold text-[#64748B] transition hover:bg-gray-50 hover:text-[#17212B] dark:text-gray-400 dark:hover:bg-[#102235] dark:hover:text-white text-left">
+                        <svg class="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                            stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                        </svg>
+                        <span>My Filings & Returns</span>
+                    </button>
+
+                    <button type="button" onclick="switchTab('vault', this)"
+                        class="sidebar-btn flex w-full cursor-pointer items-center gap-3 rounded-xl px-4 py-3 text-xs font-semibold text-[#64748B] transition hover:bg-gray-50 hover:text-[#17212B] dark:text-gray-400 dark:hover:bg-[#102235] dark:hover:text-white text-left">
+                        <svg class="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                            stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4" />
+                        </svg>
+                        <span>Document Vault</span>
+                    </button>
+
+                    <button type="button" onclick="switchTab('advisory', this)"
+                        class="sidebar-btn flex w-full cursor-pointer items-center gap-3 rounded-xl px-4 py-3 text-xs font-semibold text-[#64748B] transition hover:bg-gray-50 hover:text-[#17212B] dark:text-gray-400 dark:hover:bg-[#102235] dark:hover:text-white text-left">
+                        <svg class="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                            stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                        <span>CA Advisory Desk</span>
+                    </button>
+
+                    <button type="button" onclick="switchTab('notices', this)"
+                        class="sidebar-btn flex w-full cursor-pointer items-center gap-3 rounded-xl px-4 py-3 text-xs font-semibold text-[#64748B] transition hover:bg-gray-50 hover:text-[#17212B] dark:text-gray-400 dark:hover:bg-[#102235] dark:hover:text-white text-left">
+                        <svg class="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                            stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                        </svg>
+                        <span>Notice Tracker</span>
+                    </button>
+
+                    <button type="button" onclick="switchTab('settings', this)"
+                        class="sidebar-btn flex w-full cursor-pointer items-center gap-3 rounded-xl px-4 py-3 text-xs font-semibold text-[#64748B] transition hover:bg-gray-50 hover:text-[#17212B] dark:text-gray-400 dark:hover:bg-[#102235] dark:hover:text-white text-left">
+                        <svg class="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                            stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                        <span>Account Settings</span>
+                    </button>
+                    <div
+                        class="mt-2 flex items-center justify-between border-t border-gray-100 pt-4 dark:border-gray-800">
+                        <div class="flex items-center gap-3">
+                            <!-- Mobile Theme Toggle -->
+                            <button type="button" dir="ltr" onclick="toggleDarkMode()" aria-label="Toggle Theme"
+                                class="themeToggleBtn relative flex h-8 w-[70px] items-center justify-between rounded-full border border-gray-300 bg-white/10 px-2 transition-colors duration-300 dark:border-gray-700 dark:bg-[#162B3D] shrink-0">
+                                <span class="text-xs select-none leading-none z-10">☀</span>
+                                <span id="themeKnobEl"
+                                    class="themeKnob pointer-events-none absolute left-0.5 top-1 flex h-6 w-6 items-center justify-center rounded-full bg-white shadow-md transition-transform duration-300 ease-out dark:bg-blue-600"></span>
+                                <span class="text-xs select-none leading-none z-10">☾</span>
+                            </button>
+
+                            <button type="button" aria-label="Toggle Direction"
+                                class="directionToggleBtn h-8 min-w-[70px] rounded-full border border-gray-200 bg-white px-3 text-[13px] font-medium tracking-[0.04em] text-[#334155] transition duration-200 hover:border-[#D5E3EC] hover:bg-[#EAF2F7] hover:text-[#123B5D] dark:border-gray-600 dark:bg-[#162B3D] dark:text-gray-200 dark:hover:bg-[#20394E] dark:hover:text-white">
+                                LTR
+                            </button>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+
+            <div class="border-t border-gray-100 pt-5 dark:border-gray-800">
+                <a href="login.html"
+                    class="flex items-center gap-3 px-4 py-2 text-xs font-bold text-rose-600 transition hover:text-rose-700 dark:text-rose-400">
+                    <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+                    </svg>
+                    <span>Logout</span>
+                </a>
+            </div>
+        </aside>
+        <main class="flex-1 p-4 sm:p-6 lg:p-10 overflow-y-auto">
+
+            <div
+                class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between border-b border-gray-100 pb-5 dark:border-gray-800">
+                <div class="flex items-center gap-3">
+                    <button type="button" onclick="toggleSidebar(true)" aria-label="Open Menu"
+                        class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-gray-200 bg-white text-[#17212B] shadow-xs active:scale-95 lg:hidden dark:border-gray-800 dark:bg-[#0D1B2A] dark:text-white">
+                        <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                    <div>
+                        <h1 id="topHeading"
+                            class="text-xl sm:text-2xl lg:text-3xl font-extrabold text-[#17212B] dark:text-white">System
+                            Overview</h1>
+                        <p id="topSubtitle" class="mt-0.5 text-xs text-[#64748B] dark:text-gray-400">
+                            Welcome back, <span class="clientDisplayName">Rajesh</span>! Here's your Taxora account
+                            summary.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-3 self-end sm:self-auto">
+
+                    <div class="flex items-center gap-3 pl-2 border-l border-gray-200 dark:border-gray-800">
+                        <div id="userAvatarBadge"
+                            class="flex h-9 w-9 items-center justify-center rounded-full bg-[#123B5D] text-xs font-bold text-white shadow-xs dark:bg-blue-600 uppercase">
+                            R
+                        </div>
+                        <div class="hidden sm:block text-left">
+                            <span id="userBadgeFullName"
+                                class="block text-xs font-bold text-[#17212B] dark:text-white">Rajesh Kumar</span>
+                            <span class="block text-[10px] text-[#64748B] dark:text-gray-400">Verified Client</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="panel-overview" class="tab-panel active mt-6 sm:mt-8">
+                <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
+                    <div
+                        class="rounded-2xl border-l-4 border-l-[#123B5D] border border-gray-200 bg-white p-5 shadow-xs dark:border-l-blue-500 dark:border-gray-800 dark:bg-[#0D1B2A]">
+                        <span class="text-xs font-semibold text-[#64748B]">Completed Filings</span>
+                        <div class="mt-3 text-3xl font-extrabold text-[#17212B] dark:text-white">5</div>
+                    </div>
+                    <div
+                        class="rounded-2xl border-l-4 border-l-[#123B5D] border border-gray-200 bg-white p-5 shadow-xs dark:border-l-blue-500 dark:border-gray-800 dark:bg-[#0D1B2A]">
+                        <span class="text-xs font-semibold text-[#64748B]">Expected Refund</span>
+                        <div class="mt-3 text-3xl font-extrabold text-[#17212B] dark:text-white">₹42,850</div>
+                    </div>
+                    <div
+                        class="rounded-2xl border-l-4 border-l-[#123B5D] border border-gray-200 bg-white p-5 shadow-xs dark:border-l-blue-500 dark:border-gray-800 dark:bg-[#0D1B2A]">
+                        <span class="text-xs font-semibold text-[#64748B]">Partner CA Sessions</span>
+                        <div class="mt-3 text-3xl font-extrabold text-[#17212B] dark:text-white">4</div>
+                    </div>
+                    <div
+                        class="rounded-2xl border-l-4 border-l-[#123B5D] border border-gray-200 bg-white p-5 shadow-xs dark:border-l-blue-500 dark:border-gray-800 dark:bg-[#0D1B2A]">
+                        <span class="text-xs font-semibold text-[#64748B]">Encrypted Vault Files</span>
+                        <div class="mt-3 text-3xl font-extrabold text-[#17212B] dark:text-white">7</div>
+                    </div>
+                </div>
+
+                <div
+                    class="mt-6 rounded-2xl border border-gray-200 bg-white p-5 dark:border-gray-800 dark:bg-[#0D1B2A]">
+                    <h2 class="text-base font-bold mb-4">Recent Requests</h2>
+                    <table class="w-full text-left text-xs">
+                        <thead>
+                            <tr class="border-b border-gray-100 pb-2 text-gray-400">
+                                <th class="pb-2">ID</th>
+                                <th class="pb-2">Client</th>
+                                <th class="pb-2">Service</th>
+                                <th class="pb-2">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b border-gray-50 dark:border-gray-800/50">
+                                <td class="py-3 font-bold">#SRV-901</td>
+                                <td class="clientDisplayName">Rajesh Kumar</td>
+                                <td>ITR-2 Filing</td>
+                                <td><span class="text-emerald-500 font-bold">Completed</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div id="panel-filings" class="tab-panel mt-6 sm:mt-8">
+                <div class="rounded-2xl border border-gray-200 bg-white p-6 dark:border-gray-800 dark:bg-[#0D1B2A]">
+                    <h2 class="text-lg font-bold">Tax Filings & Acknowledgements</h2>
+                    <div class="mt-4 space-y-3">
+                        <div
+                            class="p-4 rounded-xl border border-gray-100 dark:border-gray-800 flex justify-between items-center">
+                            <div>
+                                <h4 class="font-bold text-sm">AY 2025-2026 (ITR-2 Filed)</h4>
+                                <span class="text-xs text-gray-400">Acknowledgement No: 8931201948</span>
+                            </div>
+                            <button
+                                class="px-3 py-1.5 rounded-lg border text-xs font-bold hover:bg-gray-50">Download</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="panel-vault" class="tab-panel mt-6 sm:mt-8">
+                <div class="rounded-2xl border border-gray-200 bg-white p-6 dark:border-gray-800 dark:bg-[#0D1B2A]">
+                    <h2 class="text-lg font-bold mb-4">Document Vault</h2>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="p-4 rounded-xl border text-center dark:border-gray-800">
+                            <span class="text-2xl">📄</span>
+                            <p class="font-bold text-xs mt-2">Form 16_FY24-25.pdf</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="panel-advisory" class="tab-panel mt-6 sm:mt-8">
+                <div class="rounded-2xl border border-gray-200 bg-white p-6 dark:border-gray-800 dark:bg-[#0D1B2A]">
+                    <h2 class="text-lg font-bold">Chartered Accountant Consultation</h2>
+                    <div
+                        class="mt-4 p-5 rounded-xl border border-blue-100 bg-blue-50/40 dark:border-blue-900/40 dark:bg-blue-950/20">
+                        <span
+                            class="px-2 py-0.5 text-[10px] font-bold text-blue-700 bg-blue-100 rounded">Scheduled</span>
+                        <h4 class="font-bold text-sm mt-2">Personal Tax Planning & Capital Gains Review</h4>
+                        <p class="text-xs text-gray-500 mt-1">Lead Partner: CA Arvind Swamy • Monday, 4:30 PM</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="panel-notices" class="tab-panel mt-6 sm:mt-8">
+                <div class="rounded-2xl border border-gray-200 bg-white p-6 dark:border-gray-800 dark:bg-[#0D1B2A]">
+                    <h2 class="text-lg font-bold mb-2">Notice Tracker</h2>
+                    <div
+                        class="p-4 rounded-xl bg-emerald-50 text-emerald-800 text-xs font-semibold dark:bg-emerald-950/40 dark:text-emerald-300">
+                        ✓ No active scrutiny or demand notices pending against your PAN.
+                    </div>
+                </div>
+            </div>
+
+            <div id="panel-settings" class="tab-panel mt-6 sm:mt-8">
+                <div
+                    class="rounded-2xl border border-gray-200 bg-white p-6 max-w-lg dark:border-gray-800 dark:bg-[#0D1B2A]">
+                    <h2 class="text-lg font-bold mb-4">Account Profile</h2>
+                    <form onsubmit="handleProfileUpdate(event)" class="space-y-4">
+                        <div>
+                            <label class="block text-xs font-bold text-gray-500 mb-1">Full Name</label>
+                            <input type="text" id="inputClientName" value="Rajesh Kumar" required
+                                class="w-full rounded-xl border border-gray-200 p-2.5 text-xs dark:border-gray-800 dark:bg-[#07131F]" />
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-gray-500 mb-1">Email</label>
+                            <input type="email" value="rajesh.kumar@example.com" required
+                                class="w-full rounded-xl border border-gray-200 p-2.5 text-xs dark:border-gray-800 dark:bg-[#07131F]" />
+                        </div>
+                        <button type="submit"
+                            class="bg-[#123B5D] text-white px-5 py-2.5 rounded-xl text-xs font-bold dark:bg-blue-600">
+                            Update Profile
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en" class="overflow-x-clip">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transparent Pricing & Advisory Retainers - Taxora Intelligence</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23123B5D'/><text x='50%' y='52%' dominant-baseline='central' text-anchor='middle' font-family='Arial, sans-serif' font-weight='900' font-size='24' fill='white'>₹</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body
+    class="min-h-screen w-full overflow-x-clip font-sans bg-[#FAFBFD] text-[#17212B] transition-colors duration-300 dark:bg-[#07131F] dark:text-white">
+
+    <div id="navbar-placeholder" class="sticky top-3 sm:top-5 z-50"></div>
+
+    <section
+        class="relative min-h-screen overflow-hidden -mt-20 pt-28 pb-18 lg:-mt-24 lg:pt-36 lg:pb-40 border-b border-gray-200 dark:border-gray-800">
+
+        <div class="pointer-events-none absolute inset-0 z-0 overflow-hidden">
+            <img src="/public/hero-banner3.avif"
+                alt="Financial Calculation & Balance Sheet Banner"
+                class="h-full w-full object-cover object-top opacity-[5.7] filter blur-[0.2px] dark:opacity-[5.7]">
+            <div
+                class="absolute inset-0 bg-gradient-to-b from-transparent via-[#FAFBFD]/70 to-[#FAFBFD] dark:via-[#07131F]/75 dark:to-[#07131F]">
+            </div>
+            <div
+                class="absolute left-1/2 top-1/4 -translate-x-1/2 -translate-y-1/2 h-[380px] w-[680px] rounded-full bg-blue-500/10 blur-[130px]">
+            </div>
+        </div>
+
+        <div class="relative z-10 mx-auto max-w-[1440px] px-6 sm:px-8 py-8 lg:px-12 text-center">
+            <div class="mx-auto max-w-3xl">
+                <div
+                    class="inline-flex items-center gap-2 rounded-full border border-blue-500/30 bg-blue-50/90 px-4 py-1.5  text-xs font-bold uppercase tracking-wider text-[#123B5D] transition-transform duration-200 hover:scale-105 cursor-default dark:bg-blue-950/60 dark:text-blue-300 shadow-sm">
+                    <span class="h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                    Fair Engagement Architecture • No Hourly Surprises
+                </div>
+
+                <h1
+                    class="my-12 text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl text-[#17212B] dark:text-white leading-[1.12]">
+                    Predictable Tax Advisory. <br>
+                    <span
+                        class="bg-gradient-to-r from-[#123B5D] via-blue-600 to-cyan-500 bg-clip-text text-transparent dark:from-blue-400 dark:to-cyan-300">
+                        Zero Hidden Bill Shocks.
+                    </span>
+                </h1>
+
+                <p
+                    class="mx-auto mt-5 max-w-2xl text-base sm:text-lg text-[#17212B] dark:text-gray-300 leading-relaxed">
+                    Transparent, fixed retainers backed by certified Chartered Accountants. Every single filing includes
+                    our 100% lifetime notice representation defense.
+                </p>
+
+                <div
+                    class="mt-8 inline-flex items-center rounded-2xl border border-gray-200 bg-white/90 p-1.5 backdrop-blur-sm dark:border-gray-700 dark:bg-[#0D1B2A] shadow-sm">
+                    <button type="button" id="btnIndividual"
+                        class="pricing-toggle-btn active-toggle rounded-xl bg-[#123B5D] px-6 py-2.5 text-xs font-bold text-white shadow-md transition-all duration-200 dark:bg-blue-600">
+                        Individual & HNIs
+                    </button>
+                    <button type="button" id="btnBusiness"
+                        class="pricing-toggle-btn rounded-xl px-6 py-2.5 text-xs font-semibold text-[#64748B] transition-all duration-200 hover:text-[#123B5D] dark:text-gray-300 dark:hover:text-white">
+                        Startups & MSMEs
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<section class="py-20 lg:py-28 border-b border-gray-200 dark:border-gray-800">
+    <div class="mx-auto max-w-[1440px] px-6 sm:px-8 lg:px-12">
+
+        <div id="individualCards" class="grid gap-8 lg:grid-cols-3 items-stretch transition-opacity duration-300">
+
+            <div class="group flex flex-col justify-between rounded-3xl border border-gray-200 bg-white p-8 sm:p-10 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl dark:border-gray-800 dark:bg-[#0D1B2A]">
+                <div>
+                    <span class="rounded-lg bg-gray-100 px-3 py-1 text-xs font-bold text-gray-700 dark:bg-gray-800 dark:text-gray-300">Starter Plan</span>
+                    <h3 class="mt-4 text-2xl font-bold text-[#17212B] dark:text-white">Salaried & Freelance</h3>
+                    <p class="mt-2 text-xs text-[#64748B] dark:text-gray-400">Single or multiple Form 16, HRA & interest deductions.</p>
+                    <div class="mt-6 flex items-baseline gap-1">
+                        <span class="text-4xl font-extrabold text-[#17212B] dark:text-white">₹999</span>
+                        <span class="text-xs text-[#64748B] dark:text-gray-400">/ filing</span>
+                    </div>
+                    <div class="mt-8 space-y-3 border-t border-gray-100 pt-6 text-xs text-[#64748B] dark:border-gray-800 dark:text-gray-300">
+                        <div>✓ Multiple Form 16 consolidation</div>
+                        <div>✓ AIS, TIS & 26AS mismatch check</div>
+                        <div>✓ 48-Hour delivery SLA</div>
+                    </div>
+                </div>
+                <a href="contact.html" class="mt-8 block w-full rounded-xl border border-gray-300 py-3.5 text-center text-xs font-bold hover:border-[#123B5D]">Start Essential Filing →</a>
+            </div>
+
+            <div class="group relative flex flex-col justify-between rounded-3xl border-2 border-[#123B5D] bg-white p-8 sm:p-10 shadow-2xl transition-all duration-300 hover:-translate-y-2 dark:border-blue-500 dark:bg-[#0D1B2A]">
+                <div>
+                    <span class="rounded-lg bg-blue-100 px-3 py-1 text-xs font-bold text-[#123B5D] dark:bg-blue-900/40 dark:text-blue-300">Comprehensive</span>
+                    <h3 class="mt-4 text-2xl font-bold text-[#17212B] dark:text-white">HNI & US Stock Shield</h3>
+                    <p class="mt-2 text-xs text-[#64748B] dark:text-gray-400">US equity, RSUs, NASDAQ stocks, F&O, and crypto capital gains.</p>
+                    <div class="mt-6 flex items-baseline gap-1">
+                        <span class="text-4xl font-extrabold text-[#123B5D] dark:text-blue-400">₹3,999</span>
+                        <span class="text-xs text-[#64748B] dark:text-gray-400">/ filing</span>
+                    </div>
+                    <div class="mt-8 space-y-3 border-t border-gray-100 pt-6 text-xs text-[#17212B] dark:border-gray-800 dark:text-gray-200">
+                        <div>✓ US Stocks & Schedule FA reporting</div>
+                        <div>✓ DTAA Form 67 Double Tax Relief</div>
+                        <div>✓ 1-on-1 Video Strategy Call with CA</div>
+                    </div>
+                </div>
+                <a href="sessions.html" class="mt-8 block w-full rounded-xl bg-[#123B5D] py-3.5 text-center text-xs font-bold text-white shadow-md hover:bg-[#0c263d] dark:bg-blue-600">Book Assigned Partner CA →</a>
+            </div>
+
+            <div class="group flex flex-col justify-between rounded-3xl border border-gray-200 bg-white p-8 sm:p-10 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl dark:border-gray-800 dark:bg-[#0D1B2A]">
+                <div>
+                    <span class="rounded-lg bg-purple-100 px-3 py-1 text-xs font-bold text-purple-800 dark:bg-purple-950/40 dark:text-purple-300">Advanced HNI</span>
+                    <h3 class="mt-4 text-2xl font-bold text-[#17212B] dark:text-white">Family Wealth Desk</h3>
+                    <p class="mt-2 text-xs text-[#64748B] dark:text-gray-400">Multi-demat, commercial property sales, and trust returns.</p>
+                    <div class="mt-6 flex items-baseline gap-1">
+                        <span class="text-4xl font-extrabold text-[#17212B] dark:text-white">₹7,499</span>
+                        <span class="text-xs text-[#64748B] dark:text-gray-400">/ filing</span>
+                    </div>
+                    <div class="mt-8 space-y-3 border-t border-gray-100 pt-6 text-xs text-[#64748B] dark:border-gray-800 dark:text-gray-300">
+                        <div>✓ Real Estate 54EC Exemption Planning</div>
+                        <div>✓ Multi-Demat P&L Audit Consolidation</div>
+                        <div>✓ Full Legal Notice Immunity</div>
+                    </div>
+                </div>
+                <a href="contact.html" class="mt-8 block w-full rounded-xl border border-gray-300 py-3.5 text-center text-xs font-bold hover:border-[#123B5D]">Consult Wealth Desk →</a>
+            </div>
+        </div>
+
+        <div id="businessCards" class="hidden grid gap-8 lg:grid-cols-3 items-stretch transition-opacity duration-300">
+            <!-- Business Card 1 -->
+            <div class="group flex flex-col justify-between rounded-3xl border border-gray-200 bg-white p-8 sm:p-10 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl dark:border-gray-800 dark:bg-[#0D1B2A]">
+                <div>
+                    <span class="rounded-lg bg-gray-100 px-3 py-1 text-xs font-bold text-gray-700 dark:bg-gray-800 dark:text-gray-300">Early Stage</span>
+                    <h3 class="mt-4 text-2xl font-bold text-[#17212B] dark:text-white">GST & Compliance Starter</h3>
+                    <p class="mt-2 text-xs text-[#64748B] dark:text-gray-400">Monthly GST filings and quarterly TDS compliance for seed startups.</p>
+                    <div class="mt-6 flex items-baseline gap-1">
+                        <span class="text-4xl font-extrabold text-[#17212B] dark:text-white">₹4,999</span>
+                        <span class="text-xs text-[#64748B] dark:text-gray-400">/ month</span>
+                    </div>
+                    <div class="mt-8 space-y-3 border-t border-gray-100 pt-6 text-xs text-[#64748B] dark:border-gray-800 dark:text-gray-300">
+                        <div>✓ Monthly GSTR-1 & GSTR-3B filings</div>
+                        <div>✓ Vendor TDS 26Q return filing</div>
+                        <div>✓ Basic payroll tax calculations</div>
+                    </div>
+                </div>
+                <a href="contact.html" class="mt-8 block w-full rounded-xl border border-gray-300 py-3.5 text-center text-xs font-bold hover:border-[#123B5D]">Start GST Retainer →</a>
+            </div>
+
+            <div class="group relative flex flex-col justify-between rounded-3xl border-2 border-[#123B5D] bg-white p-8 sm:p-10 shadow-2xl transition-all duration-300 hover:-translate-y-2 dark:border-blue-500 dark:bg-[#0D1B2A]">
+                <div>
+                    <span class="rounded-lg bg-blue-100 px-3 py-1 text-xs font-bold text-[#123B5D] dark:bg-blue-900/40 dark:text-blue-300">Full Retainer</span>
+                    <h3 class="mt-4 text-2xl font-bold text-[#17212B] dark:text-white">Growth MSME & Virtual CFO</h3>
+                    <p class="mt-2 text-xs text-[#64748B] dark:text-gray-400">End-to-end accounting, ITC reconciliation, and monthly leadership MIS.</p>
+                    <div class="mt-6 flex items-baseline gap-1">
+                        <span class="text-4xl font-extrabold text-[#123B5D] dark:text-blue-400">₹9,999</span>
+                        <span class="text-xs text-[#64748B] dark:text-gray-400">/ month</span>
+                    </div>
+                    <div class="mt-8 space-y-3 border-t border-gray-100 pt-6 text-xs text-[#17212B] dark:border-gray-800 dark:text-gray-200">
+                        <div>✓ Automated GSTR-2B ITC recovery engine</div>
+                        <div>✓ Daily automated ledger reconciliation</div>
+                        <div>✓ Monthly Virtual CFO strategy review</div>
+                        <div>✓ ROC annual returns & statutory audit defense</div>
+                    </div>
+                </div>
+                <a href="contact.html" class="mt-8 block w-full rounded-xl bg-[#123B5D] py-3.5 text-center text-xs font-bold text-white shadow-md hover:bg-[#0c263d] dark:bg-blue-600">Onboard Company Desk →</a>
+            </div>
+
+            <div class="group flex flex-col justify-between rounded-3xl border border-gray-200 bg-white p-8 sm:p-10 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl dark:border-gray-800 dark:bg-[#0D1B2A]">
+                <div>
+                    <span class="rounded-lg bg-purple-100 px-3 py-1 text-xs font-bold text-purple-800 dark:bg-purple-950/40 dark:text-purple-300">Cross-Border</span>
+                    <h3 class="mt-4 text-2xl font-bold text-[#17212B] dark:text-white">Exporters & Multi-Entity</h3>
+                    <p class="mt-2 text-xs text-[#64748B] dark:text-gray-400">Zero-rated LUT refunds, transfer pricing, and multi-state compliance.</p>
+                    <div class="mt-6 flex items-baseline gap-1">
+                        <span class="text-4xl font-extrabold text-[#17212B] dark:text-white">₹19,999</span>
+                        <span class="text-xs text-[#64748B] dark:text-gray-400">/ month</span>
+                    </div>
+                    <div class="mt-8 space-y-3 border-t border-gray-100 pt-6 text-xs text-[#64748B] dark:border-gray-800 dark:text-gray-300">
+                        <div>✓ Export GST LUT refund processing</div>
+                        <div>✓ Form 15CA/CB foreign remittances</div>
+                        <div>✓ Multi-branch GST statutory reconciliations</div>
+                    </div>
+                </div>
+                <a href="contact.html" class="mt-8 block w-full rounded-xl border border-gray-300 py-3.5 text-center text-xs font-bold hover:border-[#123B5D]">Custom Entity Scope →</a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+    <section class="py-20 bg-white border-b border-gray-200 dark:border-gray-800 dark:bg-[#0A1624]">
+        <div class="mx-auto max-w-[1440px] px-6 sm:px-8 lg:px-12">
+            <div class="max-w-2xl mx-auto text-center mb-16">
+                <span class="text-xs font-bold uppercase tracking-wider text-[#123B5D] dark:text-blue-400">Standalone
+                    Capabilities</span>
+                <h2 class="mt-2 text-3xl font-extrabold sm:text-4xl text-[#17212B] dark:text-white">
+                    Modular Specialized Add-ons
+                </h2>
+                <p class="mt-3 text-sm text-[#64748B] dark:text-gray-400">
+                    Need support on a specific regulatory issue? Plug in single-engagement advisory.
+                </p>
+            </div>
+
+            <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+
+                <div class="group flex flex-col justify-between rounded-3xl border border-gray-200 bg-[#FAFBFD] p-7 transition-all duration-300 ease-out hover:-translate-y-2 hover:border-blue-400/50 hover:shadow-xl dark:border-gray-800 dark:bg-[#0D1B2A]">
+                    <div>
+                        <span class="text-xs font-bold text-blue-600 dark:text-blue-400 uppercase">Litigation</span>
+                        <h4 class="mt-2 font-bold text-lg text-[#17212B] dark:text-white">Notice Scrutiny Draft</h4>
+                        <p class="mt-2 text-xs leading-relaxed text-[#64748B] dark:text-gray-400">
+                            Section 143(1), 139(9), or 148 legal response draft backed by case law precedents.
+                        </p>
+                    </div>
+                    <div class="mt-6 flex items-baseline justify-between border-t border-gray-200/80 pt-4 dark:border-gray-800">
+                        <span class="text-lg font-black text-[#123B5D] dark:text-white">₹2,499</span>
+                        <a href="contact.html" class="text-xs font-bold text-[#123B5D] hover:underline dark:text-blue-400">Request →</a>
+                    </div>
+                </div>
+
+                <div class="group flex flex-col justify-between rounded-3xl border border-gray-200 bg-[#FAFBFD] p-7 transition-all duration-300 ease-out hover:-translate-y-2 hover:border-emerald-400/50 hover:shadow-xl dark:border-gray-800 dark:bg-[#0D1B2A]">
+                    <div>
+                        <span class="text-xs font-bold text-emerald-600 dark:text-emerald-400 uppercase">Cross-Border</span>
+                        <h4 class="mt-2 font-bold text-lg text-[#17212B] dark:text-white">Form 15CA & 15CB</h4>
+                        <p class="mt-2 text-xs leading-relaxed text-[#64748B] dark:text-gray-400">
+                            Chartered Accountant certification for overseas foreign remittances without tax deduction leaks.
+                        </p>
+                    </div>
+                    <div class="mt-6 flex items-baseline justify-between border-t border-gray-200/80 pt-4 dark:border-gray-800">
+                        <span class="text-lg font-black text-[#123B5D] dark:text-white">₹3,499</span>
+                        <a href="contact.html" class="text-xs font-bold text-[#123B5D] hover:underline dark:text-blue-400">Request →</a>
+                    </div>
+                </div>
+
+                <div class="group flex flex-col justify-between rounded-3xl border border-gray-200 bg-[#FAFBFD] p-7 transition-all duration-300 ease-out hover:-translate-y-2 hover:border-indigo-400/50 hover:shadow-xl dark:border-gray-800 dark:bg-[#0D1B2A]">
+                    <div>
+                        <span class="text-xs font-bold text-indigo-600 dark:text-indigo-400 uppercase">Indirect Tax</span>
+                        <h4 class="mt-2 font-bold text-lg text-[#17212B] dark:text-white">Annual GSTR-9/9C Audit</h4>
+                        <p class="mt-2 text-xs leading-relaxed text-[#64748B] dark:text-gray-400">
+                            Annual turnover reconciliation, reverse-charge review, and certified statutory sign-off.
+                        </p>
+                    </div>
+                    <div class="mt-6 flex items-baseline justify-between border-t border-gray-200/80 pt-4 dark:border-gray-800">
+                        <span class="text-lg font-black text-[#123B5D] dark:text-white">₹7,999</span>
+                        <a href="contact.html" class="text-xs font-bold text-[#123B5D] hover:underline dark:text-blue-400">Request →</a>
+                    </div>
+                </div>
+
+                <div class="group flex flex-col justify-between rounded-3xl border border-gray-200 bg-[#FAFBFD] p-7 transition-all duration-300 ease-out hover:-translate-y-2 hover:border-purple-400/50 hover:shadow-xl dark:border-gray-800 dark:bg-[#0D1B2A]">
+                    <div>
+                        <span class="text-xs font-bold text-purple-600 dark:text-purple-400 uppercase">Valuation</span>
+                        <h4 class="mt-2 font-bold text-lg text-[#17212B] dark:text-white">Sec 56 DCF Valuation</h4>
+                        <p class="mt-2 text-xs leading-relaxed text-[#64748B] dark:text-gray-400">
+                            Registered Valuer DCF shares valuation report for fundraising rounds under Angel Tax norms.
+                        </p>
+                    </div>
+                    <div class="mt-6 flex items-baseline justify-between border-t border-gray-200/80 pt-4 dark:border-gray-800">
+                        <span class="text-lg font-black text-[#123B5D] dark:text-white">₹14,999</span>
+                        <a href="contact.html" class="text-xs font-bold text-[#123B5D] hover:underline dark:text-blue-400">Request →</a>
+                    </div>
+                </div>
+
+            </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 lg:py-28 border-b border-gray-200 dark:border-gray-800">
+        <div class="mx-auto max-w-[1440px] px-6 sm:px-8 lg:px-12">
+            <div class="max-w-2xl mx-auto text-center mb-16">
+                <span class="text-xs font-bold uppercase tracking-wider text-[#123B5D] dark:text-blue-400">Detailed
+                    Scope</span>
+                <h2 class="mt-2 text-3xl font-extrabold sm:text-4xl text-[#17212B] dark:text-white">
+                    Compare Every Inclusion Line-by-Line
+                </h2>
+            </div>
+
+            <div
+                class="overflow-x-auto rounded-3xl border border-gray-200 bg-white shadow-sm dark:border-gray-800 dark:bg-[#0D1B2A]">
+                <table class="w-full text-start text-xs sm:text-sm">
+                    <thead>
+                        <tr
+                            class="border-b border-gray-100 bg-gray-50/70 text-[#64748B] dark:border-gray-800 dark:bg-[#102235] dark:text-gray-400">
+                            <th class="p-5 text-start font-bold">Deliverable Scope</th>
+                            <th class="p-5 text-center font-bold">Essential (₹999)</th>
+                            <th class="p-5 text-center font-bold text-[#123B5D] dark:text-blue-400">HNI & ESOP (₹3,999)
+                            </th>
+                            <th class="p-5 text-center font-bold">Corporate (₹9,999/mo)</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-100 dark:divide-gray-800 text-[#17212B] dark:text-gray-300">
+                        <tr class="hover:bg-blue-50/30 dark:hover:bg-[#13273d]">
+                            <td class="p-5 font-semibold">Dual Regime Arbitrage (Old vs New)</td>
+                            <td class="p-5 text-center text-emerald-500 font-bold">✓ Included</td>
+                            <td class="p-5 text-center text-emerald-500 font-bold">✓ Included</td>
+                            <td class="p-5 text-center text-emerald-500 font-bold">✓ Included</td>
+                        </tr>
+                        <tr class="hover:bg-blue-50/30 dark:hover:bg-[#13273d]">
+                            <td class="p-5 font-semibold">AIS / TIS / 26AS Dividend Cross-Match</td>
+                            <td class="p-5 text-center text-emerald-500 font-bold">✓ Included</td>
+                            <td class="p-5 text-center text-emerald-500 font-bold">✓ Included</td>
+                            <td class="p-5 text-center text-emerald-500 font-bold">✓ Included</td>
+                        </tr>
+                        <tr class="hover:bg-blue-50/30 dark:hover:bg-[#13273d]">
+                            <td class="p-5 font-semibold">Foreign Stock (Schedule FA) Reporting</td>
+                            <td class="p-5 text-center text-gray-400">✕</td>
+                            <td class="p-5 text-center text-emerald-500 font-bold">✓ Included</td>
+                            <td class="p-5 text-center text-emerald-500 font-bold">✓ Included</td>
+                        </tr>
+                        <tr class="hover:bg-blue-50/30 dark:hover:bg-[#13273d]">
+                            <td class="p-5 font-semibold">1-on-1 Video Advisory Session with CA</td>
+                            <td class="p-5 text-center text-gray-400">✕</td>
+                            <td class="p-5 text-center text-emerald-500 font-bold">✓ 30 Mins Included</td>
+                            <td class="p-5 text-center text-emerald-500 font-bold">✓ Unlimited Priority</td>
+                        </tr>
+                        <tr class="hover:bg-blue-50/30 dark:hover:bg-[#13273d]">
+                            <td class="p-5 font-semibold">Lifetime Notice Defense Representation</td>
+                            <td class="p-5 text-center text-gray-400">Add-on (₹2,499)</td>
+                            <td class="p-5 text-center text-emerald-500 font-bold">✓ Free 143(1) Stay</td>
+                            <td class="p-5 text-center text-emerald-500 font-bold">✓ Full Legal Counsel</td>
+                        </tr>
+                        <tr class="hover:bg-blue-50/30 dark:hover:bg-[#13273d]">
+                            <td class="p-5 font-semibold">Monthly GST Filings & ITC Recovery Engine</td>
+                            <td class="p-5 text-center text-gray-400">✕</td>
+                            <td class="p-5 text-center text-gray-400">✕</td>
+                            <td class="p-5 text-center text-emerald-500 font-bold">✓ Included</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-gray-50/70 dark:bg-[#0A1624] border-b border-gray-200 dark:border-gray-800">
+        <div class="mx-auto max-w-[1440px] px-6 sm:px-8 lg:px-12">
+            <div class="max-w-2xl mx-auto text-center mb-16">
+                <span class="text-xs font-bold uppercase tracking-wider text-[#123B5D] dark:text-blue-400">Client
+                    Protection</span>
+                <h2 class="mt-2 text-3xl font-extrabold sm:text-4xl text-[#17212B] dark:text-white">
+                    Our Four Non-Negotiable Fee Guarantees
+                </h2>
+            </div>
+
+            <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+                <div
+                    class="rounded-2xl border border-gray-200 bg-white p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg dark:border-gray-800 dark:bg-[#0D1B2A]">
+                    <div class="text-2xl font-bold text-[#123B5D] dark:text-blue-400">🛡️</div>
+                    <h4 class="mt-3 font-bold text-base text-[#17212B] dark:text-white">Notice Immunity</h4>
+                    <p class="mt-2 text-xs leading-relaxed text-[#64748B] dark:text-gray-400">If CPC Bangalore sends a
+                        defective inquiry due to our preparation, we draft and defend the case at zero charge.</p>
+                </div>
+
+                <div
+                    class="rounded-2xl border border-gray-200 bg-white p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg dark:border-gray-800 dark:bg-[#0D1B2A]">
+                    <div class="text-2xl font-bold text-emerald-600 dark:text-emerald-400">⏱️</div>
+                    <h4 class="mt-3 font-bold text-base text-[#17212B] dark:text-white">Guaranteed Turnaround</h4>
+                    <p class="mt-2 text-xs leading-relaxed text-[#64748B] dark:text-gray-400">All draft returns
+                        delivered within 24 to 48 business hours after document receipt—or receive a 20% engagement
+                        refund.</p>
+                </div>
+
+                <div
+                    class="rounded-2xl border border-gray-200 bg-white p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg dark:border-gray-800 dark:bg-[#0D1B2A]">
+                    <div class="text-2xl font-bold text-indigo-600 dark:text-indigo-400">🔒</div>
+                    <h4 class="mt-3 font-bold text-base text-[#17212B] dark:text-white">Zero Scope Creep</h4>
+                    <p class="mt-2 text-xs leading-relaxed text-[#64748B] dark:text-gray-400">Every retainer proposal is
+                        fixed. No billing clock runs in the background for routine email questions or confirmations.</p>
+                </div>
+
+                <div
+                    class="rounded-2xl border border-gray-200 bg-white p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg dark:border-gray-800 dark:bg-[#0D1B2A]">
+                    <div class="text-2xl font-bold text-amber-600 dark:text-amber-400">📜</div>
+                    <h4 class="mt-3 font-bold text-base text-[#17212B] dark:text-white">ICAI Norm Compliance</h4>
+                    <p class="mt-2 text-xs leading-relaxed text-[#64748B] dark:text-gray-400">Direct supervision by
+                        practicing Fellows of the Institute of Chartered Accountants of India under strict fiduciary
+                        ethics.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16">
+        <div class="mx-auto max-w-[1440px] px-6 sm:px-8 lg:px-12 ">
+            <div
+                class="group relative overflow-hidden rounded-3xl bg-gradient-to-r from-[#0F2841] via-[#123B5D] to-[#0A1B2D] p-8 sm:p-12 lg:p-16 text-white shadow-2xl transition-all duration-500 hover:shadow-[0_25px_60px_rgba(18,59,93,0.35)]">
+                <div class="relative z-10 grid gap-10 lg:grid-cols-12 items-center">
+                    <div class="lg:col-span-8 space-y-4">
+                        <span
+                            class="inline-block rounded-md bg-white/10 px-3 py-1 text-xs font-bold uppercase tracking-wider text-blue-200 transition-transform duration-200 hover:scale-105 cursor-default">
+                            Bespoke Corporate Advisory
+                        </span>
+                        <h2 class="text-3xl font-extrabold sm:text-4xl text-white">
+                            Need a Tailored Retainer for Multi-Entity Group Companies?
+                        </h2>
+                        <p class="text-sm sm:text-base text-gray-200 leading-relaxed max-w-2xl">
+                            Have multiple GST registrations, subsidiary cross-charges, or overseas holding entities in
+                            Singapore/Delaware? Request a custom engagement proposal designed by our senior partners.
+                        </p>
+                    </div>
+                    <div class="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col gap-3">
+                        <a href="contact.html"
+                            class="text-center rounded-xl bg-white px-7 py-3.5 text-sm font-bold text-[#123B5D] shadow-md transition-all duration-300 ease-out hover:-translate-y-1 hover:bg-gray-100 hover:shadow-xl active:scale-95">
+                            Request Custom Scope Call
+                        </a>
+                        <a href="sessions.html"
+                            class="text-center rounded-xl border border-white/30 bg-white/10 px-7 py-3.5 text-sm font-bold text-white transition-all duration-300 ease-out hover:-translate-y-1 hover:border-white hover:bg-white/20 active:scale-95">
+                            Book Strategic CA Clinic
+                        </a>
+                    </div>
+                </div>
+                <div
+                    class="pointer-events-none absolute -right-20 -top-20 h-72 w-72 rounded-full bg-blue-500/20 blur-3xl transition-all duration-700 group-hover:scale-125 group-hover:bg-blue-400/30">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer-placeholder"></div>
+    <script src="app.js"></script>
+
+</body>
+
+</html>

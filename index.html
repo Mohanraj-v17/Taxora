@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tax Filing & Accounting Services</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23123B5D'/><text x='50%' y='52%' dominant-baseline='central' text-anchor='middle' font-family='Arial, sans-serif' font-weight='900' font-size='24' fill='white'>₹</text></svg>">    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <script>
+        (function () {
+            const savedTheme = localStorage.getItem("theme");
+            const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+            if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
+                document.documentElement.classList.add("dark");
+                document.documentElement.style.backgroundColor = "#07131F";
+            } else {
+                document.documentElement.classList.remove("dark");
+                document.documentElement.style.backgroundColor = "#FAFBFD";
+            }
+        })();
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="min-h-screen w-full overflow-x-clip font-sans bg-white text-[#17212B] transition-colors duration-300 dark:bg-[#07131F] dark:text-white">
+
+    <div id="navbar-placeholder" class="sticky top-3 sm:top-5 z-50"></div>
+
+    <section class="relative overflow-hidden py-16 lg:py-24 border-b border-gray-200 dark:border-gray-800">
+        <div class="mx-auto max-w-[1280px] px-6 lg:px-8">
+            <div class="grid items-center gap-12 lg:grid-cols-2">
+                <div class="space-y-6">
+                    <div
+                        class="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-[#123B5D] transition-transform duration-200 hover:scale-105 cursor-default dark:border-blue-900/60 dark:bg-[#102a43] dark:text-blue-300">
+                        <span class="h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                        FY 2025 - 2026 Tax Season Ready
+                    </div>
+                    <h1
+                        class="text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl text-[#17212B] dark:text-white leading-[1.15]">
+                        Effortless Tax Filing. <br>
+                        <span class="text-[#123B5D] dark:text-blue-400">Maximum Savings</span> Guaranteed.
+                    </h1>
+                    <p class="max-w-xl text-lg leading-relaxed text-[#64748B] dark:text-gray-300">
+                        File your returns accurately with guidance from qualified Chartered Accountants. Fast, secure,
+                        and stress-free compliance for salaried individuals and enterprises.
+                    </p>
+                    <div class="flex flex-wrap items-center gap-4 pt-2">
+                        <a href="services.html"
+                            class="rounded-xl bg-[#123B5D] px-8 py-3.5 text-sm font-semibold text-white shadow-lg shadow-[#123B5D]/20 transition-all duration-300 ease-out hover:-translate-y-1 hover:bg-[#0c283f] hover:shadow-xl hover:shadow-[#123B5D]/30 active:scale-95 dark:bg-blue-600 dark:hover:bg-blue-500 dark:hover:shadow-blue-500/25">
+                            File My Taxes Now
+                        </a>
+                        <a href="contact.html"
+                            class="rounded-xl border border-gray-300 bg-white px-7 py-3.5 text-sm font-semibold text-[#17212B] transition-all duration-300 ease-out hover:-translate-y-1 hover:border-[#123B5D] hover:bg-gray-50 hover:text-[#123B5D] hover:shadow-md active:scale-95 dark:border-gray-700 dark:bg-[#0D1B2A] dark:text-gray-200 dark:hover:border-blue-400 dark:hover:bg-[#162B3D] dark:hover:text-white">
+                            Book CA Consultation
+                        </a>
+                    </div>
+                    <div class="flex items-center gap-6 pt-4 text-xs font-medium text-[#64748B] dark:text-gray-400">
+                        <div class="flex items-center gap-2 transition-transform duration-200 hover:translate-x-1 cursor-default">
+                            <span class="text-emerald-500 text-base font-bold">✓</span> 100% Audit Protection
+                        </div>
+                        <div class="flex items-center gap-2 transition-transform duration-200 hover:translate-x-1 cursor-default">
+                            <span class="text-emerald-500 text-base font-bold">✓</span> Bank-Grade 256-bit Encryption
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative group">
+                    <div
+                        class="relative overflow-hidden rounded-3xl border border-gray-200 shadow-2xl transition-all duration-500 group-hover:shadow-[0_25px_50px_rgba(18,59,93,0.18)] dark:border-gray-800 dark:group-hover:shadow-[0_25px_50px_rgba(0,0,0,0.5)]">
+                        <img src="/public/hero-banner1.avif"
+                            alt="Tax filing and accounting analysis"
+                            class="h-[460px] w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-gray-50/70 transition-colors duration-300 dark:bg-[#0B1724] border-b border-gray-200 dark:border-gray-800">
+        <div class="mx-auto max-w-[1280px] px-6 lg:px-8">
+            <div class="mx-auto max-w-2xl text-center">
+                <span class="text-xs font-bold uppercase tracking-wider text-[#123B5D] dark:text-blue-400">Expertise
+                    That Delivers</span>
+                <h2 class="mt-2 text-3xl font-extrabold sm:text-4xl text-[#17212B] dark:text-white">
+                    Tailored Financial & Tax Solutions
+                </h2>
+                <p class="mt-3 text-[#64748B] dark:text-gray-400 text-sm sm:text-base">
+                    From simple salary returns to enterprise-grade GST audits, our team handles end-to-end accounting.
+                </p>
+            </div>
+
+            <div class="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+                <div
+                    class="group relative rounded-2xl border border-gray-200 bg-white p-8 transition-all duration-300 ease-out hover:-translate-y-2 hover:border-blue-400/50 hover:shadow-[0_20px_40px_rgba(18,59,93,0.12)] dark:border-gray-800 dark:bg-[#0D1B2A] dark:hover:border-blue-500/50 dark:hover:shadow-[0_20px_40px_rgba(0,0,0,0.45)]">
+                    <div
+                        class="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-100 text-xl font-bold text-[#123B5D] transition-transform duration-300 ease-out group-hover:scale-110 group-hover:rotate-6 dark:bg-blue-900/40 dark:text-blue-300">
+                        📄
+                    </div>
+                    <h3 class="mt-5 text-xl font-bold text-[#17212B] transition-colors duration-200 group-hover:text-[#123B5D] dark:text-white dark:group-hover:text-blue-400">
+                        ITR 1-4 Individual Filing
+                    </h3>
+                    <p class="mt-3 text-sm leading-relaxed text-[#64748B] dark:text-gray-400">
+                        Tailored for salaried employees, freelancers, and capital gain investors. Fast filing with
+                        complete 80C to 80D deduction claims.
+                    </p>
+                    <a href="services.html"
+                        class="mt-5 inline-flex items-center text-sm font-semibold text-[#123B5D] transition-transform duration-200 group-hover:translate-x-1.5 dark:text-blue-400">
+                        Learn more <span class="ms-1 transition-transform duration-200 group-hover:translate-x-1">→</span>
+                    </a>
+                </div>
+
+                <div
+                    class="group relative rounded-2xl border border-gray-200 bg-white p-8 transition-all duration-300 ease-out hover:-translate-y-2 hover:border-indigo-400/50 hover:shadow-[0_20px_40px_rgba(79,70,229,0.12)] dark:border-gray-800 dark:bg-[#0D1B2A] dark:hover:border-indigo-500/50 dark:hover:shadow-[0_20px_40px_rgba(0,0,0,0.45)]">
+                    <div
+                        class="flex h-12 w-12 items-center justify-center rounded-xl bg-indigo-100 text-xl font-bold text-indigo-700 transition-transform duration-300 ease-out group-hover:scale-110 group-hover:rotate-6 dark:bg-indigo-950/60 dark:text-indigo-300">
+                        📊
+                    </div>
+                    <h3 class="mt-5 text-xl font-bold text-[#17212B] transition-colors duration-200 group-hover:text-indigo-600 dark:text-white dark:group-hover:text-indigo-400">
+                        GST Registration & Filings
+                    </h3>
+                    <p class="mt-3 text-sm leading-relaxed text-[#64748B] dark:text-gray-400">
+                        Monthly GSTR-1, GSTR-3B filings and annual reconciliations ensuring seamless Input Tax Credit
+                        (ITC) optimization.
+                    </p>
+                    <a href="services.html"
+                        class="mt-5 inline-flex items-center text-sm font-semibold text-[#123B5D] transition-transform duration-200 group-hover:translate-x-1.5 dark:text-blue-400">
+                        Learn more <span class="ms-1 transition-transform duration-200 group-hover:translate-x-1">→</span>
+                    </a>
+                </div>
+
+                <div
+                    class="group relative rounded-2xl border border-gray-200 bg-white p-8 transition-all duration-300 ease-out hover:-translate-y-2 hover:border-amber-400/50 hover:shadow-[0_20px_40px_rgba(217,119,6,0.12)] dark:border-gray-800 dark:bg-[#0D1B2A] dark:hover:border-amber-500/50 dark:hover:shadow-[0_20px_40px_rgba(0,0,0,0.45)]">
+                    <div
+                        class="flex h-12 w-12 items-center justify-center rounded-xl bg-amber-100 text-xl font-bold text-amber-700 transition-transform duration-300 ease-out group-hover:scale-110 group-hover:rotate-6 dark:bg-amber-950/60 dark:text-amber-300">
+                        💼
+                    </div>
+                    <h3 class="mt-5 text-xl font-bold text-[#17212B] transition-colors duration-200 group-hover:text-amber-600 dark:text-white dark:group-hover:text-amber-400">
+                        Corporate Bookkeeping
+                    </h3>
+                    <p class="mt-3 text-sm leading-relaxed text-[#64748B] dark:text-gray-400">
+                        Daily ledger updates, balance sheets, automated bank reconciliations, and monthly MIS report
+                        generation for leadership.
+                    </p>
+                    <a href="services.html"
+                        class="mt-5 inline-flex items-center text-sm font-semibold text-[#123B5D] transition-transform duration-200 group-hover:translate-x-1.5 dark:text-blue-400">
+                        Learn more <span class="ms-1 transition-transform duration-200 group-hover:translate-x-1">→</span>
+                    </a>
+                </div>
+
+                <div
+                    class="group relative rounded-2xl border border-gray-200 bg-white p-8 transition-all duration-300 ease-out hover:-translate-y-2 hover:border-emerald-400/50 hover:shadow-[0_20px_40px_rgba(5,150,105,0.12)] dark:border-gray-800 dark:bg-[#0D1B2A] dark:hover:border-emerald-500/50 dark:hover:shadow-[0_20px_40px_rgba(0,0,0,0.45)]">
+                    <div
+                        class="flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-100 text-xl font-bold text-emerald-700 transition-transform duration-300 ease-out group-hover:scale-110 group-hover:rotate-6 dark:bg-emerald-950/60 dark:text-emerald-300">
+                        🌐
+                    </div>
+                    <h3 class="mt-5 text-xl font-bold text-[#17212B] transition-colors duration-200 group-hover:text-emerald-600 dark:text-white dark:group-hover:text-emerald-400">
+                        NRI Taxation & Remittances
+                    </h3>
+                    <p class="mt-3 text-sm leading-relaxed text-[#64748B] dark:text-gray-400">
+                        Form 15CA/CB documentation, foreign income credit (DTAA), and repatriation assistance with zero
+                        penalty risks.
+                    </p>
+                    <a href="services.html"
+                        class="mt-5 inline-flex items-center text-sm font-semibold text-[#123B5D] transition-transform duration-200 group-hover:translate-x-1.5 dark:text-blue-400">
+                        Learn more <span class="ms-1 transition-transform duration-200 group-hover:translate-x-1">→</span>
+                    </a>
+                </div>
+
+                <div
+                    class="group relative rounded-2xl border border-gray-200 bg-white p-8 transition-all duration-300 ease-out hover:-translate-y-2 hover:border-rose-400/50 hover:shadow-[0_20px_40px_rgba(225,29,72,0.12)] dark:border-gray-800 dark:bg-[#0D1B2A] dark:hover:border-rose-500/50 dark:hover:shadow-[0_20px_40px_rgba(0,0,0,0.45)]">
+                    <div
+                        class="flex h-12 w-12 items-center justify-center rounded-xl bg-rose-100 text-xl font-bold text-rose-700 transition-transform duration-300 ease-out group-hover:scale-110 group-hover:rotate-6 dark:bg-rose-950/60 dark:text-rose-300">
+                        🛡️
+                    </div>
+                    <h3 class="mt-5 text-xl font-bold text-[#17212B] transition-colors duration-200 group-hover:text-rose-600 dark:text-white dark:group-hover:text-rose-400">
+                        Tax Notice Resolution
+                    </h3>
+                    <p class="mt-3 text-sm leading-relaxed text-[#64748B] dark:text-gray-400">
+                        Received a notice under section 143(1), 139(9), or 148? Our senior CAs draft accurate responses
+                        and represent your case.
+                    </p>
+                    <a href="services.html"
+                        class="mt-5 inline-flex items-center text-sm font-semibold text-[#123B5D] transition-transform duration-200 group-hover:translate-x-1.5 dark:text-blue-400">
+                        Learn more <span class="ms-1 transition-transform duration-200 group-hover:translate-x-1">→</span>
+                    </a>
+                </div>
+
+                <div
+                    class="group relative rounded-2xl border border-gray-200 bg-white p-8 transition-all duration-300 ease-out hover:-translate-y-2 hover:border-cyan-400/50 hover:shadow-[0_20px_40px_rgba(8,145,178,0.12)] dark:border-gray-800 dark:bg-[#0D1B2A] dark:hover:border-cyan-500/50 dark:hover:shadow-[0_20px_40px_rgba(0,0,0,0.45)]">
+                    <div
+                        class="flex h-12 w-12 items-center justify-center rounded-xl bg-cyan-100 text-xl font-bold text-cyan-700 transition-transform duration-300 ease-out group-hover:scale-110 group-hover:rotate-6 dark:bg-cyan-950/60 dark:text-cyan-300">
+                        📈
+                    </div>
+                    <h3 class="mt-5 text-xl font-bold text-[#17212B] transition-colors duration-200 group-hover:text-cyan-600 dark:text-white dark:group-hover:text-cyan-400">
+                        Virtual CFO Advisory
+                    </h3>
+                    <p class="mt-3 text-sm leading-relaxed text-[#64748B] dark:text-gray-400">
+                        Strategic cash flow modeling, payroll structuring, and investor-ready financial reports without
+                        the full-time CFO overhead.
+                    </p>
+                    <a href="services.html"
+                        class="mt-5 inline-flex items-center text-sm font-semibold text-[#123B5D] transition-transform duration-200 group-hover:translate-x-1.5 dark:text-blue-400">
+                        Learn more <span class="ms-1 transition-transform duration-200 group-hover:translate-x-1">→</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 overflow-hidden border-b border-gray-200 dark:border-gray-800">
+        <div class="mx-auto max-w-[1280px] px-6 lg:px-8">
+            <div class="grid items-center gap-12 lg:grid-cols-2">
+                <div class="relative order-2 lg:order-1 group overflow-hidden rounded-3xl">
+                    <img src="/public/mid-banner2.jpg"
+                        alt="Corporate tax and financial skyline"
+                        class="h-[500px] w-full rounded-3xl object-cover shadow-2xl transition-transform duration-700 ease-out group-hover:scale-105">
+                    <div class="absolute inset-0 rounded-3xl bg-gradient-to-tr from-[#123B5D]/40 to-transparent transition-opacity duration-300 group-hover:opacity-80"></div>
+                </div>
+
+                <div class="space-y-6 order-1 lg:order-2">
+                    <span class="text-xs font-bold uppercase tracking-wider text-[#123B5D] dark:text-blue-400">Why
+                        Taxora Stands Out</span>
+                    <h2 class="text-3xl font-extrabold text-[#17212B] sm:text-4xl dark:text-white">
+                        Precision Accounting Backed by Certified Chartered Accountants
+                    </h2>
+                    <p class="text-base text-[#64748B] dark:text-gray-300">
+                        Tax laws evolve every year. We ensure your business and personal portfolios remain 100%
+                        compliant while unlocking all valid exemptions.
+                    </p>
+
+                    <div class="space-y-3 pt-2">
+                        <div class="group flex items-start gap-4 rounded-2xl p-3 -mx-3 transition-all duration-300 hover:bg-blue-50/70 hover:shadow-sm dark:hover:bg-[#0D1B2A]">
+                            <div
+                                class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-[#123B5D] font-bold transition-all duration-300 group-hover:scale-110 group-hover:bg-[#123B5D] group-hover:text-white dark:bg-blue-900/30 dark:text-blue-300 dark:group-hover:bg-blue-600 dark:group-hover:text-white">
+                                01
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-[#17212B] transition-colors duration-200 group-hover:text-[#123B5D] dark:text-white dark:group-hover:text-blue-400">
+                                    100% Verified CA Review
+                                </h4>
+                                <p class="text-sm text-[#64748B] dark:text-gray-400">Every single return is personally
+                                    vetted by a qualified CA before submission.</p>
+                            </div>
+                        </div>
+
+                        <div class="group flex items-start gap-4 rounded-2xl p-3 -mx-3 transition-all duration-300 hover:bg-blue-50/70 hover:shadow-sm dark:hover:bg-[#0D1B2A]">
+                            <div
+                                class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-[#123B5D] font-bold transition-all duration-300 group-hover:scale-110 group-hover:bg-[#123B5D] group-hover:text-white dark:bg-blue-900/30 dark:text-blue-300 dark:group-hover:bg-blue-600 dark:group-hover:text-white">
+                                02
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-[#17212B] transition-colors duration-200 group-hover:text-[#123B5D] dark:text-white dark:group-hover:text-blue-400">
+                                    Zero Defective Notice Warranty
+                                </h4>
+                                <p class="text-sm text-[#64748B] dark:text-gray-400">Accurate tax computations minimize
+                                    scrutiny and eliminate penalty letters.</p>
+                            </div>
+                        </div>
+
+                        <div class="group flex items-start gap-4 rounded-2xl p-3 -mx-3 transition-all duration-300 hover:bg-blue-50/70 hover:shadow-sm dark:hover:bg-[#0D1B2A]">
+                            <div
+                                class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-[#123B5D] font-bold transition-all duration-300 group-hover:scale-110 group-hover:bg-[#123B5D] group-hover:text-white dark:bg-blue-900/30 dark:text-blue-300 dark:group-hover:bg-blue-600 dark:group-hover:text-white">
+                                03
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-[#17212B] transition-colors duration-200 group-hover:text-[#123B5D] dark:text-white dark:group-hover:text-blue-400">
+                                    Lightning Fast 24-48hr Turnaround
+                                </h4>
+                                <p class="text-sm text-[#64748B] dark:text-gray-400">Submit your Form 16 and bank
+                                    statement, get acknowledgment receipts in under 48 hours.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-gray-50/70 transition-colors duration-300 dark:bg-[#0B1724] border-b border-gray-200 dark:border-gray-800">
+        <div class="mx-auto max-w-[1280px] px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto">
+                <span class="text-xs font-bold uppercase tracking-wider text-[#123B5D] dark:text-blue-400">Simple
+                    Workflow</span>
+                <h2 class="mt-2 text-3xl font-extrabold sm:text-4xl text-[#17212B] dark:text-white">
+                    File Your Taxes in 4 Easy Steps
+                </h2>
+                <p class="mt-3 text-sm sm:text-base text-[#64748B] dark:text-gray-400">
+                    No complicated tax terminology. Here is how smooth filing works on our platform.
+                </p>
+            </div>
+
+            <div class="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+                <div
+                    class="group relative rounded-2xl border border-gray-200 bg-white p-7 text-center transition-all duration-300 ease-out hover:-translate-y-2 hover:border-[#123B5D]/40 hover:shadow-xl dark:border-gray-800 dark:bg-[#0D1B2A] dark:hover:border-blue-500/40">
+                    <div
+                        class="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-[#123B5D] text-lg font-extrabold text-white transition-transform duration-300 ease-out group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-[#123B5D]/30 dark:group-hover:shadow-blue-500/30">
+                        1
+                    </div>
+                    <h3 class="mt-5 text-lg font-bold text-[#17212B] transition-colors duration-200 group-hover:text-[#123B5D] dark:text-white dark:group-hover:text-blue-400">
+                        Upload Docs
+                    </h3>
+                    <p class="mt-2 text-xs leading-relaxed text-[#64748B] dark:text-gray-400">
+                        Securely upload Form 16, AIS, or bank statements via encrypted client dashboard.
+                    </p>
+                </div>
+
+                <div
+                    class="group relative rounded-2xl border border-gray-200 bg-white p-7 text-center transition-all duration-300 ease-out hover:-translate-y-2 hover:border-[#123B5D]/40 hover:shadow-xl dark:border-gray-800 dark:bg-[#0D1B2A] dark:hover:border-blue-500/40">
+                    <div
+                        class="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-[#123B5D] text-lg font-extrabold text-white transition-transform duration-300 ease-out group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-[#123B5D]/30 dark:group-hover:shadow-blue-500/30">
+                        2
+                    </div>
+                    <h3 class="mt-5 text-lg font-bold text-[#17212B] transition-colors duration-200 group-hover:text-[#123B5D] dark:text-white dark:group-hover:text-blue-400">
+                        CA Optimization
+                    </h3>
+                    <p class="mt-2 text-xs leading-relaxed text-[#64748B] dark:text-gray-400">
+                        Our tax specialists analyze deductions and select the ideal regime (Old vs New).
+                    </p>
+                </div>
+
+                <div
+                    class="group relative rounded-2xl border border-gray-200 bg-white p-7 text-center transition-all duration-300 ease-out hover:-translate-y-2 hover:border-[#123B5D]/40 hover:shadow-xl dark:border-gray-800 dark:bg-[#0D1B2A] dark:hover:border-blue-500/40">
+                    <div
+                        class="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-[#123B5D] text-lg font-extrabold text-white transition-transform duration-300 ease-out group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-[#123B5D]/30 dark:group-hover:shadow-blue-500/30">
+                        3
+                    </div>
+                    <h3 class="mt-5 text-lg font-bold text-[#17212B] transition-colors duration-200 group-hover:text-[#123B5D] dark:text-white dark:group-hover:text-blue-400">
+                        Review & Approve
+                    </h3>
+                    <p class="mt-2 text-xs leading-relaxed text-[#64748B] dark:text-gray-400">
+                        Inspect the prepared draft, confirm calculated refunds, and provide 1-click consent.
+                    </p>
+                </div>
+
+                <div
+                    class="group relative rounded-2xl border border-gray-200 bg-white p-7 text-center transition-all duration-300 ease-out hover:-translate-y-2 hover:border-emerald-500/40 hover:shadow-xl dark:border-gray-800 dark:bg-[#0D1B2A] dark:hover:border-emerald-500/40">
+                    <div
+                        class="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-emerald-600 text-lg font-extrabold text-white transition-transform duration-300 ease-out group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-emerald-500/30">
+                        ✓
+                    </div>
+                    <h3 class="mt-5 text-lg font-bold text-[#17212B] transition-colors duration-200 group-hover:text-emerald-600 dark:text-white dark:group-hover:text-emerald-400">
+                        ITR-V Generated
+                    </h3>
+                    <p class="mt-2 text-xs leading-relaxed text-[#64748B] dark:text-gray-400">
+                        Get your official IT Department acknowledgment and real-time refund status tracking.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 border-b border-gray-200 dark:border-gray-800">
+        <div class="mx-auto max-w-[1280px] px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto">
+                <span class="text-xs font-bold uppercase tracking-wider text-[#123B5D] dark:text-blue-400">Proven
+                    Trust</span>
+                <h2 class="mt-2 text-3xl font-extrabold sm:text-4xl text-[#17212B] dark:text-white">
+                    Trusted by Over 15,000+ Filers
+                </h2>
+                <p class="mt-3 text-sm sm:text-base text-[#64748B] dark:text-gray-400">
+                    See what salaried professionals, founders, and business owners say about our accuracy.
+                </p>
+            </div>
+
+            <div class="mt-14 grid gap-8 md:grid-cols-3">
+                <div
+                    class="group flex flex-col justify-between rounded-2xl border border-gray-200 bg-white p-7 shadow-sm transition-all duration-300 ease-out hover:-translate-y-2 hover:border-blue-300 hover:shadow-xl dark:border-gray-800 dark:bg-[#0D1B2A] dark:hover:border-blue-500/40">
+                    <div>
+                        <div class="flex text-amber-400 gap-1 text-sm transition-transform duration-200 group-hover:scale-105 origin-left">★★★★★</div>
+                        <p class="mt-4 text-sm leading-relaxed text-[#334155] dark:text-gray-300">
+                            "I had both salary and US stock options (ESOPs) which usually takes forever to report.
+                            Taxora's CA sorted out the foreign tax credit and saved me ₹82,000 in excess tax!"
+                        </p>
+                    </div>
+                    <div class="mt-6 flex items-center gap-4 border-t border-gray-100 pt-5 dark:border-gray-800">
+                        <img src="/public/client priya sharma.avif"
+                            alt="Client Priya Sharma" class="h-11 w-11 rounded-full object-cover transition-transform duration-300 group-hover:scale-110 ring-2 ring-transparent group-hover:ring-blue-400/50">
+                        <div>
+                            <h4 class="text-sm font-bold text-[#17212B] transition-colors duration-200 group-hover:text-[#123B5D] dark:text-white dark:group-hover:text-blue-400">Priya Sharma</h4>
+                            <p class="text-xs text-[#64748B] dark:text-gray-400">Staff Engineer at SaaS Unicorn</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="group flex flex-col justify-between rounded-2xl border border-gray-200 bg-white p-7 shadow-sm transition-all duration-300 ease-out hover:-translate-y-2 hover:border-blue-300 hover:shadow-xl dark:border-gray-800 dark:bg-[#0D1B2A] dark:hover:border-blue-500/40">
+                    <div>
+                        <div class="flex text-amber-400 gap-1 text-sm transition-transform duration-200 group-hover:scale-105 origin-left">★★★★★</div>
+                        <p class="mt-4 text-sm leading-relaxed text-[#334155] dark:text-gray-300">
+                            "Their monthly GST compliance service is flawless. Zero late fees since 2 years. They handle
+                            our invoices and e-way bills with absolute precision."
+                        </p>
+                    </div>
+                    <div class="mt-6 flex items-center gap-4 border-t border-gray-100 pt-5 dark:border-gray-800">
+                        <img src="/public/client rajesh.avif"
+                            alt="Client Rajesh Kumar" class="h-11 w-11 rounded-full object-cover object-top transition-transform duration-300 group-hover:scale-110 ring-2 ring-transparent group-hover:ring-blue-400/50">
+                        <div>
+                            <h4 class="text-sm font-bold text-[#17212B] transition-colors duration-200 group-hover:text-[#123B5D] dark:text-white dark:group-hover:text-blue-400">Rajesh Kumar</h4>
+                            <p class="text-xs text-[#64748B] dark:text-gray-400">Managing Director, LogiTech</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="group flex flex-col justify-between rounded-2xl border border-gray-200 bg-white p-7 shadow-sm transition-all duration-300 ease-out hover:-translate-y-2 hover:border-blue-300 hover:shadow-xl dark:border-gray-800 dark:bg-[#0D1B2A] dark:hover:border-blue-500/40">
+                    <div>
+                        <div class="flex text-amber-400 gap-1 text-sm transition-transform duration-200 group-hover:scale-105 origin-left">★★★★★</div>
+                        <p class="mt-4 text-sm leading-relaxed text-[#334155] dark:text-gray-300">
+                            "I received a notice under section 143(1) from the income tax portal. Their tax advisor
+                            solved the mismatch and got the demand dropped within 4 days."
+                        </p>
+                    </div>
+                    <div class="mt-6 flex items-center gap-4 border-t border-gray-100 pt-5 dark:border-gray-800">
+                        <img src="/public/client Joseph.avif"
+                            alt="Client Joseph" class="h-11 w-11 rounded-full object-cover object-top transition-transform duration-300 group-hover:scale-110 ring-2 ring-transparent group-hover:ring-blue-400/50">
+                        <div>
+                            <h4 class="text-sm font-bold text-[#17212B] transition-colors duration-200 group-hover:text-[#123B5D] dark:text-white dark:group-hover:text-blue-400">Joseph Thomas</h4>
+                            <p class="text-xs text-[#64748B] dark:text-gray-400">Financial Analyst</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 border border-gray-200 dark:border-gray-800">
+        <div class="mx-auto max-w-[1280px] px-6 lg:px-8">
+            <div
+                class="group relative overflow-hidden rounded-3xl bg-gradient-to-r from-[#123B5D] to-[#0A2239] px-8 py-14 shadow-2xl transition-all duration-500 hover:shadow-[0_25px_60px_rgba(18,59,93,0.35)] lg:px-16 lg:py-20 text-white">
+                <div class="relative z-10 grid gap-8 lg:grid-cols-2 lg:items-center">
+                    <div>
+                        <span
+                            class="inline-block rounded-md bg-white/10 px-3 py-1 text-xs font-semibold tracking-wider uppercase text-blue-200 transition-transform duration-200 hover:scale-105 cursor-default">
+                            Don't Risk Last-Minute Penalties
+                        </span>
+                        <h2 class="mt-4 text-3xl font-extrabold sm:text-4xl text-white">
+                            Ready to file your returns with maximum peace of mind?
+                        </h2>
+                        <p class="mt-3 text-sm sm:text-base text-gray-200">
+                            Book your 1-on-1 session with our chartered accountants today. Clear doubts, calculate exact
+                            liability, and file without glitches.
+                        </p>
+                    </div>
+                    <div class="flex flex-col sm:flex-row items-center gap-4 lg:justify-end">
+                        <a href="contact.html"
+                            class="w-full sm:w-auto text-center rounded-xl bg-white px-8 py-4 text-sm font-bold text-[#123B5D] shadow-md transition-all duration-300 ease-out hover:-translate-y-1 hover:bg-gray-100 hover:shadow-xl active:scale-95">
+                            Schedule Free 15-Min Call
+                        </a>
+                        <a href="pricing.html"
+                            class="w-full sm:w-auto text-center rounded-xl border border-white/30 bg-white/10 px-8 py-4 text-sm font-bold text-white transition-all duration-300 ease-out hover:-translate-y-1 hover:border-white hover:bg-white/20 active:scale-95">
+                            Explore Pricing Plans
+                        </a>
+                    </div>
+                </div>
+                <div
+                    class="pointer-events-none absolute -right-20 -top-20 h-72 w-72 rounded-full bg-blue-500/20 blur-3xl transition-all duration-700 group-hover:scale-125 group-hover:bg-blue-400/30">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
