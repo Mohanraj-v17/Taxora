@@ -275,27 +275,31 @@ window.setPriorityFilter = function (priority, btn) {
     filterCases();
 };
 
+// Safe DOM Initialization (Strictly NO reload, NO redirect)
 document.addEventListener("DOMContentLoaded", () => {
-    // Vercel path fix: root-relative fetch to prevent loop
-    Promise.all([
-        fetch("/navbar.html").then(res => res.ok ? res.text() : "").catch(() => ""),
-        fetch("/footer.html").then(res => res.ok ? res.text() : "").catch(() => "")
-    ])
-        .then(([navbarHtml, footerHtml]) => {
-            const navContainer = document.getElementById("navbar-placeholder");
-            const footerContainer = document.getElementById("footer-placeholder");
+    const navContainer = document.getElementById("navbar-placeholder");
+    const footerContainer = document.getElementById("footer-placeholder");
 
-            if (navContainer && navbarHtml) navContainer.innerHTML = navbarHtml;
+    // Only fetch if placeholders actually exist in the current page
+    if (navContainer || footerContainer) {
+        Promise.all([
+            navContainer ? fetch("navbar.html").then(r => r.ok ? r.text() : "").catch(() => "") : Promise.resolve(""),
+            footerContainer ? fetch("footer.html").then(r => r.ok ? r.text() : "").catch(() => "") : Promise.resolve("")
+        ]).then(([navHtml, footerHtml]) => {
+            if (navContainer && navHtml) navContainer.innerHTML = navHtml;
             if (footerContainer && footerHtml) footerContainer.innerHTML = footerHtml;
-
             initInteractions();
             initAllPageFeatures();
             updateActiveNav();
-        })
-        .catch(() => {
+        }).catch(() => {
             initInteractions();
             initAllPageFeatures();
         });
+    } else {
+        // Dashboard and Admin don't have navbar placeholders, direct init
+        initInteractions();
+        initAllPageFeatures();
+    }
 });
 
 function initAllPageFeatures() {
