@@ -142,21 +142,36 @@ window.toggleSidebar = function (open) {
     }
 };
 
+// 1. Single Centralized Theme Toggle Function
 window.toggleDarkMode = function () {
     const html = document.documentElement;
     const isDark = html.classList.contains("dark");
+    window.applyTheme(!isDark);
+};
+
+// 2. Exact Alignment & Visual Sync Function
+window.applyTheme = function (isDark) {
+    const html = document.documentElement;
+    const themeKnobs = document.querySelectorAll(".themeKnob");
+
     if (isDark) {
-        html.classList.remove("dark");
-        html.style.backgroundColor = "#FAFBFD";
-        localStorage.setItem("theme", "light");
-    } else {
         html.classList.add("dark");
         html.style.backgroundColor = "#07131F";
         localStorage.setItem("theme", "dark");
+    } else {
+        html.classList.remove("dark");
+        html.style.backgroundColor = "#FAFBFD";
+        localStorage.setItem("theme", "light");
     }
-    const knobs = document.querySelectorAll(".themeKnob");
-    knobs.forEach(knob => {
-        knob.style.transform = isDark ? "translateX(0px)" : "translateX(28px)";
+
+    themeKnobs.forEach(knob => {
+        if (isDark) {
+            knob.style.transform = "translateX(42px)";
+            knob.style.backgroundColor = "#2563EB"; // Solid blue
+        } else {
+            knob.style.transform = "translateX(0px)";
+            knob.style.backgroundColor = "#FFFFFF"; // Solid white
+        }
     });
 };
 
@@ -276,27 +291,9 @@ window.setPriorityFilter = function (priority, btn) {
 };
 
 document.addEventListener("DOMContentLoaded", () => {
-    const navContainer = document.getElementById("navbar-placeholder");
-    const footerContainer = document.getElementById("footer-placeholder");
-
-    if (navContainer || footerContainer) {
-        Promise.all([
-            navContainer ? fetch("./navbar.html").then(r => r.ok ? r.text() : "").catch(() => "") : Promise.resolve(""),
-            footerContainer ? fetch("./footer.html").then(r => r.ok ? r.text() : "").catch(() => "") : Promise.resolve("")
-        ]).then(([navHtml, footerHtml]) => {
-            navContainer.innerHTML = navHtml;
-            if (footerContainer && footerHtml) footerContainer.innerHTML = footerHtml;
-            initInteractions();
-            initAllPageFeatures();
-            updateActiveNav();
-        }).catch(() => {
-            initInteractions();
-            initAllPageFeatures();
-        });
-    } else {
-        initInteractions();
-        initAllPageFeatures();
-    }
+    initInteractions();
+    initAllPageFeatures();
+    updateActiveNav();
 });
 
 function initAllPageFeatures() {
@@ -573,31 +570,20 @@ function initRegisterForm() {
 function initInteractions() {
     const html = document.documentElement;
     const themeToggleBtns = document.querySelectorAll(".themeToggleBtn");
-    const themeKnobs = document.querySelectorAll(".themeKnob");
     const directionToggleBtns = document.querySelectorAll(".directionToggleBtn");
 
-    function applyTheme(isDark) {
-        if (isDark) {
-            html.classList.add("dark");
-            html.style.backgroundColor = "#07131F";
-            themeKnobs.forEach(knob => knob.style.transform = "translateX(28px)");
-            localStorage.setItem("theme", "dark");
-        } else {
-            html.classList.remove("dark");
-            html.style.backgroundColor = "#FAFBFD";
-            themeKnobs.forEach(knob => knob.style.transform = "translateX(0px)");
-            localStorage.setItem("theme", "light");
-        }
-    }
-
+    // Initial load sync
     const savedTheme = localStorage.getItem("theme");
     const systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    applyTheme(savedTheme === "dark" || (!savedTheme && systemPrefersDark));
+    const isDark = savedTheme === "dark" || (!savedTheme && systemPrefersDark);
+    window.applyTheme(isDark);
 
+    // Event listener attach
     themeToggleBtns.forEach(btn => {
-        btn.onclick = () => applyTheme(!html.classList.contains("dark"));
+        btn.onclick = () => window.toggleDarkMode();
     });
 
+    // Direction logic
     const savedDir = localStorage.getItem("taxora_direction") || "ltr";
     html.setAttribute("dir", savedDir);
     directionToggleBtns.forEach(b => b.textContent = savedDir.toUpperCase());
@@ -612,6 +598,7 @@ function initInteractions() {
         };
     });
 
+    // Mobile Menu
     const mobileMenuBtn = document.getElementById("mobileMenuBtn");
     const mobileMenu = document.getElementById("mobileMenu");
 
@@ -640,9 +627,12 @@ function initInteractions() {
 }
 
 function updateActiveNav() {
-    const pathSegments = window.location.pathname.split("/").filter(Boolean);
-    const lastSegment = pathSegments.pop() || "index.html";
-    const currentPage = (lastSegment.includes(".") ? lastSegment.split(".")[0] : lastSegment).toLowerCase() || "index";
+    let currentPage = window.location.pathname.split("/").filter(Boolean).pop() || "index.html";
+    if (currentPage.endsWith(".html")) {
+        currentPage = currentPage.replace(".html", "");
+    }
+    currentPage = currentPage.toLowerCase();
+    if (currentPage === "" || currentPage === "index") currentPage = "index";
 
     const dropdownButtons = document.querySelectorAll("header nav .group > button");
     dropdownButtons.forEach(btn => {
@@ -661,8 +651,11 @@ function updateActiveNav() {
         );
         link.classList.add("text-[#334155]", "dark:text-gray-300");
 
-        const linkFile = href.split("/").filter(Boolean).pop() || "";
-        const linkPage = (linkFile.includes(".") ? linkFile.split(".")[0] : linkFile).toLowerCase();
+        let linkPage = href.split("/").filter(Boolean).pop() || "";
+        if (linkPage.endsWith(".html")) {
+            linkPage = linkPage.replace(".html", "");
+        }
+        linkPage = linkPage.toLowerCase();
 
         if (linkPage === currentPage) {
             const parentDropdown = link.closest(".group");
