@@ -1,4 +1,3 @@
-
 (function () {
     const savedTheme = localStorage.getItem("theme");
     const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
@@ -14,6 +13,23 @@
 
     const savedDir = localStorage.getItem("taxora_direction") || "ltr";
     document.documentElement.setAttribute("dir", savedDir);
+
+    const zeroFlashStyle = document.createElement("style");
+    zeroFlashStyle.id = "taxora-zero-flash-styles";
+    zeroFlashStyle.innerHTML = `
+        * {
+            -webkit-tap-highlight-color: transparent !important;
+        }
+        html.dark, html.dark body {
+            background-color: #07131F !important;
+            color-scheme: dark;
+        }
+        html:not(.dark), html:not(.dark) body {
+            background-color: #FAFBFD !important;
+            color-scheme: light;
+        }
+    `;
+    document.head.appendChild(zeroFlashStyle);
 })();
 
 (function injectFavicon() {
@@ -131,25 +147,27 @@ window.toggleDarkMode = function () {
     const isDark = html.classList.contains("dark");
     if (isDark) {
         html.classList.remove("dark");
+        html.style.backgroundColor = "#FAFBFD";
         localStorage.setItem("theme", "light");
     } else {
         html.classList.add("dark");
+        html.style.backgroundColor = "#07131F";
         localStorage.setItem("theme", "dark");
     }
     const knobs = document.querySelectorAll(".themeKnob");
     knobs.forEach(knob => {
-        knob.style.transform = isDark ? "translateX(0px)" : "translateX(42px)";
+        knob.style.transform = isDark ? "translateX(0px)" : "translateX(28px)";
     });
 };
 
 window.toggleDirection = function () {
     const html = document.documentElement;
     const currentDir = html.getAttribute("dir") || "ltr";
-    const nextDir = currentDir === "rtl" ? "ltr" : "rtl";
-    html.setAttribute("dir", nextDir);
-    localStorage.setItem("taxora_direction", nextDir);
+    const newDir = currentDir === "rtl" ? "ltr" : "rtl";
+    html.setAttribute("dir", newDir);
+    localStorage.setItem("taxora_direction", newDir);
     const directionToggleBtns = document.querySelectorAll(".directionToggleBtn");
-    directionToggleBtns.forEach(btn => btn.textContent = nextDir.toUpperCase());
+    directionToggleBtns.forEach(btn => btn.textContent = newDir.toUpperCase());
 };
 
 window.showDashboardToast = function (msg) {
@@ -258,9 +276,10 @@ window.setPriorityFilter = function (priority, btn) {
 };
 
 document.addEventListener("DOMContentLoaded", () => {
+    // Vercel path fix: root-relative fetch to prevent loop
     Promise.all([
-        fetch("navbar.html").then(res => res.ok ? res.text() : ""),
-        fetch("footer.html").then(res => res.ok ? res.text() : "")
+        fetch("/navbar.html").then(res => res.ok ? res.text() : "").catch(() => ""),
+        fetch("/footer.html").then(res => res.ok ? res.text() : "").catch(() => "")
     ])
         .then(([navbarHtml, footerHtml]) => {
             const navContainer = document.getElementById("navbar-placeholder");
@@ -298,7 +317,6 @@ function initDashboardFeatures() {
         applyUpdatedName(savedName);
     }
 }
-
 
 function initAdminFeatures() {
     const defaultAdminBtn = document.querySelector(".sidebar-btn[onclick*='pipeline']");
@@ -560,10 +578,12 @@ function initInteractions() {
     function applyTheme(isDark) {
         if (isDark) {
             html.classList.add("dark");
-            themeKnobs.forEach(knob => knob.style.transform = "translateX(42px)");
+            html.style.backgroundColor = "#07131F";
+            themeKnobs.forEach(knob => knob.style.transform = "translateX(28px)");
             localStorage.setItem("theme", "dark");
         } else {
             html.classList.remove("dark");
+            html.style.backgroundColor = "#FAFBFD";
             themeKnobs.forEach(knob => knob.style.transform = "translateX(0px)");
             localStorage.setItem("theme", "light");
         }
