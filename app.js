@@ -274,26 +274,24 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     try {
         if (navContainer) {
-            const navResponse = await fetch("/navbar.html");
+            const response = await fetch("/navbar.html");
 
-            if (!navResponse.ok) {
-                throw new Error("Navbar file not found: " + navResponse.status);
+            if (!response.ok) {
+                throw new Error("Navbar failed to load");
             }
 
-            navContainer.innerHTML = await navResponse.text();
+            navContainer.innerHTML = await response.text();
         }
 
         if (footerContainer) {
-            const footerResponse = await fetch("/footer.html");
+            const response = await fetch("/footer.html");
 
-            if (!footerResponse.ok) {
-                throw new Error("Footer file not found: " + footerResponse.status);
+            if (response.ok) {
+                footerContainer.innerHTML = await response.text();
             }
-
-            footerContainer.innerHTML = await footerResponse.text();
         }
     } catch (error) {
-        console.error("Navbar/Footer loading error:", error);
+        console.error("Loading error:", error);
     }
 
     initInteractions();
