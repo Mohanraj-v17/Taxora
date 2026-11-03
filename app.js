@@ -1,5 +1,6 @@
 (function () {
     const savedTheme = localStorage.getItem("theme");
+    const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
     const isDark = savedTheme === "dark" || (!savedTheme && prefersDark);
 
     if (isDark) {
@@ -19,6 +20,10 @@
         * {
             -webkit-tap-highlight-color: transparent !important;
         }
+        html {
+            scroll-behavior: smooth !important;
+            scroll-padding-top: 96px !important;
+        }
         html.dark, html.dark body {
             background-color: #07131F !important;
             color-scheme: dark;
@@ -26,6 +31,168 @@
         html:not(.dark), html:not(.dark) body {
             background-color: #FAFBFD !important;
             color-scheme: light;
+        }
+
+        /* Nav active states */
+        header nav a.nav-active,
+        header nav .group > button.nav-active,
+        #mobileMenu a.nav-active {
+            background-color: #123B5D !important;
+            color: #ffffff !important;
+            font-weight: 600 !important;
+            box-shadow: 0 2px 8px rgba(18, 59, 93, 0.22) !important;
+        }
+        header nav a.nav-active:hover,
+        header nav .group > button.nav-active:hover,
+        #mobileMenu a.nav-active:hover {
+            background-color: #0E2B45 !important;
+            color: #ffffff !important;
+        }
+        html.dark header nav a.nav-active,
+        html.dark header nav .group > button.nav-active,
+        html.dark #mobileMenu a.nav-active {
+            background-color: #2563EB !important;
+            color: #ffffff !important;
+            box-shadow: 0 2px 10px rgba(37, 99, 235, 0.35) !important;
+        }
+        html.dark header nav a.nav-active:hover,
+        html.dark header nav .group > button.nav-active:hover,
+        html.dark #mobileMenu a.nav-active:hover {
+            background-color: #1D4ED8 !important;
+            color: #ffffff !important;
+        }
+
+        /* Instant text colors for non-active nav links and dropdown buttons to prevent theme flash & lag */
+        html.dark header nav a:not(.nav-active),
+        html.dark header nav .group > button:not(.nav-active),
+        html.dark #mobileMenu a:not(.nav-active),
+        html.dark #mobileMenu .group > button:not(.nav-active) {
+            color: #D1D5DB !important;
+        }
+        html:not(.dark) header nav a:not(.nav-active),
+        html:not(.dark) header nav .group > button:not(.nav-active),
+        html:not(.dark) #mobileMenu a:not(.nav-active),
+        html:not(.dark) #mobileMenu .group > button:not(.nav-active) {
+            color: #334155 !important;
+        }
+        html.dark header nav .group > button:not(.nav-active) span {
+            color: #9CA3AF !important;
+        }
+        html:not(.dark) header nav .group > button:not(.nav-active) span {
+            color: #64748B !important;
+        }
+
+        /* Instant LTR / Direction Toggle Button theme styles */
+        html.dark .directionToggleBtn {
+            color: #E5E7EB !important;
+            background-color: #162B3D !important;
+            border-color: #4B5563 !important;
+        }
+        html:not(.dark) .directionToggleBtn {
+            color: #334155 !important;
+            background-color: #FFFFFF !important;
+            border-color: #E5E7EB !important;
+        }
+
+        /* Instant Theme Toggle button styles */
+        html.dark .themeToggleBtn {
+            background-color: #162B3D !important;
+            border-color: #4B5563 !important;
+        }
+        html:not(.dark) .themeToggleBtn {
+            background-color: #FFFFFF !important;
+            border-color: #E5E7EB !important;
+        }
+        html.dark .themeToggleBtn > span:not(.themeKnob) {
+            color: #D1D5DB !important;
+        }
+        html:not(.dark) .themeToggleBtn > span:not(.themeKnob) {
+            color: #64748B !important;
+        }
+        html.dark .themeKnob {
+            background-color: #2563EB !important;
+            border: none !important;
+            transform: translateX(42px) !important;
+        }
+        html:not(.dark) .themeKnob {
+            background-color: #FFFFFF !important;
+            border: none !important;
+            transform: translateX(0px) !important;
+        }
+
+        /* Hover states for non-active items */
+        html.dark header nav a:not(.nav-active):hover,
+        html.dark header nav .group > button:not(.nav-active):hover {
+            color: #FFFFFF !important;
+            background-color: #162B3D !important;
+        }
+        html:not(.dark) header nav a:not(.nav-active):hover,
+        html:not(.dark) header nav .group > button:not(.nav-active):hover {
+            color: #123B5D !important;
+            background-color: #EAF2F7 !important;
+        }
+        html.dark .directionToggleBtn:hover {
+            color: #FFFFFF !important;
+            background-color: #20394E !important;
+        }
+        html:not(.dark) .directionToggleBtn:hover {
+            color: #123B5D !important;
+            background-color: #EAF2F7 !important;
+            border-color: #D5E3EC !important;
+        }
+
+        /* Instant Pricing Segment Toggle styles */
+        html.dark .pricing-toggle-btn:not(.active-toggle) {
+            color: #D1D5DB !important;
+            background-color: transparent !important;
+        }
+        html:not(.dark) .pricing-toggle-btn:not(.active-toggle) {
+            color: #64748B !important;
+            background-color: transparent !important;
+        }
+        html.dark .pricing-toggle-btn.active-toggle {
+            color: #FFFFFF !important;
+            background-color: #2563EB !important;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06) !important;
+        }
+        html:not(.dark) .pricing-toggle-btn.active-toggle {
+            color: #FFFFFF !important;
+            background-color: #123B5D !important;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06) !important;
+        }
+
+        /* Instant Services Domain Filter button styles */
+        html.dark .service-filter-btn:not(.active-service-btn) {
+            color: #D1D5DB !important;
+            background-color: #0D1B2A !important;
+            border-color: #374151 !important;
+        }
+        html:not(.dark) .service-filter-btn:not(.active-service-btn) {
+            color: #64748B !important;
+            background-color: rgba(255, 255, 255, 0.9) !important;
+            border-color: #E5E7EB !important;
+        }
+        html.dark .service-filter-btn.active-service-btn {
+            color: #FFFFFF !important;
+            background-color: #2563EB !important;
+        }
+        html:not(.dark) .service-filter-btn.active-service-btn {
+            color: #FFFFFF !important;
+            background-color: #123B5D !important;
+        }
+
+        /* Transition override: text color changes instantaneously on theme toggle with 0ms transition */
+        header nav a,
+        header nav .group > button,
+        #mobileMenu a,
+        #mobileMenu .group > button,
+        .directionToggleBtn,
+        .themeToggleBtn,
+        .pricing-toggle-btn,
+        .service-filter-btn,
+        .filter-btn {
+            transition-property: background-color, border-color, box-shadow, transform !important;
+            transition-duration: 150ms !important;
         }
     `;
     document.head.appendChild(zeroFlashStyle);
@@ -166,10 +333,12 @@ window.applyTheme = function (isDark) {
     themeKnobs.forEach(knob => {
         if (isDark) {
             knob.style.transform = "translateX(42px)";
-            knob.style.backgroundColor = "#2563EB"; // Solid blue
+            knob.style.backgroundColor = "#2563EB"; // Solid Taxora Tech Blue
+            knob.style.border = "none";
         } else {
             knob.style.transform = "translateX(0px)";
             knob.style.backgroundColor = "#FFFFFF"; // Solid white
+            knob.style.border = "none";
         }
     });
 };
@@ -289,16 +458,24 @@ window.setPriorityFilter = function (priority, btn) {
     filterCases();
 };
 
-document.addEventListener("DOMContentLoaded", () => {
+function initTaxora() {
     initInteractions();
     initAllPageFeatures();
     updateActiveNav();
-});
+}
+
+if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initTaxora);
+} else {
+    initTaxora();
+}
 
 function initAllPageFeatures() {
     initPricingToggle();
     initSessionFilters();
     initBlogFilters();
+    initServicesFilters();
+    initFaqFilters();
     initFaqAccordion();
     initHome2SlotButtons();
     initDashboardFeatures();
@@ -336,22 +513,22 @@ function initPricingToggle() {
     if (!btnInd || !btnBiz) return;
 
     btnInd.onclick = () => {
-        btnBiz.classList.remove("bg-[#123B5D]", "dark:bg-blue-600", "text-white");
-        btnBiz.classList.add("text-[#64748B]", "dark:text-gray-300");
+        btnBiz.classList.remove("active-toggle", "bg-[#123B5D]", "dark:bg-blue-600", "text-white", "font-bold", "shadow-md");
+        btnBiz.classList.add("text-[#64748B]", "dark:text-gray-300", "font-semibold");
 
-        btnInd.classList.remove("text-[#64748B]", "dark:text-gray-300");
-        btnInd.classList.add("bg-[#123B5D]", "dark:bg-blue-600", "text-white");
+        btnInd.classList.remove("text-[#64748B]", "dark:text-gray-300", "font-semibold");
+        btnInd.classList.add("active-toggle", "bg-[#123B5D]", "dark:bg-blue-600", "text-white", "font-bold", "shadow-md");
 
         if (bizCards) bizCards.classList.add("hidden");
         if (indCards) indCards.classList.remove("hidden");
     };
 
     btnBiz.onclick = () => {
-        btnInd.classList.remove("bg-[#123B5D]", "dark:bg-blue-600", "text-white");
-        btnInd.classList.add("text-[#64748B]", "dark:text-gray-300");
+        btnInd.classList.remove("active-toggle", "bg-[#123B5D]", "dark:bg-blue-600", "text-white", "font-bold", "shadow-md");
+        btnInd.classList.add("text-[#64748B]", "dark:text-gray-300", "font-semibold");
 
-        btnBiz.classList.remove("text-[#64748B]", "dark:text-gray-300");
-        btnBiz.classList.add("bg-[#123B5D]", "dark:bg-blue-600", "text-white");
+        btnBiz.classList.remove("text-[#64748B]", "dark:text-gray-300", "font-semibold");
+        btnBiz.classList.add("active-toggle", "bg-[#123B5D]", "dark:bg-blue-600", "text-white", "font-bold", "shadow-md");
 
         if (indCards) indCards.classList.add("hidden");
         if (bizCards) bizCards.classList.remove("hidden");
@@ -382,9 +559,10 @@ function initSessionFilters() {
                 card.style.display = (filterValue === "all" || cardCategory === filterValue) ? "flex" : "none";
             });
 
-            if (cardsContainer) {
-                const navbarOffset = 110;
-                const elementPosition = cardsContainer.getBoundingClientRect().top;
+            const targetSection = document.getElementById("sessions-calendar") || cardsContainer;
+            if (targetSection) {
+                const navbarOffset = 96;
+                const elementPosition = targetSection.getBoundingClientRect().top;
                 const offsetPosition = elementPosition + window.pageYOffset - navbarOffset;
 
                 window.scrollTo({
@@ -397,34 +575,193 @@ function initSessionFilters() {
 }
 
 function initBlogFilters() {
-    const filterButtons = document.querySelectorAll("#blogFilterGroup button");
+    const filterButtons = document.querySelectorAll("#blogFilterGroup button, #blogFilterGroup a");
     const blogCards = document.querySelectorAll("#blogCardsList .blog-item");
     const blogContainer = document.getElementById("blogCardsList");
 
     if (!filterButtons.length) return;
 
     filterButtons.forEach(btn => {
-        btn.onclick = () => {
+        btn.onclick = (e) => {
+            e.preventDefault();
             const filterValue = btn.getAttribute("data-filter") || "all";
 
+            // Update URL hash path
+            if (window.history && window.history.pushState) {
+                window.history.pushState(null, null, "#blog-library");
+            } else {
+                window.location.hash = "blog-library";
+            }
+
+            // Update active pill styling
             filterButtons.forEach(b => {
-                b.classList.remove("bg-[#123B5D]", "dark:bg-blue-600", "text-white");
-                b.classList.add("border", "border-gray-200", "bg-white/90", "text-[#64748B]", "dark:border-gray-700", "dark:bg-[#0D1B2A]", "dark:text-gray-300");
+                b.classList.remove("active-filter-btn", "bg-[#123B5D]", "dark:bg-blue-600", "text-white", "font-bold", "shadow-md");
+                b.classList.add("border", "border-gray-200", "bg-white/90", "text-[#64748B]", "font-semibold", "dark:border-gray-700", "dark:bg-[#0D1B2A]", "dark:text-gray-300");
             });
 
-            btn.classList.remove("border", "border-gray-200", "bg-white/90", "text-[#64748B]", "dark:border-gray-700", "dark:bg-[#0D1B2A]", "dark:text-gray-300");
-            btn.classList.add("bg-[#123B5D]", "dark:bg-blue-600", "text-white");
+            btn.classList.remove("border", "border-gray-200", "bg-white/90", "text-[#64748B]", "font-semibold", "dark:border-gray-700", "dark:bg-[#0D1B2A]", "dark:text-gray-300");
+            btn.classList.add("active-filter-btn", "bg-[#123B5D]", "dark:bg-blue-600", "text-white", "font-bold", "shadow-md");
 
+            // Filter cards
             blogCards.forEach(card => {
                 const cardCategory = card.getAttribute("data-category");
-                card.style.display = (filterValue === "all" || cardCategory === filterValue) ? "flex" : "none";
+                const matches = (filterValue === "all" || cardCategory === filterValue);
+                card.style.display = matches ? "flex" : "none";
+                if (matches && filterValue !== "all") {
+                    card.classList.add("ring-2", "ring-blue-500", "dark:ring-blue-400", "shadow-xl");
+                    setTimeout(() => {
+                        card.classList.remove("ring-2", "ring-blue-500", "dark:ring-blue-400", "shadow-xl");
+                    }, 1500);
+                }
             });
 
-            if (blogContainer) {
-                const navbarOffset = 110;
-                const elementPosition = blogContainer.getBoundingClientRect().top;
+            // Smooth scroll so the library section fits cleanly inside viewport
+            const targetSection = document.getElementById("blog-library") || blogContainer;
+            if (targetSection) {
+                const header = document.querySelector("header");
+                const navbarOffset = (header ? header.offsetHeight : 72) + 12;
+                const elementPosition = targetSection.getBoundingClientRect().top;
                 const offsetPosition = elementPosition + window.pageYOffset - navbarOffset;
 
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: "smooth"
+                });
+            }
+        };
+    });
+}
+
+function initServicesFilters() {
+    const filterButtons = document.querySelectorAll("#servicesFilterGroup .service-filter-btn");
+    if (!filterButtons.length) return;
+
+    let isProgrammaticScroll = false;
+    let scrollTimeout = null;
+
+    function setActiveButton(activeBtn) {
+        filterButtons.forEach(btn => {
+            btn.classList.remove("active-service-btn", "bg-[#123B5D]", "dark:bg-blue-600", "text-white", "font-bold", "shadow-md");
+            btn.classList.add("border", "border-gray-200", "bg-white/90", "text-[#64748B]", "font-semibold", "dark:border-gray-700", "dark:bg-[#0D1B2A]", "dark:text-gray-300");
+        });
+        activeBtn.classList.remove("border", "border-gray-200", "bg-white/90", "text-[#64748B]", "font-semibold", "dark:border-gray-700", "dark:bg-[#0D1B2A]", "dark:text-gray-300");
+        activeBtn.classList.add("active-service-btn", "bg-[#123B5D]", "dark:bg-blue-600", "text-white", "font-bold", "shadow-md");
+    }
+
+    filterButtons.forEach(btn => {
+        btn.addEventListener("click", (e) => {
+            e.preventDefault();
+            setActiveButton(btn);
+
+            const targetId = btn.getAttribute("data-target") || btn.getAttribute("href")?.replace("#", "");
+            const targetEl = document.getElementById(targetId);
+
+            // Update browser URL hash path cleanly
+            if (window.history && window.history.pushState) {
+                window.history.pushState(null, null, "#" + targetId);
+            } else {
+                window.location.hash = targetId;
+            }
+
+            if (targetEl) {
+                isProgrammaticScroll = true;
+                if (scrollTimeout) clearTimeout(scrollTimeout);
+                scrollTimeout = setTimeout(() => { isProgrammaticScroll = false; }, 1200);
+
+                const header = document.querySelector("header");
+                const navOffset = (header ? header.offsetHeight : 72) + 16;
+
+                // Frame Row 1 (direct-tax, gst-desk, cross-border) via section top so heading & cards fit
+                const isRow1 = (targetId === "direct-tax" || targetId === "gst-desk" || targetId === "cross-border");
+                const scrollAnchor = isRow1 ? (document.getElementById("services-overview") || targetEl) : targetEl;
+                
+                const elementPosition = scrollAnchor.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - navOffset;
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: "smooth"
+                });
+
+                // Prominent visual highlight on the specific card clicked
+                const card = targetEl.classList.contains("group") ? targetEl : targetEl.querySelector(".group");
+                if (card) {
+                    card.classList.add("ring-4", "ring-[#123B5D]", "dark:ring-blue-400", "shadow-2xl", "scale-[1.01]");
+                    setTimeout(() => {
+                        card.classList.remove("ring-4", "ring-[#123B5D]", "dark:ring-blue-400", "shadow-2xl", "scale-[1.01]");
+                    }, 1800);
+                }
+            }
+        });
+    });
+
+    // Scrollspy to automatically update active button when user scrolls manually through cards
+    const observedTargets = [
+        { id: "direct-tax", btnIndex: 0 },
+        { id: "gst-desk", btnIndex: 1 },
+        { id: "cross-border", btnIndex: 2 },
+        { id: "virtual-cfo", btnIndex: 3 },
+        { id: "scrutiny-defense", btnIndex: 4 }
+    ];
+
+    if ("IntersectionObserver" in window) {
+        const observer = new IntersectionObserver((entries) => {
+            if (isProgrammaticScroll) return;
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const match = observedTargets.find(t => t.id === entry.target.id);
+                    if (match && filterButtons[match.btnIndex]) {
+                        setActiveButton(filterButtons[match.btnIndex]);
+                    }
+                }
+            });
+        }, {
+            root: null,
+            rootMargin: "-20% 0px -50% 0px",
+            threshold: 0.15
+        });
+
+        observedTargets.forEach(t => {
+            const el = document.getElementById(t.id);
+            if (el) observer.observe(el);
+        });
+    }
+}
+
+function initFaqFilters() {
+    const filterButtons = document.querySelectorAll("#faqFilterGroup button, #faqFilterGroup a");
+    const faqSections = document.querySelectorAll(".faq-category-section");
+
+    if (!filterButtons.length) return;
+
+    filterButtons.forEach(btn => {
+        btn.onclick = (e) => {
+            e.preventDefault();
+            const filterValue = btn.getAttribute("data-filter") || btn.getAttribute("href")?.replace("#", "") || "all";
+
+            filterButtons.forEach(b => {
+                b.classList.remove("bg-[#123B5D]", "dark:bg-blue-600", "text-white", "font-bold", "shadow-md");
+                b.classList.add(
+                    "border", "border-gray-200", "bg-white/90", "text-[#64748B]", "font-semibold",
+                    "dark:border-gray-700", "dark:bg-[#0D1B2A]", "dark:text-gray-300"
+                );
+            });
+
+            btn.classList.remove("border", "border-gray-200", "bg-white/90", "text-[#64748B]", "font-semibold", "dark:border-gray-700", "dark:bg-[#0D1B2A]", "dark:text-gray-300");
+            btn.classList.add("bg-[#123B5D]", "dark:bg-blue-600", "text-white", "font-bold", "shadow-md");
+
+            faqSections.forEach(section => {
+                const sectionId = section.getAttribute("id");
+                const sectionCategory = section.getAttribute("data-category") || sectionId;
+                const matches = filterValue === "all" || sectionId === filterValue || sectionCategory === filterValue;
+                section.style.display = matches ? "block" : "none";
+            });
+
+            const targetSection = filterValue === "all" ? faqSections[0] : document.getElementById(filterValue);
+            if (targetSection) {
+                const navbarOffset = 96;
+                const elementPosition = targetSection.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - navbarOffset;
                 window.scrollTo({
                     top: offsetPosition,
                     behavior: "smooth"
@@ -439,19 +776,33 @@ function initFaqAccordion() {
     if (!toggles.length) return;
 
     toggles.forEach(toggle => {
-        toggle.onclick = () => {
-            const content = toggle.nextElementSibling;
+        toggle.onclick = (e) => {
+            e.preventDefault();
+            const container = toggle.closest(".faq-item") || toggle.parentElement;
+            const content = toggle.nextElementSibling || (container ? container.querySelector(".faq-content") : null);
             const icon = toggle.querySelector(".faq-icon");
             if (!content) return;
 
             const isClosed = content.classList.contains("hidden");
 
+            // Close all FAQ items
             document.querySelectorAll(".faq-content").forEach(c => c.classList.add("hidden"));
             document.querySelectorAll(".faq-icon").forEach(i => i.textContent = "+");
+            document.querySelectorAll(".faq-toggle").forEach(t => t.setAttribute("aria-expanded", "false"));
+            document.querySelectorAll(".faq-item").forEach(item => {
+                item.classList.remove("border-[#123B5D]", "shadow-md", "dark:border-blue-500");
+                item.classList.add("border-gray-200", "dark:border-gray-800");
+            });
 
+            // If it was closed, open this one
             if (isClosed) {
                 content.classList.remove("hidden");
                 if (icon) icon.textContent = "−";
+                toggle.setAttribute("aria-expanded", "true");
+                if (container) {
+                    container.classList.remove("border-gray-200", "dark:border-gray-800");
+                    container.classList.add("border-[#123B5D]", "shadow-md", "dark:border-blue-500");
+                }
             }
         };
     });
@@ -588,13 +939,7 @@ function initInteractions() {
     directionToggleBtns.forEach(b => b.textContent = savedDir.toUpperCase());
 
     directionToggleBtns.forEach(btn => {
-        btn.onclick = () => {
-            const isRTL = html.getAttribute("dir") === "rtl";
-            const newDir = isRTL ? "ltr" : "rtl";
-            html.setAttribute("dir", newDir);
-            localStorage.setItem("taxora_direction", newDir);
-            directionToggleBtns.forEach(b => b.textContent = newDir.toUpperCase());
-        };
+        btn.onclick = () => window.toggleDirection();
     });
 
     // Mobile Menu
@@ -602,41 +947,90 @@ function initInteractions() {
     const mobileMenu = document.getElementById("mobileMenu");
 
     if (mobileMenuBtn && mobileMenu) {
-        mobileMenuBtn.onclick = (e) => {
-            e.stopPropagation();
-            const isClosed = mobileMenu.classList.contains("hidden");
-            mobileMenu.classList.toggle("hidden", !isClosed);
-            mobileMenuBtn.textContent = isClosed ? "✕" : "☰";
-        };
+        const hamburgerIcon = document.getElementById("hamburgerIcon");
+        const closeIcon = document.getElementById("closeIcon");
 
-        document.onclick = (e) => {
-            if (!mobileMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+        const setMenuState = (isOpen) => {
+            if (isOpen) {
+                mobileMenu.classList.remove("hidden");
+                mobileMenuBtn.setAttribute("aria-expanded", "true");
+                if (hamburgerIcon && closeIcon) {
+                    hamburgerIcon.classList.add("hidden");
+                    closeIcon.classList.remove("hidden");
+                } else {
+                    mobileMenuBtn.textContent = "✕";
+                }
+            } else {
                 mobileMenu.classList.add("hidden");
-                mobileMenuBtn.textContent = "☰";
+                mobileMenuBtn.setAttribute("aria-expanded", "false");
+                if (hamburgerIcon && closeIcon) {
+                    hamburgerIcon.classList.remove("hidden");
+                    closeIcon.classList.add("hidden");
+                } else {
+                    mobileMenuBtn.textContent = "☰";
+                }
             }
         };
 
+        mobileMenuBtn.onclick = (e) => {
+            e.stopPropagation();
+            const isCurrentlyOpen = !mobileMenu.classList.contains("hidden");
+            setMenuState(!isCurrentlyOpen);
+        };
+
+        document.addEventListener("click", (e) => {
+            if (!mobileMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+                setMenuState(false);
+            }
+        });
+
         mobileMenu.querySelectorAll("a").forEach(link => {
-            link.onclick = () => {
-                mobileMenu.classList.add("hidden");
-                mobileMenuBtn.textContent = "☰";
-            };
+            link.addEventListener("click", () => {
+                setMenuState(false);
+            });
+        });
+
+        mobileMenu.addEventListener("click", (e) => {
+            e.stopPropagation();
+        });
+
+        document.addEventListener("keydown", (e) => {
+            if (e.key === "Escape") {
+                setMenuState(false);
+            }
+        });
+
+        window.addEventListener("resize", () => {
+            if (window.innerWidth >= 1280 && !mobileMenu.classList.contains("hidden")) {
+                setMenuState(false);
+            }
         });
     }
 }
 
 function updateActiveNav() {
-    let currentPage = window.location.pathname.split("/").filter(Boolean).pop() || "index.html";
+    let rawPath = window.location.pathname || "";
+    let currentFile = rawPath.split("/").filter(Boolean).pop() || "index.html";
+    if (currentFile.includes("?")) currentFile = currentFile.split("?")[0];
+    if (currentFile.includes("#")) currentFile = currentFile.split("#")[0];
+
+    let currentPage = currentFile.toLowerCase();
     if (currentPage.endsWith(".html")) {
         currentPage = currentPage.replace(".html", "");
     }
-    currentPage = currentPage.toLowerCase();
-    if (currentPage === "" || currentPage === "index") currentPage = "index";
+    if (!currentPage || currentPage === "index" || currentPage === "navbar") {
+        currentPage = "index";
+    }
 
     const dropdownButtons = document.querySelectorAll("header nav .group > button");
     dropdownButtons.forEach(btn => {
-        btn.classList.remove("bg-[#EAF2F7]", "text-[#123B5D]", "font-bold", "dark:bg-[#162B3D]", "dark:text-white", "shadow-sm");
+        btn.classList.remove(
+            "nav-active", "bg-[#123B5D]", "text-white", "!text-white", "font-bold", "font-semibold",
+            "dark:bg-blue-600", "dark:text-white", "dark:!text-white", "shadow-sm",
+            "bg-[#EAF2F7]", "text-[#123B5D]", "dark:bg-[#162B3D]"
+        );
         btn.classList.add("text-[#334155]", "dark:text-gray-300");
+        btn.removeAttribute("aria-current");
     });
 
     const allLinks = document.querySelectorAll("header nav a, #mobileMenu a");
@@ -645,12 +1039,17 @@ function updateActiveNav() {
         if (!href || href === "login.html" || href.startsWith("#") || href.startsWith("http")) return;
 
         link.classList.remove(
-            "bg-[#EAF2F7]", "text-[#123B5D]", "text-[#1D4ED8]", "font-bold",
-            "dark:bg-[#162B3D]", "dark:text-white", "dark:text-[#60A5FA]", "shadow-sm"
+            "nav-active", "bg-[#123B5D]", "text-white", "!text-white", "font-bold", "font-semibold",
+            "dark:bg-blue-600", "dark:text-white", "dark:!text-white", "shadow-sm",
+            "bg-[#EAF2F7]", "text-[#123B5D]", "text-[#1D4ED8]",
+            "dark:bg-[#162B3D]", "dark:text-[#60A5FA]"
         );
         link.classList.add("text-[#334155]", "dark:text-gray-300");
+        link.removeAttribute("aria-current");
 
         let linkPage = href.split("/").filter(Boolean).pop() || "";
+        if (linkPage.includes("?")) linkPage = linkPage.split("?")[0];
+        if (linkPage.includes("#")) linkPage = linkPage.split("#")[0];
         if (linkPage.endsWith(".html")) {
             linkPage = linkPage.replace(".html", "");
         }
@@ -661,20 +1060,39 @@ function updateActiveNav() {
             const isInsideMobileMenu = link.closest("#mobileMenu");
 
             if (parentDropdown) {
+                // Inside dropdown
                 link.classList.remove("text-[#334155]", "dark:text-gray-300");
-                link.classList.add("text-[#1D4ED8]", "font-bold", "dark:text-[#60A5FA]");
+                link.classList.add(
+                    "nav-active", "bg-[#123B5D]", "!text-white", "font-semibold",
+                    "dark:bg-blue-600", "dark:!text-white"
+                );
+                link.setAttribute("aria-current", "page");
 
                 const parentButton = parentDropdown.querySelector("button");
                 if (parentButton) {
                     parentButton.classList.remove("text-[#334155]", "dark:text-gray-300");
-                    parentButton.classList.add("bg-[#EAF2F7]", "text-[#123B5D]", "font-bold", "dark:bg-[#162B3D]", "dark:text-white", "shadow-sm");
+                    parentButton.classList.add(
+                        "nav-active", "bg-[#123B5D]", "!text-white", "font-semibold", "shadow-sm",
+                        "dark:bg-blue-600", "dark:!text-white"
+                    );
+                    parentButton.setAttribute("aria-current", "page");
                 }
             } else if (isInsideMobileMenu) {
+                // Mobile menu item
                 link.classList.remove("text-[#334155]", "dark:text-gray-300");
-                link.classList.add("text-[#1D4ED8]", "font-bold", "dark:text-[#60A5FA]");
+                link.classList.add(
+                    "nav-active", "bg-[#123B5D]", "!text-white", "font-semibold", "shadow-sm",
+                    "dark:bg-blue-600", "dark:!text-white"
+                );
+                link.setAttribute("aria-current", "page");
             } else {
+                // Top-level desktop nav link
                 link.classList.remove("text-[#334155]", "dark:text-gray-300");
-                link.classList.add("bg-[#EAF2F7]", "text-[#123B5D]", "font-bold", "dark:bg-[#162B3D]", "dark:text-white", "shadow-sm");
+                link.classList.add(
+                    "nav-active", "bg-[#123B5D]", "!text-white", "font-semibold", "shadow-sm",
+                    "dark:bg-blue-600", "dark:!text-white"
+                );
+                link.setAttribute("aria-current", "page");
             }
         }
     });
