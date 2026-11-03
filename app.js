@@ -172,13 +172,24 @@
             background-color: rgba(255, 255, 255, 0.9) !important;
             border-color: #E5E7EB !important;
         }
-        html.dark .service-filter-btn.active-service-btn {
+        html.dark .service-filter-btn.active-service-btn,
+        html.dark .service-filter-btn.active-service-btn:hover {
             color: #FFFFFF !important;
             background-color: #2563EB !important;
+            border-color: #2563EB !important;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06) !important;
         }
-        html:not(.dark) .service-filter-btn.active-service-btn {
+        html:not(.dark) .service-filter-btn.active-service-btn,
+        html:not(.dark) .service-filter-btn.active-service-btn:hover {
             color: #FFFFFF !important;
             background-color: #123B5D !important;
+            border-color: #123B5D !important;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06) !important;
+        }
+
+        /* Lightning fast instant transition on filter pills */
+        .service-filter-btn {
+            transition: transform 75ms ease, box-shadow 75ms ease !important;
         }
 
         /* Transition override: text color changes instantaneously on theme toggle with 0ms transition */
@@ -189,7 +200,6 @@
         .directionToggleBtn,
         .themeToggleBtn,
         .pricing-toggle-btn,
-        .service-filter-btn,
         .filter-btn {
             transition-property: background-color, border-color, box-shadow, transform !important;
             transition-duration: 150ms !important;
@@ -636,10 +646,8 @@ function initServicesFilters() {
     const filterButtons = document.querySelectorAll("#servicesFilterGroup .service-filter-btn");
     if (!filterButtons.length) return;
 
-    let isProgrammaticScroll = false;
-    let scrollTimeout = null;
-
     function setActiveButton(activeBtn) {
+        if (!activeBtn) return;
         filterButtons.forEach(btn => {
             btn.classList.remove("active-service-btn", "bg-[#123B5D]", "dark:bg-blue-600", "text-white", "font-bold", "shadow-md");
             btn.classList.add("border", "border-gray-200", "bg-white/90", "text-[#64748B]", "font-semibold", "dark:border-gray-700", "dark:bg-[#0D1B2A]", "dark:text-gray-300");
@@ -648,33 +656,43 @@ function initServicesFilters() {
         activeBtn.classList.add("active-service-btn", "bg-[#123B5D]", "dark:bg-blue-600", "text-white", "font-bold", "shadow-md");
     }
 
+    // Support initial URL hash on load
+    const currentHash = window.location.hash.replace("#", "");
+    if (currentHash) {
+        const matchingBtn = Array.from(filterButtons).find(b =>
+            (b.getAttribute("data-target") === currentHash) || (b.getAttribute("href") === "#" + currentHash)
+        );
+        if (matchingBtn) {
+            setActiveButton(matchingBtn);
+        }
+    }
+
     filterButtons.forEach(btn => {
+        const targetId = btn.getAttribute("data-target") || btn.getAttribute("href")?.replace("#", "");
+
+        // Instant visual feedback on pointerdown (touch/click start) in 0ms flat
+        btn.addEventListener("pointerdown", () => {
+            setActiveButton(btn);
+        }, { passive: true });
+
         btn.addEventListener("click", (e) => {
             e.preventDefault();
             setActiveButton(btn);
 
-            const targetId = btn.getAttribute("data-target") || btn.getAttribute("href")?.replace("#", "");
-            const targetEl = document.getElementById(targetId);
-
-            // Update browser URL hash path cleanly
             if (window.history && window.history.pushState) {
                 window.history.pushState(null, null, "#" + targetId);
             } else {
                 window.location.hash = targetId;
             }
 
+            const targetEl = document.getElementById(targetId);
             if (targetEl) {
-                isProgrammaticScroll = true;
-                if (scrollTimeout) clearTimeout(scrollTimeout);
-                scrollTimeout = setTimeout(() => { isProgrammaticScroll = false; }, 1200);
-
                 const header = document.querySelector("header");
                 const navOffset = (header ? header.offsetHeight : 72) + 16;
 
-                // Frame Row 1 (direct-tax, gst-desk, cross-border) via section top so heading & cards fit
                 const isRow1 = (targetId === "direct-tax" || targetId === "gst-desk" || targetId === "cross-border");
                 const scrollAnchor = isRow1 ? (document.getElementById("services-overview") || targetEl) : targetEl;
-                
+
                 const elementPosition = scrollAnchor.getBoundingClientRect().top;
                 const offsetPosition = elementPosition + window.pageYOffset - navOffset;
 
@@ -694,38 +712,6 @@ function initServicesFilters() {
             }
         });
     });
-
-    // Scrollspy to automatically update active button when user scrolls manually through cards
-    const observedTargets = [
-        { id: "direct-tax", btnIndex: 0 },
-        { id: "gst-desk", btnIndex: 1 },
-        { id: "cross-border", btnIndex: 2 },
-        { id: "virtual-cfo", btnIndex: 3 },
-        { id: "scrutiny-defense", btnIndex: 4 }
-    ];
-
-    if ("IntersectionObserver" in window) {
-        const observer = new IntersectionObserver((entries) => {
-            if (isProgrammaticScroll) return;
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const match = observedTargets.find(t => t.id === entry.target.id);
-                    if (match && filterButtons[match.btnIndex]) {
-                        setActiveButton(filterButtons[match.btnIndex]);
-                    }
-                }
-            });
-        }, {
-            root: null,
-            rootMargin: "-20% 0px -50% 0px",
-            threshold: 0.15
-        });
-
-        observedTargets.forEach(t => {
-            const el = document.getElementById(t.id);
-            if (el) observer.observe(el);
-        });
-    }
 }
 
 function initFaqFilters() {
